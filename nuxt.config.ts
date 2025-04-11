@@ -15,9 +15,9 @@ export default defineNuxtConfig({
       dev: true,
       api: 'https://api.nuxt.studio',
       gitInfo: {
-        name: 'alexphone-blog',
-        owner: 'alex-phone',
-        url: 'https://github.com/alex-phone/alexphone-blog'
+        name: 'blog-raul',
+        owner: 'rgallegos',
+        url: 'https://github.com/rgallegosAlexphone/blog-raul'
       }
     }
   },

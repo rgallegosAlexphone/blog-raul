@@ -1749,6 +1749,12 @@ const components = {
           }
         },
         {
+          "name": "class",
+          "type": "any",
+          "description": "",
+          "schema": "any"
+        },
+        {
           "name": "href",
           "type": "string | undefined",
           "description": "",
@@ -1777,12 +1783,6 @@ const components = {
               "5": "\"_top\""
             }
           }
-        },
-        {
-          "name": "class",
-          "type": "any",
-          "description": "",
-          "schema": "any"
         }
       ]
     }
@@ -1967,16 +1967,16 @@ const components = {
           }
         },
         {
-          "name": "class",
-          "type": "any",
-          "description": "",
-          "schema": "any"
-        },
-        {
           "name": "label",
           "type": "string",
           "description": "",
           "schema": "string"
+        },
+        {
+          "name": "class",
+          "type": "any",
+          "description": "",
+          "schema": "any"
         }
       ]
     }
@@ -2481,6 +2481,12 @@ const components = {
           }
         },
         {
+          "name": "class",
+          "type": "any",
+          "description": "",
+          "schema": "any"
+        },
+        {
           "name": "target",
           "type": "\"_blank\" | \"_parent\" | \"_self\" | \"_top\" | (string & {}) | null | undefined",
           "description": "",
@@ -2501,12 +2507,6 @@ const components = {
               }
             }
           }
-        },
-        {
-          "name": "class",
-          "type": "any",
-          "description": "",
-          "schema": "any"
         },
         {
           "name": "to",
@@ -3118,6 +3118,12 @@ const components = {
           }
         },
         {
+          "name": "class",
+          "type": "any",
+          "description": "",
+          "schema": "any"
+        },
+        {
           "name": "target",
           "type": "\"_blank\" | \"_parent\" | \"_self\" | \"_top\" | (string & {}) | null | undefined",
           "description": "",
@@ -3138,12 +3144,6 @@ const components = {
               }
             }
           }
-        },
-        {
-          "name": "class",
-          "type": "any",
-          "description": "",
-          "schema": "any"
         },
         {
           "name": "to",
@@ -3358,6 +3358,19 @@ const components = {
           }
         },
         {
+          "name": "title",
+          "type": "string | undefined",
+          "description": "",
+          "schema": {
+            "kind": "enum",
+            "type": "string | undefined",
+            "schema": {
+              "0": "undefined",
+              "1": "string"
+            }
+          }
+        },
+        {
           "name": "color",
           "type": "\"primary\" | \"secondary\" | \"success\" | \"info\" | \"warning\" | \"error\" | \"neutral\" | undefined",
           "description": "",
@@ -3386,19 +3399,6 @@ const components = {
             "schema": {
               "0": "undefined",
               "1": "PartialString<{ base: string[]; icon: string; title: string; description: string; externalIcon: string[]; }>"
-            }
-          }
-        },
-        {
-          "name": "title",
-          "type": "string | undefined",
-          "description": "",
-          "schema": {
-            "kind": "enum",
-            "type": "string | undefined",
-            "schema": {
-              "0": "undefined",
-              "1": "string"
             }
           }
         }
@@ -6996,16 +6996,16 @@ const components = {
           }
         },
         {
-          "name": "class",
-          "type": "any",
-          "description": "",
-          "schema": "any"
-        },
-        {
           "name": "label",
           "type": "string",
           "description": "",
           "schema": "string"
+        },
+        {
+          "name": "class",
+          "type": "any",
+          "description": "",
+          "schema": "any"
         }
       ]
     }
