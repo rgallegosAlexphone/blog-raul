@@ -1551,7 +1551,7 @@ function publicAssetsURL(...path) {
 }
 
 const checksums = {
-  "content": "v3.3.0--p5tYysU_yP_Ah1yTqcyvFIRADTML632X_WEyZEZEnBM"
+  "content": "v3.3.0--cFYl7TfLPFcaGeZgBOmrO9ZXQiH6HN4001zDNdnN_Us"
 };
 const checksumsStructure = {
   "content": "bgIYhpjRuV8zbHJE_CfelwKpJ_Td6YuGJwixiek8lmI"
@@ -1749,12 +1749,6 @@ const components = {
           }
         },
         {
-          "name": "class",
-          "type": "any",
-          "description": "",
-          "schema": "any"
-        },
-        {
           "name": "href",
           "type": "string | undefined",
           "description": "",
@@ -1783,6 +1777,12 @@ const components = {
               "5": "\"_top\""
             }
           }
+        },
+        {
+          "name": "class",
+          "type": "any",
+          "description": "",
+          "schema": "any"
         }
       ]
     }
@@ -1967,16 +1967,16 @@ const components = {
           }
         },
         {
-          "name": "label",
-          "type": "string",
-          "description": "",
-          "schema": "string"
-        },
-        {
           "name": "class",
           "type": "any",
           "description": "",
           "schema": "any"
+        },
+        {
+          "name": "label",
+          "type": "string",
+          "description": "",
+          "schema": "string"
         }
       ]
     }
@@ -2481,12 +2481,6 @@ const components = {
           }
         },
         {
-          "name": "class",
-          "type": "any",
-          "description": "",
-          "schema": "any"
-        },
-        {
           "name": "target",
           "type": "\"_blank\" | \"_parent\" | \"_self\" | \"_top\" | (string & {}) | null | undefined",
           "description": "",
@@ -2507,6 +2501,12 @@ const components = {
               }
             }
           }
+        },
+        {
+          "name": "class",
+          "type": "any",
+          "description": "",
+          "schema": "any"
         },
         {
           "name": "to",
@@ -3118,12 +3118,6 @@ const components = {
           }
         },
         {
-          "name": "class",
-          "type": "any",
-          "description": "",
-          "schema": "any"
-        },
-        {
           "name": "target",
           "type": "\"_blank\" | \"_parent\" | \"_self\" | \"_top\" | (string & {}) | null | undefined",
           "description": "",
@@ -3144,6 +3138,12 @@ const components = {
               }
             }
           }
+        },
+        {
+          "name": "class",
+          "type": "any",
+          "description": "",
+          "schema": "any"
         },
         {
           "name": "to",
@@ -3358,19 +3358,6 @@ const components = {
           }
         },
         {
-          "name": "title",
-          "type": "string | undefined",
-          "description": "",
-          "schema": {
-            "kind": "enum",
-            "type": "string | undefined",
-            "schema": {
-              "0": "undefined",
-              "1": "string"
-            }
-          }
-        },
-        {
           "name": "color",
           "type": "\"primary\" | \"secondary\" | \"success\" | \"info\" | \"warning\" | \"error\" | \"neutral\" | undefined",
           "description": "",
@@ -3399,6 +3386,19 @@ const components = {
             "schema": {
               "0": "undefined",
               "1": "PartialString<{ base: string[]; icon: string; title: string; description: string; externalIcon: string[]; }>"
+            }
+          }
+        },
+        {
+          "name": "title",
+          "type": "string | undefined",
+          "description": "",
+          "schema": {
+            "kind": "enum",
+            "type": "string | undefined",
+            "schema": {
+              "0": "undefined",
+              "1": "string"
             }
           }
         }
@@ -6996,16 +6996,16 @@ const components = {
           }
         },
         {
-          "name": "label",
-          "type": "string",
-          "description": "",
-          "schema": "string"
-        },
-        {
           "name": "class",
           "type": "any",
           "description": "",
           "schema": "any"
+        },
+        {
+          "name": "label",
+          "type": "string",
+          "description": "",
+          "schema": "string"
         }
       ]
     }

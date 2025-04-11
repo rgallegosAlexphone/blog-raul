@@ -8,17 +8,19 @@ export default defineNuxtConfig({
     '@vueuse/nuxt'
   ],
   components: true,
+
   devtools: { enabled: true },
 
   content: {
     preview: {
       dev: true,
-      api: 'https://api.nuxt.studio',
-      gitInfo: {
-        name: 'blog-raul',
-        owner: 'rgallegos',
-        url: 'https://github.com/rgallegosAlexphone/blog-raul'
-      }
+      api: 'https://api.nuxt.studio'
+    }
+  },
+
+  vite: {
+    optimizeDeps: {
+      include: ['brace-expansion']
     }
   },
 
