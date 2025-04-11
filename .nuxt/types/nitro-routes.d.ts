@@ -4,7 +4,22 @@ declare module "nitropack/types" {
   type Awaited<T> = T extends PromiseLike<infer U> ? Awaited<U> : T
   interface InternalApi {
     '/__nuxt_error': {
-      'default': Simplify<Serialize<Awaited<ReturnType<typeof import('../../node_modules/.pnpm/nuxt@3.16.2_@parcel+watcher@2.5.1_better-sqlite3@11.9.1_db0@0.3.1_better-sqlite3@11.9.1_a6b5ad1cb5036dbaf4ce1846bec1b973/node_modules/nuxt/dist/core/runtime/nitro/handlers/renderer').default>>>>
+      'default': Simplify<Serialize<Awaited<ReturnType<typeof import('../../node_modules/.pnpm/nuxt@3.16.2_@parcel+watcher@2.5.1_better-sqlite3@11.9.1_db0@0.3.1_better-sqlite3@11.9.1_903d23821023d2f6663cda8955282063/node_modules/nuxt/dist/core/runtime/nitro/handlers/renderer').default>>>>
+    }
+    '/api/_nuxt_icon/:collection': {
+      'default': Simplify<Serialize<Awaited<ReturnType<typeof import('../../node_modules/.pnpm/@nuxt+icon@1.12.0_magicast@0.3.5_vite@6.2.6_jiti@2.4.2_lightningcss@1.29.2_terser@5.39._45852c06d0891daac18bddc1664bb3a3/node_modules/@nuxt/icon/dist/runtime/server/api').default>>>>
+    }
+    '/__preview.json': {
+      'get': Simplify<Serialize<Awaited<ReturnType<typeof import('../../node_modules/.pnpm/@nuxt+content@3.4.0_magicast@0.3.5_typescript@5.8.3/node_modules/@nuxt/content/dist/runtime/api/preview').default>>>>
+    }
+    '/api/component-meta': {
+      'get': Simplify<Serialize<Awaited<ReturnType<typeof import('../../node_modules/.pnpm/nuxt-component-meta@0.10.1_magicast@0.3.5/node_modules/nuxt-component-meta/dist/runtime/server/api/component-meta.get').default>>>>
+    }
+    '/api/component-meta.json': {
+      'get': Simplify<Serialize<Awaited<ReturnType<typeof import('../../node_modules/.pnpm/nuxt-component-meta@0.10.1_magicast@0.3.5/node_modules/nuxt-component-meta/dist/runtime/server/api/component-meta.json.get').default>>>>
+    }
+    '/api/component-meta/:component?': {
+      'get': Simplify<Serialize<Awaited<ReturnType<typeof import('../../node_modules/.pnpm/nuxt-component-meta@0.10.1_magicast@0.3.5/node_modules/nuxt-component-meta/dist/runtime/server/api/component-meta-component.get').default>>>>
     }
     '/__nuxt_content/:collection/sql_dump': {
       'default': Simplify<Serialize<Awaited<ReturnType<typeof import('../../node_modules/.pnpm/@nuxt+content@3.4.0_magicast@0.3.5_typescript@5.8.3/node_modules/@nuxt/content/dist/runtime/presets/node/database-handler').default>>>>

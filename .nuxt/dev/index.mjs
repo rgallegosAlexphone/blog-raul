@@ -1,5 +1,5 @@
 import process from 'node:process';globalThis._importMeta_={url:import.meta.url,env:process.env};import { tmpdir } from 'node:os';
-import { defineEventHandler, handleCacheHeaders, splitCookiesString, createEvent, fetchWithEvent, isEvent, eventHandler, setHeaders, sendRedirect, proxyRequest, getRequestHeader, setResponseHeaders, setResponseStatus, send, getRequestHeaders, setResponseHeader, getRequestURL, getResponseHeader, getRouterParam, getResponseStatus, createError, readBody, lazyEventHandler, useBase, createApp, createRouter as createRouter$1, toNodeListener, getQuery as getQuery$1, getResponseStatusText } from 'file:///Users/rgallegos/proyectos/blog-raul/node_modules/.pnpm/h3@1.15.1/node_modules/h3/dist/index.mjs';
+import { defineEventHandler, handleCacheHeaders, splitCookiesString, createEvent, fetchWithEvent, isEvent, eventHandler, setHeaders, sendRedirect, proxyRequest, getRequestHeader, setResponseHeaders, setResponseStatus, send, getRequestHeaders, setResponseHeader, getRequestURL, getResponseHeader, getResponseStatus, createError, getQuery as getQuery$1, appendHeader, getRouterParam, readBody, lazyEventHandler, useBase, createApp, createRouter as createRouter$1, toNodeListener, getResponseStatusText } from 'file:///Users/rgallegos/proyectos/blog-raul/node_modules/.pnpm/h3@1.15.1/node_modules/h3/dist/index.mjs';
 import { Server } from 'node:http';
 import { resolve, dirname, join } from 'node:path';
 import nodeCrypto from 'node:crypto';
@@ -16,10 +16,10 @@ import { createFetch, Headers as Headers$1 } from 'file:///Users/rgallegos/proye
 import { fetchNodeRequestHandler, callNodeRequestHandler } from 'file:///Users/rgallegos/proyectos/blog-raul/node_modules/.pnpm/node-mock-http@1.0.0/node_modules/node-mock-http/dist/index.mjs';
 import { createStorage, prefixStorage } from 'file:///Users/rgallegos/proyectos/blog-raul/node_modules/.pnpm/unstorage@1.15.0_db0@0.3.1_better-sqlite3@11.9.1__ioredis@5.6.0/node_modules/unstorage/dist/index.mjs';
 import unstorage_47drivers_47fs from 'file:///Users/rgallegos/proyectos/blog-raul/node_modules/.pnpm/unstorage@1.15.0_db0@0.3.1_better-sqlite3@11.9.1__ioredis@5.6.0/node_modules/unstorage/drivers/fs.mjs';
-import { digest } from 'file:///Users/rgallegos/proyectos/blog-raul/node_modules/.pnpm/ohash@2.0.11/node_modules/ohash/dist/index.mjs';
+import { digest, hash as hash$1 } from 'file:///Users/rgallegos/proyectos/blog-raul/node_modules/.pnpm/ohash@2.0.11/node_modules/ohash/dist/index.mjs';
 import { klona } from 'file:///Users/rgallegos/proyectos/blog-raul/node_modules/.pnpm/klona@2.0.6/node_modules/klona/dist/index.mjs';
 import defu, { defuFn } from 'file:///Users/rgallegos/proyectos/blog-raul/node_modules/.pnpm/defu@6.1.4/node_modules/defu/dist/defu.mjs';
-import { snakeCase } from 'file:///Users/rgallegos/proyectos/blog-raul/node_modules/.pnpm/scule@1.3.0/node_modules/scule/dist/index.mjs';
+import { snakeCase, pascalCase } from 'file:///Users/rgallegos/proyectos/blog-raul/node_modules/.pnpm/scule@1.3.0/node_modules/scule/dist/index.mjs';
 import { getContext } from 'file:///Users/rgallegos/proyectos/blog-raul/node_modules/.pnpm/unctx@2.4.1/node_modules/unctx/dist/index.mjs';
 import { toRouteMatcher, createRouter } from 'file:///Users/rgallegos/proyectos/blog-raul/node_modules/.pnpm/radix3@1.1.2/node_modules/radix3/dist/index.mjs';
 import { readFile } from 'node:fs/promises';
@@ -30,11 +30,13 @@ import { SourceMapConsumer } from 'file:///Users/rgallegos/proyectos/blog-raul/n
 import { AsyncLocalStorage } from 'node:async_hooks';
 import { stringify, uneval } from 'file:///Users/rgallegos/proyectos/blog-raul/node_modules/.pnpm/devalue@5.1.1/node_modules/devalue/index.js';
 import { captureRawStackTrace, parseRawStackTrace } from 'file:///Users/rgallegos/proyectos/blog-raul/node_modules/.pnpm/errx@0.1.0/node_modules/errx/dist/index.js';
-import { isAbsolute } from 'file:///Users/rgallegos/proyectos/blog-raul/node_modules/.pnpm/pathe@2.0.3/node_modules/pathe/dist/index.mjs';
+import { basename, isAbsolute } from 'file:///Users/rgallegos/proyectos/blog-raul/node_modules/.pnpm/pathe@2.0.3/node_modules/pathe/dist/index.mjs';
+import { getIcons } from 'file:///Users/rgallegos/proyectos/blog-raul/node_modules/.pnpm/@iconify+utils@2.3.0/node_modules/@iconify/utils/lib/index.mjs';
+import { collections } from 'file:///Users/rgallegos/proyectos/blog-raul/.nuxt/nuxt-icon-server-bundle.mjs';
+import { appConfigSchema, collections as collections$1, gitInfo } from 'file:///Users/rgallegos/proyectos/blog-raul/.nuxt/content/preview.mjs';
 import localAdapter from 'file:///Users/rgallegos/proyectos/blog-raul/node_modules/.pnpm/db0@0.3.1_better-sqlite3@11.9.1/node_modules/db0/dist/connectors/better-sqlite3.mjs';
 import { fileURLToPath } from 'node:url';
 import { ipxFSStorage, ipxHttpStorage, createIPX, createIPXH3Handler } from 'file:///Users/rgallegos/proyectos/blog-raul/node_modules/.pnpm/ipx@2.1.0_db0@0.3.1_better-sqlite3@11.9.1__ioredis@5.6.0/node_modules/ipx/dist/index.mjs';
-import { DeprecationsPlugin, PromisesPlugin, TemplateParamsPlugin, AliasSortingPlugin } from 'file:///Users/rgallegos/proyectos/blog-raul/node_modules/.pnpm/unhead@2.0.5/node_modules/unhead/dist/plugins.mjs';
 
 const serverAssets = [{"baseName":"server","dir":"/Users/rgallegos/proyectos/blog-raul/server/assets"}];
 
@@ -577,7 +579,251 @@ function cloneWithProxy(obj, overrides) {
 const cachedEventHandler = defineCachedEventHandler;
 
 const inlineAppConfig = {
-  "nuxt": {}
+  "nuxt": {},
+  "ui": {
+    "icons": {
+      "caution": "i-lucide-circle-alert",
+      "copy": "i-lucide-copy",
+      "copyCheck": "i-lucide-copy-check",
+      "dark": "i-lucide-moon",
+      "error": "i-lucide-circle-x",
+      "external": "i-lucide-arrow-up-right",
+      "eye": "i-lucide-eye",
+      "eyeOff": "i-lucide-eye-off",
+      "file": "i-lucide-file-text",
+      "folder": "i-lucide-folder",
+      "folderOpen": "i-lucide-folder-open",
+      "hash": "i-lucide-hash",
+      "info": "i-lucide-info",
+      "light": "i-lucide-sun",
+      "menu": "i-lucide-menu",
+      "panelClose": "i-lucide-panel-left-close",
+      "panelOpen": "i-lucide-panel-left-open",
+      "success": "i-lucide-circle-check",
+      "system": "i-lucide-monitor",
+      "tip": "i-lucide-lightbulb",
+      "warning": "i-lucide-triangle-alert",
+      "arrowLeft": "i-lucide-arrow-left",
+      "arrowRight": "i-lucide-arrow-right",
+      "check": "i-lucide-check",
+      "chevronDoubleLeft": "i-lucide-chevrons-left",
+      "chevronDoubleRight": "i-lucide-chevrons-right",
+      "chevronDown": "i-lucide-chevron-down",
+      "chevronLeft": "i-lucide-chevron-left",
+      "chevronRight": "i-lucide-chevron-right",
+      "chevronUp": "i-lucide-chevron-up",
+      "close": "i-lucide-x",
+      "ellipsis": "i-lucide-ellipsis",
+      "loading": "i-lucide-refresh-cw",
+      "minus": "i-lucide-minus",
+      "plus": "i-lucide-plus",
+      "search": "i-lucide-search"
+    },
+    "colors": {
+      "primary": "green",
+      "secondary": "blue",
+      "success": "green",
+      "info": "blue",
+      "warning": "yellow",
+      "error": "red",
+      "neutral": "slate"
+    }
+  },
+  "icon": {
+    "provider": "server",
+    "class": "",
+    "aliases": {},
+    "iconifyApiEndpoint": "https://api.iconify.design",
+    "localApiEndpoint": "/api/_nuxt_icon",
+    "fallbackToApi": true,
+    "cssSelectorPrefix": "i-",
+    "cssWherePseudo": true,
+    "cssLayer": "components",
+    "mode": "css",
+    "attrs": {
+      "aria-hidden": true
+    },
+    "collections": [
+      "academicons",
+      "akar-icons",
+      "ant-design",
+      "arcticons",
+      "basil",
+      "bi",
+      "bitcoin-icons",
+      "bpmn",
+      "brandico",
+      "bx",
+      "bxl",
+      "bxs",
+      "bytesize",
+      "carbon",
+      "catppuccin",
+      "cbi",
+      "charm",
+      "ci",
+      "cib",
+      "cif",
+      "cil",
+      "circle-flags",
+      "circum",
+      "clarity",
+      "codicon",
+      "covid",
+      "cryptocurrency",
+      "cryptocurrency-color",
+      "dashicons",
+      "devicon",
+      "devicon-plain",
+      "ei",
+      "el",
+      "emojione",
+      "emojione-monotone",
+      "emojione-v1",
+      "entypo",
+      "entypo-social",
+      "eos-icons",
+      "ep",
+      "et",
+      "eva",
+      "f7",
+      "fa",
+      "fa-brands",
+      "fa-regular",
+      "fa-solid",
+      "fa6-brands",
+      "fa6-regular",
+      "fa6-solid",
+      "fad",
+      "fe",
+      "feather",
+      "file-icons",
+      "flag",
+      "flagpack",
+      "flat-color-icons",
+      "flat-ui",
+      "flowbite",
+      "fluent",
+      "fluent-emoji",
+      "fluent-emoji-flat",
+      "fluent-emoji-high-contrast",
+      "fluent-mdl2",
+      "fontelico",
+      "fontisto",
+      "formkit",
+      "foundation",
+      "fxemoji",
+      "gala",
+      "game-icons",
+      "geo",
+      "gg",
+      "gis",
+      "gravity-ui",
+      "gridicons",
+      "grommet-icons",
+      "guidance",
+      "healthicons",
+      "heroicons",
+      "heroicons-outline",
+      "heroicons-solid",
+      "hugeicons",
+      "humbleicons",
+      "ic",
+      "icomoon-free",
+      "icon-park",
+      "icon-park-outline",
+      "icon-park-solid",
+      "icon-park-twotone",
+      "iconamoon",
+      "iconoir",
+      "icons8",
+      "il",
+      "ion",
+      "iwwa",
+      "jam",
+      "la",
+      "lets-icons",
+      "line-md",
+      "logos",
+      "ls",
+      "lucide",
+      "lucide-lab",
+      "mage",
+      "majesticons",
+      "maki",
+      "map",
+      "marketeq",
+      "material-symbols",
+      "material-symbols-light",
+      "mdi",
+      "mdi-light",
+      "medical-icon",
+      "memory",
+      "meteocons",
+      "mi",
+      "mingcute",
+      "mono-icons",
+      "mynaui",
+      "nimbus",
+      "nonicons",
+      "noto",
+      "noto-v1",
+      "octicon",
+      "oi",
+      "ooui",
+      "openmoji",
+      "oui",
+      "pajamas",
+      "pepicons",
+      "pepicons-pencil",
+      "pepicons-pop",
+      "pepicons-print",
+      "ph",
+      "pixelarticons",
+      "prime",
+      "ps",
+      "quill",
+      "radix-icons",
+      "raphael",
+      "ri",
+      "rivet-icons",
+      "si-glyph",
+      "simple-icons",
+      "simple-line-icons",
+      "skill-icons",
+      "solar",
+      "streamline",
+      "streamline-emojis",
+      "subway",
+      "svg-spinners",
+      "system-uicons",
+      "tabler",
+      "tdesign",
+      "teenyicons",
+      "token",
+      "token-branded",
+      "topcoat",
+      "twemoji",
+      "typcn",
+      "uil",
+      "uim",
+      "uis",
+      "uit",
+      "uiw",
+      "unjs",
+      "vaadin",
+      "vs",
+      "vscode-icons",
+      "websymbol",
+      "weui",
+      "whh",
+      "wi",
+      "wpf",
+      "zmdi",
+      "zondicons"
+    ],
+    "fetchTimeout": 1500
+  }
 };
 
 
@@ -635,6 +881,14 @@ const _inlineRuntimeConfig = {
       "/__nuxt_error": {
         "cache": false
       },
+      "/_fonts/**": {
+        "headers": {
+          "cache-control": "public, max-age=31536000, immutable"
+        },
+        "cache": {
+          "maxAge": 31536000
+        }
+      },
       "/__nuxt_content/content/sql_dump": {
         "prerender": true
       },
@@ -657,7 +911,31 @@ const _inlineRuntimeConfig = {
     "mdc": {
       "components": {
         "prose": true,
-        "map": {}
+        "map": {
+          "accordion": "ProseAccordion",
+          "accordion-item": "ProseAccordionItem",
+          "badge": "ProseBadge",
+          "callout": "ProseCallout",
+          "card": "ProseCard",
+          "card-group": "ProseCardGroup",
+          "caution": "ProseCaution",
+          "code-collapse": "ProseCodeCollapse",
+          "code-group": "ProseCodeGroup",
+          "code-icon": "ProseCodeIcon",
+          "code-preview": "ProseCodePreview",
+          "code-tree": "ProseCodeTree",
+          "collapsible": "ProseCollapsible",
+          "field": "ProseField",
+          "field-group": "ProseFieldGroup",
+          "icon": "ProseIcon",
+          "kbd": "ProseKbd",
+          "note": "ProseNote",
+          "steps": "ProseSteps",
+          "tabs": "ProseTabs",
+          "tabs-item": "ProseTabsItem",
+          "tip": "ProseTip",
+          "warning": "ProseWarning"
+        }
       },
       "headings": {
         "anchorLinks": {
@@ -669,7 +947,14 @@ const _inlineRuntimeConfig = {
           "h6": false
         }
       }
+    },
+    "preview": {
+      "api": "https://api.nuxt.studio",
+      "iframeMessagingAllowedOrigins": ""
     }
+  },
+  "icon": {
+    "serverKnownCssClasses": []
   },
   "content": {
     "databaseVersion": "v3.3.0",
@@ -717,7 +1002,12 @@ function useRuntimeConfig(event) {
   event.context.nitro.runtimeConfig = runtimeConfig;
   return runtimeConfig;
 }
-_deepFreeze(klona(appConfig));
+const _sharedAppConfig = _deepFreeze(klona(appConfig));
+function useAppConfig(event) {
+  {
+    return _sharedAppConfig;
+  }
+}
 function _deepFreeze(object) {
   const propNames = Object.getOwnPropertyNames(object);
   for (const name of propNames) {
@@ -1049,7 +1339,7 @@ async function errorHandler(error, event) {
   // H3 will handle fallback
 }
 
-const script = `
+const script$1 = `
 if (!window.__NUXT_DEVTOOLS_TIME_METRIC__) {
   Object.defineProperty(window, '__NUXT_DEVTOOLS_TIME_METRIC__', {
     value: {},
@@ -1060,9 +1350,9 @@ if (!window.__NUXT_DEVTOOLS_TIME_METRIC__) {
 window.__NUXT_DEVTOOLS_TIME_METRIC__.appInit = Date.now()
 `;
 
-const _3RhFgR14Y1NyffuTzOX0XJb_nJLTuV97RDO3XuIRMAM = (function(nitro) {
+const _uSZ98UCsSRJz2x1uwxEIbkqptT2CMwlznTYjPN2wTc = (function(nitro) {
   nitro.hooks.hook("render:html", (htmlContext) => {
-    htmlContext.head.push(`<script>${script}<\/script>`);
+    htmlContext.head.push(`<script>${script$1}<\/script>`);
   });
 });
 
@@ -1072,11 +1362,15 @@ const appHead = {"meta":[{"name":"viewport","content":"width=device-width, initi
 
 const appRootTag = "div";
 
-const appRootAttrs = {"id":"__nuxt"};
+const appRootAttrs = {"id":"__nuxt","class":"isolate"};
 
 const appTeleportTag = "div";
 
 const appTeleportAttrs = {"id":"teleports"};
+
+const appSpaLoaderTag = "div";
+
+const appSpaLoaderAttrs = {"id":"__nuxt-loader"};
 
 const appId = "nuxt-app";
 
@@ -1085,7 +1379,7 @@ const devReducers = {
   URL: (data) => data instanceof URL ? data.toString() : void 0
 };
 const asyncContext = getContext("nuxt-dev", { asyncContext: true, AsyncLocalStorage });
-const _hxSm6rhiNm1SM4OfIq0aoCprhJTQRPPyIDGool8QIbc = (nitroApp) => {
+const _4ZAswCeMkZGUxDQnS2xXBFIJb6dbPIW9ox5l4vGY3zk = (nitroApp) => {
   const handler = nitroApp.h3App.handler;
   nitroApp.h3App.handler = (event) => {
     return asyncContext.callAsync({ logs: [], event }, () => handler(event));
@@ -1154,30 +1448,106 @@ function onConsoleLog(callback) {
   consola$1.wrapConsole();
 }
 
-const plugins = [
-  _3RhFgR14Y1NyffuTzOX0XJb_nJLTuV97RDO3XuIRMAM,
-_hxSm6rhiNm1SM4OfIq0aoCprhJTQRPPyIDGool8QIbc
-];
+const script = "\"use strict\";(()=>{const t=window,e=document.documentElement,c=[\"dark\",\"light\"],n=getStorageValue(\"localStorage\",\"nuxt-color-mode\")||\"system\";let i=n===\"system\"?u():n;const r=e.getAttribute(\"data-color-mode-forced\");r&&(i=r),l(i),t[\"__NUXT_COLOR_MODE__\"]={preference:n,value:i,getColorScheme:u,addColorScheme:l,removeColorScheme:d};function l(o){const s=\"\"+o+\"\",a=\"\";e.classList?e.classList.add(s):e.className+=\" \"+s,a&&e.setAttribute(\"data-\"+a,o)}function d(o){const s=\"\"+o+\"\",a=\"\";e.classList?e.classList.remove(s):e.className=e.className.replace(new RegExp(s,\"g\"),\"\"),a&&e.removeAttribute(\"data-\"+a)}function f(o){return t.matchMedia(\"(prefers-color-scheme\"+o+\")\")}function u(){if(t.matchMedia&&f(\"\").media!==\"not all\"){for(const o of c)if(f(\":\"+o).matches)return o}return\"light\"}})();function getStorageValue(t,e){switch(t){case\"localStorage\":return window.localStorage.getItem(e);case\"sessionStorage\":return window.sessionStorage.getItem(e);case\"cookie\":return getCookie(e);default:return null}}function getCookie(t){const c=(\"; \"+window.document.cookie).split(\"; \"+t+\"=\");if(c.length===2)return c.pop()?.split(\";\").shift()}";
 
-const _1nkzOb = eventHandler(async (event) => {
-  const collection = getRouterParam(event, "collection");
-  const data = await useStorage().getItem(`build:content:database.compressed.mjs`) || "";
-  if (data) {
-    const lineStart = `export const ${collection} = "`;
-    const content = String(data).split("\n").find((line) => line.startsWith(lineStart));
-    if (content) {
-      return content.substring(lineStart.length, content.length - 1);
-    }
-  }
-  return await import('file:///Users/rgallegos/proyectos/blog-raul/.nuxt/content/database.compressed.mjs').then((m) => m[collection]);
+const _vlkWbSZ6au1Eh7IK7MUuT2hol2cDbO7xQ577Psyawo = (function(nitro) {
+  nitro.hooks.hook("render:html", (htmlContext) => {
+    htmlContext.head.push(`<script>${script}<\/script>`);
+  });
 });
 
-async function decompressSQLDump(base64Str, compressionType = "gzip") {
-  const binaryData = Uint8Array.from(atob(base64Str), (c) => c.charCodeAt(0));
-  const response = new Response(new Blob([binaryData]));
-  const decompressedStream = response.body?.pipeThrough(new DecompressionStream(compressionType));
-  const decompressedText = await new Response(decompressedStream).text();
-  return decompressedText.split("\n");
+const plugins = [
+  _uSZ98UCsSRJz2x1uwxEIbkqptT2CMwlznTYjPN2wTc,
+_4ZAswCeMkZGUxDQnS2xXBFIJb6dbPIW9ox5l4vGY3zk,
+_vlkWbSZ6au1Eh7IK7MUuT2hol2cDbO7xQ577Psyawo
+];
+
+function defineRenderHandler(render) {
+  const runtimeConfig = useRuntimeConfig();
+  return eventHandler(async (event) => {
+    const nitroApp = useNitroApp();
+    const ctx = { event, render, response: void 0 };
+    await nitroApp.hooks.callHook("render:before", ctx);
+    if (!ctx.response) {
+      if (event.path === `${runtimeConfig.app.baseURL}favicon.ico`) {
+        setResponseHeader(event, "Content-Type", "image/x-icon");
+        return send(
+          event,
+          "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+        );
+      }
+      ctx.response = await ctx.render(event);
+      if (!ctx.response) {
+        const _currentStatus = getResponseStatus(event);
+        setResponseStatus(event, _currentStatus === 200 ? 500 : _currentStatus);
+        return send(
+          event,
+          "No response returned from render handler: " + event.path
+        );
+      }
+    }
+    await nitroApp.hooks.callHook("render:response", ctx.response, ctx);
+    if (ctx.response.headers) {
+      setResponseHeaders(event, ctx.response.headers);
+    }
+    if (ctx.response.statusCode || ctx.response.statusMessage) {
+      setResponseStatus(
+        event,
+        ctx.response.statusCode,
+        ctx.response.statusMessage
+      );
+    }
+    return ctx.response.body;
+  });
+}
+
+const scheduledTasks = false;
+
+const tasks = {
+  
+};
+
+const __runningTasks__ = {};
+async function runTask(name, {
+  payload = {},
+  context = {}
+} = {}) {
+  if (__runningTasks__[name]) {
+    return __runningTasks__[name];
+  }
+  if (!(name in tasks)) {
+    throw createError({
+      message: `Task \`${name}\` is not available!`,
+      statusCode: 404
+    });
+  }
+  if (!tasks[name].resolve) {
+    throw createError({
+      message: `Task \`${name}\` is not implemented!`,
+      statusCode: 501
+    });
+  }
+  const handler = await tasks[name].resolve();
+  const taskEvent = { name, payload, context };
+  __runningTasks__[name] = handler.run(taskEvent);
+  try {
+    const res = await __runningTasks__[name];
+    return res;
+  } finally {
+    delete __runningTasks__[name];
+  }
+}
+
+function buildAssetsDir() {
+  return useRuntimeConfig().app.buildAssetsDir;
+}
+function buildAssetsURL(...path) {
+  return joinRelativeURL(publicAssetsURL(), buildAssetsDir(), ...path);
+}
+function publicAssetsURL(...path) {
+  const app = useRuntimeConfig().app;
+  const publicBase = app.cdnURL || app.baseURL;
+  return path.length ? joinRelativeURL(publicBase, ...path) : publicBase;
 }
 
 const checksums = {
@@ -1219,6 +1589,6436 @@ async function fetchDatabase(event, collection) {
     headers: { "content-type": "text/plain" },
     query: { v: checksums[String(collection)], t: Date.now()  }
   });
+}
+
+const warnOnceSet = /* @__PURE__ */ new Set();
+const DEFAULT_ENDPOINT = "https://api.iconify.design";
+const _Tn6xkJ = defineCachedEventHandler(async (event) => {
+  const url = getRequestURL(event);
+  if (!url)
+    return createError({ status: 400, message: "Invalid icon request" });
+  const options = useAppConfig().icon;
+  const collectionName = event.context.params?.collection?.replace(/\.json$/, "");
+  const collection = collectionName ? await collections[collectionName]?.() : null;
+  const apiEndPoint = options.iconifyApiEndpoint || DEFAULT_ENDPOINT;
+  const icons = url.searchParams.get("icons")?.split(",");
+  if (collection) {
+    if (icons?.length) {
+      const data = getIcons(
+        collection,
+        icons
+      );
+      consola$1.debug(`[Icon] serving ${(icons || []).map((i) => "`" + collectionName + ":" + i + "`").join(",")} from bundled collection`);
+      return data;
+    }
+  } else {
+    if (collectionName && !warnOnceSet.has(collectionName) && apiEndPoint === DEFAULT_ENDPOINT) {
+      consola$1.warn([
+        `[Icon] Collection \`${collectionName}\` is not found locally`,
+        `We suggest to install it via \`npm i -D @iconify-json/${collectionName}\` to provide the best end-user experience.`
+      ].join("\n"));
+      warnOnceSet.add(collectionName);
+    }
+  }
+  if (options.fallbackToApi === true || options.fallbackToApi === "server-only") {
+    const apiUrl = new URL("./" + basename(url.pathname) + url.search, apiEndPoint);
+    consola$1.debug(`[Icon] fetching ${(icons || []).map((i) => "`" + collectionName + ":" + i + "`").join(",")} from iconify api`);
+    if (apiUrl.host !== new URL(apiEndPoint).host) {
+      return createError({ status: 400, message: "Invalid icon request" });
+    }
+    try {
+      const data = await $fetch(apiUrl.href);
+      return data;
+    } catch (e) {
+      consola$1.error(e);
+      if (e.status === 404)
+        return createError({ status: 404 });
+      else
+        return createError({ status: 500, message: "Failed to fetch fallback icon" });
+    }
+  }
+  return createError({ status: 404 });
+}, {
+  group: "nuxt",
+  name: "icon",
+  getKey(event) {
+    const collection = event.context.params?.collection?.replace(/\.json$/, "") || "unknown";
+    const icons = String(getQuery$1(event).icons || "");
+    return `${collection}_${icons.split(",")[0]}_${icons.length}_${hash$1(icons)}`;
+  },
+  swr: true,
+  maxAge: 60 * 60 * 24 * 7
+  // 1 week
+});
+
+const components = {
+  "ProseA": {
+    "mode": "all",
+    "global": true,
+    "prefetch": false,
+    "preload": false,
+    "filePath": "node_modules/.pnpm/@nuxt+ui-pro@3.0.2_@babel+parser@7.27.0_db0@0.3.1_better-sqlite3@11.9.1__embla-carousel_c91fed73073e7ebd3bd8cfe4cd954783/node_modules/@nuxt/ui-pro/dist/runtime/components/prose/A.vue",
+    "pascalName": "ProseA",
+    "kebabName": "prose-a",
+    "chunkName": "components/prose-a",
+    "priority": 0,
+    "_scanned": true,
+    "meta": {
+      "type": 1,
+      "props": [
+        {
+          "name": "href",
+          "global": false,
+          "description": "",
+          "tags": [],
+          "required": false,
+          "type": "string | undefined",
+          "schema": {
+            "kind": "enum",
+            "type": "string | undefined",
+            "schema": {
+              "0": "undefined",
+              "1": "string"
+            }
+          }
+        },
+        {
+          "name": "target",
+          "global": false,
+          "description": "",
+          "tags": [],
+          "required": false,
+          "type": "\"_blank\" | \"_parent\" | \"_self\" | \"_top\" | null | undefined",
+          "schema": {
+            "kind": "enum",
+            "type": "\"_blank\" | \"_parent\" | \"_self\" | \"_top\" | null | undefined",
+            "schema": {
+              "0": "undefined",
+              "1": "null",
+              "2": "\"_blank\"",
+              "3": "\"_parent\"",
+              "4": "\"_self\"",
+              "5": "\"_top\""
+            }
+          }
+        }
+      ],
+      "slots": [
+        {
+          "name": "default",
+          "type": "{}",
+          "description": "",
+          "schema": {
+            "kind": "object",
+            "type": "{}",
+            "schema": {}
+          }
+        }
+      ],
+      "events": [],
+      "exposed": [
+        {
+          "name": "$slots",
+          "type": "Readonly<InternalSlots> & { default?: ((props: {}) => any) | undefined; }",
+          "description": "",
+          "schema": {
+            "kind": "object",
+            "type": "Readonly<InternalSlots> & { default?: ((props: {}) => any) | undefined; }",
+            "schema": {
+              "default": {
+                "name": "default",
+                "global": false,
+                "description": "",
+                "tags": [],
+                "required": false,
+                "type": "((props: {}) => any) | undefined",
+                "schema": {
+                  "kind": "enum",
+                  "type": "((props: {}) => any) | undefined",
+                  "schema": {
+                    "0": "undefined",
+                    "1": {
+                      "kind": "event",
+                      "type": "(props: {}): any",
+                      "schema": []
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "href",
+          "type": "string | undefined",
+          "description": "",
+          "schema": {
+            "kind": "enum",
+            "type": "string | undefined",
+            "schema": {
+              "0": "undefined",
+              "1": "string"
+            }
+          }
+        },
+        {
+          "name": "target",
+          "type": "\"_blank\" | \"_parent\" | \"_self\" | \"_top\" | null | undefined",
+          "description": "",
+          "schema": {
+            "kind": "enum",
+            "type": "\"_blank\" | \"_parent\" | \"_self\" | \"_top\" | null | undefined",
+            "schema": {
+              "0": "undefined",
+              "1": "null",
+              "2": "\"_blank\"",
+              "3": "\"_parent\"",
+              "4": "\"_self\"",
+              "5": "\"_top\""
+            }
+          }
+        },
+        {
+          "name": "class",
+          "type": "any",
+          "description": "",
+          "schema": "any"
+        }
+      ]
+    }
+  },
+  "ProseAccordion": {
+    "mode": "all",
+    "global": true,
+    "prefetch": false,
+    "preload": false,
+    "filePath": "node_modules/.pnpm/@nuxt+ui-pro@3.0.2_@babel+parser@7.27.0_db0@0.3.1_better-sqlite3@11.9.1__embla-carousel_c91fed73073e7ebd3bd8cfe4cd954783/node_modules/@nuxt/ui-pro/dist/runtime/components/prose/Accordion.vue",
+    "pascalName": "ProseAccordion",
+    "kebabName": "prose-accordion",
+    "chunkName": "components/prose-accordion",
+    "priority": 0,
+    "_scanned": true,
+    "meta": {
+      "type": 1,
+      "props": [
+        {
+          "name": "type",
+          "global": false,
+          "description": "",
+          "tags": [],
+          "required": false,
+          "type": "\"multiple\" | \"single\" | undefined",
+          "schema": {
+            "kind": "enum",
+            "type": "\"multiple\" | \"single\" | undefined",
+            "schema": {
+              "0": "undefined",
+              "1": "\"multiple\"",
+              "2": "\"single\""
+            }
+          },
+          "default": "\"multiple\""
+        }
+      ],
+      "slots": [
+        {
+          "name": "default",
+          "type": "{} | undefined",
+          "description": "",
+          "schema": {
+            "kind": "enum",
+            "type": "{} | undefined",
+            "schema": {
+              "0": "undefined",
+              "1": {
+                "kind": "object",
+                "type": "{}",
+                "schema": {}
+              }
+            }
+          }
+        }
+      ],
+      "events": [],
+      "exposed": [
+        {
+          "name": "$slots",
+          "type": "Readonly<InternalSlots> & AccordionSlots",
+          "description": "",
+          "schema": {
+            "kind": "object",
+            "type": "Readonly<InternalSlots> & AccordionSlots",
+            "schema": {
+              "default": {
+                "name": "default",
+                "global": false,
+                "description": "",
+                "tags": [],
+                "required": true,
+                "type": "(props?: {} | undefined) => any",
+                "schema": {
+                  "kind": "event",
+                  "type": "(props?: {} | undefined): any",
+                  "schema": {}
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "type",
+          "type": "\"multiple\" | \"single\"",
+          "description": "",
+          "schema": {
+            "kind": "enum",
+            "type": "\"multiple\" | \"single\"",
+            "schema": {
+              "0": "\"multiple\"",
+              "1": "\"single\""
+            }
+          }
+        },
+        {
+          "name": "class",
+          "type": "any",
+          "description": "",
+          "schema": "any"
+        }
+      ]
+    }
+  },
+  "ProseAccordionItem": {
+    "mode": "all",
+    "global": true,
+    "prefetch": false,
+    "preload": false,
+    "filePath": "node_modules/.pnpm/@nuxt+ui-pro@3.0.2_@babel+parser@7.27.0_db0@0.3.1_better-sqlite3@11.9.1__embla-carousel_c91fed73073e7ebd3bd8cfe4cd954783/node_modules/@nuxt/ui-pro/dist/runtime/components/prose/AccordionItem.vue",
+    "pascalName": "ProseAccordionItem",
+    "kebabName": "prose-accordion-item",
+    "chunkName": "components/prose-accordion-item",
+    "priority": 0,
+    "_scanned": true,
+    "meta": {
+      "type": 1,
+      "props": [
+        {
+          "name": "label",
+          "global": false,
+          "description": "",
+          "tags": [],
+          "required": true,
+          "type": "string",
+          "schema": "string"
+        }
+      ],
+      "slots": [
+        {
+          "name": "default",
+          "type": "{ mdcUnwrap: string; }",
+          "description": "",
+          "schema": {
+            "kind": "object",
+            "type": "{ mdcUnwrap: string; }",
+            "schema": {
+              "mdcUnwrap": {
+                "name": "mdcUnwrap",
+                "global": false,
+                "description": "",
+                "tags": [],
+                "required": true,
+                "type": "string",
+                "schema": "string"
+              }
+            }
+          }
+        }
+      ],
+      "events": [],
+      "exposed": [
+        {
+          "name": "$slots",
+          "type": "Readonly<InternalSlots> & { default?: ((props: { mdcUnwrap: string; }) => any) | undefined; }",
+          "description": "",
+          "schema": {
+            "kind": "object",
+            "type": "Readonly<InternalSlots> & { default?: ((props: { mdcUnwrap: string; }) => any) | undefined; }",
+            "schema": {
+              "default": {
+                "name": "default",
+                "global": false,
+                "description": "",
+                "tags": [],
+                "required": false,
+                "type": "((props: { mdcUnwrap: string; }) => any) | undefined",
+                "schema": {
+                  "kind": "enum",
+                  "type": "((props: { mdcUnwrap: string; }) => any) | undefined",
+                  "schema": {
+                    "0": "undefined",
+                    "1": {
+                      "kind": "event",
+                      "type": "(props: { mdcUnwrap: string; }): any",
+                      "schema": []
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "class",
+          "type": "any",
+          "description": "",
+          "schema": "any"
+        },
+        {
+          "name": "label",
+          "type": "string",
+          "description": "",
+          "schema": "string"
+        }
+      ]
+    }
+  },
+  "ProseBadge": {
+    "mode": "all",
+    "global": true,
+    "prefetch": false,
+    "preload": false,
+    "filePath": "node_modules/.pnpm/@nuxt+ui-pro@3.0.2_@babel+parser@7.27.0_db0@0.3.1_better-sqlite3@11.9.1__embla-carousel_c91fed73073e7ebd3bd8cfe4cd954783/node_modules/@nuxt/ui-pro/dist/runtime/components/prose/Badge.vue",
+    "pascalName": "ProseBadge",
+    "kebabName": "prose-badge",
+    "chunkName": "components/prose-badge",
+    "priority": 0,
+    "_scanned": true,
+    "meta": {
+      "type": 1,
+      "props": [],
+      "slots": [
+        {
+          "name": "default",
+          "type": "{ mdcUnwrap: string; }",
+          "description": "",
+          "schema": {
+            "kind": "object",
+            "type": "{ mdcUnwrap: string; }",
+            "schema": {
+              "mdcUnwrap": {
+                "name": "mdcUnwrap",
+                "global": false,
+                "description": "",
+                "tags": [],
+                "required": true,
+                "type": "string",
+                "schema": "string"
+              }
+            }
+          }
+        }
+      ],
+      "events": [],
+      "exposed": [
+        {
+          "name": "$slots",
+          "type": "Readonly<InternalSlots> & { default?: ((props: { mdcUnwrap: string; }) => any) | undefined; }",
+          "description": "",
+          "schema": {
+            "kind": "object",
+            "type": "Readonly<InternalSlots> & { default?: ((props: { mdcUnwrap: string; }) => any) | undefined; }",
+            "schema": {
+              "default": {
+                "name": "default",
+                "global": false,
+                "description": "",
+                "tags": [],
+                "required": false,
+                "type": "((props: { mdcUnwrap: string; }) => any) | undefined",
+                "schema": {
+                  "kind": "enum",
+                  "type": "((props: { mdcUnwrap: string; }) => any) | undefined",
+                  "schema": {
+                    "0": "undefined",
+                    "1": {
+                      "kind": "event",
+                      "type": "(props: { mdcUnwrap: string; }): any",
+                      "schema": []
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "class",
+          "type": "any",
+          "description": "",
+          "schema": "any"
+        }
+      ]
+    }
+  },
+  "ProseBlockquote": {
+    "mode": "all",
+    "global": true,
+    "prefetch": false,
+    "preload": false,
+    "filePath": "node_modules/.pnpm/@nuxt+ui-pro@3.0.2_@babel+parser@7.27.0_db0@0.3.1_better-sqlite3@11.9.1__embla-carousel_c91fed73073e7ebd3bd8cfe4cd954783/node_modules/@nuxt/ui-pro/dist/runtime/components/prose/Blockquote.vue",
+    "pascalName": "ProseBlockquote",
+    "kebabName": "prose-blockquote",
+    "chunkName": "components/prose-blockquote",
+    "priority": 0,
+    "_scanned": true,
+    "meta": {
+      "type": 1,
+      "props": [],
+      "slots": [
+        {
+          "name": "default",
+          "type": "{}",
+          "description": "",
+          "schema": {
+            "kind": "object",
+            "type": "{}",
+            "schema": {}
+          }
+        }
+      ],
+      "events": [],
+      "exposed": [
+        {
+          "name": "$slots",
+          "type": "Readonly<InternalSlots> & { default?: ((props: {}) => any) | undefined; }",
+          "description": "",
+          "schema": {
+            "kind": "object",
+            "type": "Readonly<InternalSlots> & { default?: ((props: {}) => any) | undefined; }",
+            "schema": {
+              "default": {
+                "name": "default",
+                "global": false,
+                "description": "",
+                "tags": [],
+                "required": false,
+                "type": "((props: {}) => any) | undefined",
+                "schema": {
+                  "kind": "enum",
+                  "type": "((props: {}) => any) | undefined",
+                  "schema": {
+                    "0": "undefined",
+                    "1": {
+                      "kind": "event",
+                      "type": "(props: {}): any",
+                      "schema": []
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "class",
+          "type": "string | undefined",
+          "description": "",
+          "schema": {
+            "kind": "enum",
+            "type": "string | undefined",
+            "schema": {
+              "0": "undefined",
+              "1": "string"
+            }
+          }
+        }
+      ]
+    }
+  },
+  "ProseCallout": {
+    "mode": "all",
+    "global": true,
+    "prefetch": false,
+    "preload": false,
+    "filePath": "node_modules/.pnpm/@nuxt+ui-pro@3.0.2_@babel+parser@7.27.0_db0@0.3.1_better-sqlite3@11.9.1__embla-carousel_c91fed73073e7ebd3bd8cfe4cd954783/node_modules/@nuxt/ui-pro/dist/runtime/components/prose/Callout.vue",
+    "pascalName": "ProseCallout",
+    "kebabName": "prose-callout",
+    "chunkName": "components/prose-callout",
+    "priority": 0,
+    "_scanned": true,
+    "meta": {
+      "type": 1,
+      "props": [
+        {
+          "name": "to",
+          "global": false,
+          "description": "",
+          "tags": [],
+          "required": false,
+          "type": "string | RouteLocationAsRelativeGeneric | RouteLocationAsPathGeneric | undefined",
+          "schema": {
+            "kind": "enum",
+            "type": "string | RouteLocationAsRelativeGeneric | RouteLocationAsPathGeneric | undefined",
+            "schema": {
+              "0": "undefined",
+              "1": "string",
+              "2": {
+                "kind": "object",
+                "type": "RouteLocationAsRelativeGeneric",
+                "schema": {
+                  "name": {
+                    "name": "name",
+                    "global": false,
+                    "description": "",
+                    "tags": [],
+                    "required": false,
+                    "type": "RouteRecordNameGeneric",
+                    "schema": {
+                      "kind": "enum",
+                      "type": "RouteRecordNameGeneric",
+                      "schema": {
+                        "0": "undefined",
+                        "1": "string",
+                        "2": "symbol"
+                      }
+                    }
+                  },
+                  "params": {
+                    "name": "params",
+                    "global": false,
+                    "description": "",
+                    "tags": [],
+                    "required": false,
+                    "type": "RouteParamsRawGeneric | undefined",
+                    "schema": {
+                      "kind": "enum",
+                      "type": "RouteParamsRawGeneric | undefined",
+                      "schema": {
+                        "0": "undefined",
+                        "1": "RouteParamsRawGeneric"
+                      }
+                    }
+                  },
+                  "path": {
+                    "name": "path",
+                    "global": false,
+                    "description": "A relative path to the current location. This property should be removed",
+                    "tags": [],
+                    "required": false,
+                    "type": "undefined",
+                    "schema": "undefined"
+                  },
+                  "query": {
+                    "name": "query",
+                    "global": false,
+                    "description": "",
+                    "tags": [],
+                    "required": false,
+                    "type": "LocationQueryRaw | undefined",
+                    "schema": {
+                      "kind": "enum",
+                      "type": "LocationQueryRaw | undefined",
+                      "schema": {
+                        "0": "undefined",
+                        "1": "LocationQueryRaw"
+                      }
+                    }
+                  },
+                  "hash": {
+                    "name": "hash",
+                    "global": false,
+                    "description": "",
+                    "tags": [],
+                    "required": false,
+                    "type": "string | undefined",
+                    "schema": {
+                      "kind": "enum",
+                      "type": "string | undefined",
+                      "schema": {
+                        "0": "undefined",
+                        "1": "string"
+                      }
+                    }
+                  },
+                  "replace": {
+                    "name": "replace",
+                    "global": false,
+                    "description": "Replace the entry in the history instead of pushing a new entry",
+                    "tags": [],
+                    "required": false,
+                    "type": "boolean | undefined",
+                    "schema": {
+                      "kind": "enum",
+                      "type": "boolean | undefined",
+                      "schema": {
+                        "0": "undefined",
+                        "1": "false",
+                        "2": "true"
+                      }
+                    }
+                  },
+                  "force": {
+                    "name": "force",
+                    "global": false,
+                    "description": "Triggers the navigation even if the location is the same as the current one.\r\nNote this will also add a new entry to the history unless `replace: true`\r\nis passed.",
+                    "tags": [],
+                    "required": false,
+                    "type": "boolean | undefined",
+                    "schema": "boolean | undefined"
+                  },
+                  "state": {
+                    "name": "state",
+                    "global": false,
+                    "description": "State to save using the History API. This cannot contain any reactive\r\nvalues and some primitives like Symbols are forbidden. More info at\r\nhttps://developer.mozilla.org/en-US/docs/Web/API/History/state",
+                    "tags": [],
+                    "required": false,
+                    "type": "HistoryState | undefined",
+                    "schema": {
+                      "kind": "enum",
+                      "type": "HistoryState | undefined",
+                      "schema": {
+                        "0": "undefined",
+                        "1": {
+                          "kind": "object",
+                          "type": "HistoryState",
+                          "schema": {}
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              "3": {
+                "kind": "object",
+                "type": "RouteLocationAsPathGeneric",
+                "schema": {
+                  "path": {
+                    "name": "path",
+                    "global": false,
+                    "description": "Percentage encoded pathname section of the URL.",
+                    "tags": [],
+                    "required": true,
+                    "type": "string",
+                    "schema": "string"
+                  },
+                  "query": {
+                    "name": "query",
+                    "global": false,
+                    "description": "",
+                    "tags": [],
+                    "required": false,
+                    "type": "LocationQueryRaw | undefined",
+                    "schema": "LocationQueryRaw | undefined"
+                  },
+                  "hash": {
+                    "name": "hash",
+                    "global": false,
+                    "description": "",
+                    "tags": [],
+                    "required": false,
+                    "type": "string | undefined",
+                    "schema": "string | undefined"
+                  },
+                  "replace": {
+                    "name": "replace",
+                    "global": false,
+                    "description": "Replace the entry in the history instead of pushing a new entry",
+                    "tags": [],
+                    "required": false,
+                    "type": "boolean | undefined",
+                    "schema": "boolean | undefined"
+                  },
+                  "force": {
+                    "name": "force",
+                    "global": false,
+                    "description": "Triggers the navigation even if the location is the same as the current one.\r\nNote this will also add a new entry to the history unless `replace: true`\r\nis passed.",
+                    "tags": [],
+                    "required": false,
+                    "type": "boolean | undefined",
+                    "schema": "boolean | undefined"
+                  },
+                  "state": {
+                    "name": "state",
+                    "global": false,
+                    "description": "State to save using the History API. This cannot contain any reactive\r\nvalues and some primitives like Symbols are forbidden. More info at\r\nhttps://developer.mozilla.org/en-US/docs/Web/API/History/state",
+                    "tags": [],
+                    "required": false,
+                    "type": "HistoryState | undefined",
+                    "schema": "HistoryState | undefined"
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "target",
+          "global": false,
+          "description": "",
+          "tags": [],
+          "required": false,
+          "type": "\"_blank\" | \"_parent\" | \"_self\" | \"_top\" | (string & {}) | null | undefined",
+          "schema": {
+            "kind": "enum",
+            "type": "\"_blank\" | \"_parent\" | \"_self\" | \"_top\" | (string & {}) | null | undefined",
+            "schema": {
+              "0": "undefined",
+              "1": "null",
+              "2": "\"_blank\"",
+              "3": "\"_parent\"",
+              "4": "\"_self\"",
+              "5": "\"_top\"",
+              "6": {
+                "kind": "object",
+                "type": "string & {}",
+                "schema": {}
+              }
+            }
+          }
+        },
+        {
+          "name": "icon",
+          "global": false,
+          "description": "",
+          "tags": [],
+          "required": false,
+          "type": "string | undefined",
+          "schema": {
+            "kind": "enum",
+            "type": "string | undefined",
+            "schema": {
+              "0": "undefined",
+              "1": "string"
+            }
+          }
+        },
+        {
+          "name": "color",
+          "global": false,
+          "description": "",
+          "tags": [
+            {
+              "name": "defaultValue",
+              "text": "'neutral'"
+            }
+          ],
+          "required": false,
+          "type": "\"primary\" | \"secondary\" | \"success\" | \"info\" | \"warning\" | \"error\" | \"neutral\" | undefined",
+          "schema": {
+            "kind": "enum",
+            "type": "\"primary\" | \"secondary\" | \"success\" | \"info\" | \"warning\" | \"error\" | \"neutral\" | undefined",
+            "schema": {
+              "0": "undefined",
+              "1": "\"primary\"",
+              "2": "\"secondary\"",
+              "3": "\"success\"",
+              "4": "\"info\"",
+              "5": "\"warning\"",
+              "6": "\"error\"",
+              "7": "\"neutral\""
+            }
+          }
+        },
+        {
+          "name": "ui",
+          "global": false,
+          "description": "",
+          "tags": [],
+          "required": false,
+          "type": "PartialString<{ base: string[]; icon: string[]; externalIcon: string[]; }> | undefined",
+          "schema": {
+            "kind": "enum",
+            "type": "PartialString<{ base: string[]; icon: string[]; externalIcon: string[]; }> | undefined",
+            "schema": {
+              "0": "undefined",
+              "1": "PartialString<{ base: string[]; icon: string[]; externalIcon: string[]; }>"
+            }
+          }
+        }
+      ],
+      "slots": [
+        {
+          "name": "default",
+          "type": "{} | undefined",
+          "description": "",
+          "schema": {
+            "kind": "enum",
+            "type": "{} | undefined",
+            "schema": {
+              "0": "undefined",
+              "1": {
+                "kind": "object",
+                "type": "{}",
+                "schema": {}
+              }
+            }
+          }
+        }
+      ],
+      "events": [],
+      "exposed": [
+        {
+          "name": "$slots",
+          "type": "Readonly<InternalSlots> & CalloutSlots",
+          "description": "",
+          "schema": {
+            "kind": "object",
+            "type": "Readonly<InternalSlots> & CalloutSlots",
+            "schema": {
+              "default": {
+                "name": "default",
+                "global": false,
+                "description": "",
+                "tags": [],
+                "required": true,
+                "type": "(props?: {} | undefined) => any",
+                "schema": {
+                  "kind": "event",
+                  "type": "(props?: {} | undefined): any",
+                  "schema": {}
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "target",
+          "type": "\"_blank\" | \"_parent\" | \"_self\" | \"_top\" | (string & {}) | null | undefined",
+          "description": "",
+          "schema": {
+            "kind": "enum",
+            "type": "\"_blank\" | \"_parent\" | \"_self\" | \"_top\" | (string & {}) | null | undefined",
+            "schema": {
+              "0": "undefined",
+              "1": "null",
+              "2": "\"_blank\"",
+              "3": "\"_parent\"",
+              "4": "\"_self\"",
+              "5": "\"_top\"",
+              "6": {
+                "kind": "object",
+                "type": "string & {}",
+                "schema": {}
+              }
+            }
+          }
+        },
+        {
+          "name": "class",
+          "type": "any",
+          "description": "",
+          "schema": "any"
+        },
+        {
+          "name": "to",
+          "type": "string | RouteLocationAsRelativeGeneric | RouteLocationAsPathGeneric | undefined",
+          "description": "",
+          "schema": {
+            "kind": "enum",
+            "type": "string | RouteLocationAsRelativeGeneric | RouteLocationAsPathGeneric | undefined",
+            "schema": {
+              "0": "undefined",
+              "1": "string",
+              "2": {
+                "kind": "object",
+                "type": "RouteLocationAsRelativeGeneric",
+                "schema": {
+                  "name": {
+                    "name": "name",
+                    "global": false,
+                    "description": "",
+                    "tags": [],
+                    "required": false,
+                    "type": "RouteRecordNameGeneric",
+                    "schema": {
+                      "kind": "enum",
+                      "type": "RouteRecordNameGeneric",
+                      "schema": {
+                        "0": "undefined",
+                        "1": "string",
+                        "2": "symbol"
+                      }
+                    }
+                  },
+                  "params": {
+                    "name": "params",
+                    "global": false,
+                    "description": "",
+                    "tags": [],
+                    "required": false,
+                    "type": "RouteParamsRawGeneric | undefined",
+                    "schema": {
+                      "kind": "enum",
+                      "type": "RouteParamsRawGeneric | undefined",
+                      "schema": {
+                        "0": "undefined",
+                        "1": "RouteParamsRawGeneric"
+                      }
+                    }
+                  },
+                  "path": {
+                    "name": "path",
+                    "global": false,
+                    "description": "A relative path to the current location. This property should be removed",
+                    "tags": [],
+                    "required": false,
+                    "type": "undefined",
+                    "schema": "undefined"
+                  },
+                  "query": {
+                    "name": "query",
+                    "global": false,
+                    "description": "",
+                    "tags": [],
+                    "required": false,
+                    "type": "LocationQueryRaw | undefined",
+                    "schema": {
+                      "kind": "enum",
+                      "type": "LocationQueryRaw | undefined",
+                      "schema": {
+                        "0": "undefined",
+                        "1": "LocationQueryRaw"
+                      }
+                    }
+                  },
+                  "hash": {
+                    "name": "hash",
+                    "global": false,
+                    "description": "",
+                    "tags": [],
+                    "required": false,
+                    "type": "string | undefined",
+                    "schema": {
+                      "kind": "enum",
+                      "type": "string | undefined",
+                      "schema": {
+                        "0": "undefined",
+                        "1": "string"
+                      }
+                    }
+                  },
+                  "replace": {
+                    "name": "replace",
+                    "global": false,
+                    "description": "Replace the entry in the history instead of pushing a new entry",
+                    "tags": [],
+                    "required": false,
+                    "type": "boolean | undefined",
+                    "schema": {
+                      "kind": "enum",
+                      "type": "boolean | undefined",
+                      "schema": {
+                        "0": "undefined",
+                        "1": "false",
+                        "2": "true"
+                      }
+                    }
+                  },
+                  "force": {
+                    "name": "force",
+                    "global": false,
+                    "description": "Triggers the navigation even if the location is the same as the current one.\r\nNote this will also add a new entry to the history unless `replace: true`\r\nis passed.",
+                    "tags": [],
+                    "required": false,
+                    "type": "boolean | undefined",
+                    "schema": "boolean | undefined"
+                  },
+                  "state": {
+                    "name": "state",
+                    "global": false,
+                    "description": "State to save using the History API. This cannot contain any reactive\r\nvalues and some primitives like Symbols are forbidden. More info at\r\nhttps://developer.mozilla.org/en-US/docs/Web/API/History/state",
+                    "tags": [],
+                    "required": false,
+                    "type": "HistoryState | undefined",
+                    "schema": {
+                      "kind": "enum",
+                      "type": "HistoryState | undefined",
+                      "schema": {
+                        "0": "undefined",
+                        "1": {
+                          "kind": "object",
+                          "type": "HistoryState",
+                          "schema": {}
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              "3": {
+                "kind": "object",
+                "type": "RouteLocationAsPathGeneric",
+                "schema": {
+                  "path": {
+                    "name": "path",
+                    "global": false,
+                    "description": "Percentage encoded pathname section of the URL.",
+                    "tags": [],
+                    "required": true,
+                    "type": "string",
+                    "schema": "string"
+                  },
+                  "query": {
+                    "name": "query",
+                    "global": false,
+                    "description": "",
+                    "tags": [],
+                    "required": false,
+                    "type": "LocationQueryRaw | undefined",
+                    "schema": "LocationQueryRaw | undefined"
+                  },
+                  "hash": {
+                    "name": "hash",
+                    "global": false,
+                    "description": "",
+                    "tags": [],
+                    "required": false,
+                    "type": "string | undefined",
+                    "schema": "string | undefined"
+                  },
+                  "replace": {
+                    "name": "replace",
+                    "global": false,
+                    "description": "Replace the entry in the history instead of pushing a new entry",
+                    "tags": [],
+                    "required": false,
+                    "type": "boolean | undefined",
+                    "schema": "boolean | undefined"
+                  },
+                  "force": {
+                    "name": "force",
+                    "global": false,
+                    "description": "Triggers the navigation even if the location is the same as the current one.\r\nNote this will also add a new entry to the history unless `replace: true`\r\nis passed.",
+                    "tags": [],
+                    "required": false,
+                    "type": "boolean | undefined",
+                    "schema": "boolean | undefined"
+                  },
+                  "state": {
+                    "name": "state",
+                    "global": false,
+                    "description": "State to save using the History API. This cannot contain any reactive\r\nvalues and some primitives like Symbols are forbidden. More info at\r\nhttps://developer.mozilla.org/en-US/docs/Web/API/History/state",
+                    "tags": [],
+                    "required": false,
+                    "type": "HistoryState | undefined",
+                    "schema": "HistoryState | undefined"
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "icon",
+          "type": "string | undefined",
+          "description": "",
+          "schema": {
+            "kind": "enum",
+            "type": "string | undefined",
+            "schema": {
+              "0": "undefined",
+              "1": "string"
+            }
+          }
+        },
+        {
+          "name": "color",
+          "type": "\"primary\" | \"secondary\" | \"success\" | \"info\" | \"warning\" | \"error\" | \"neutral\" | undefined",
+          "description": "",
+          "schema": {
+            "kind": "enum",
+            "type": "\"primary\" | \"secondary\" | \"success\" | \"info\" | \"warning\" | \"error\" | \"neutral\" | undefined",
+            "schema": {
+              "0": "undefined",
+              "1": "\"primary\"",
+              "2": "\"secondary\"",
+              "3": "\"success\"",
+              "4": "\"info\"",
+              "5": "\"warning\"",
+              "6": "\"error\"",
+              "7": "\"neutral\""
+            }
+          }
+        },
+        {
+          "name": "ui",
+          "type": "PartialString<{ base: string[]; icon: string[]; externalIcon: string[]; }> | undefined",
+          "description": "",
+          "schema": {
+            "kind": "enum",
+            "type": "PartialString<{ base: string[]; icon: string[]; externalIcon: string[]; }> | undefined",
+            "schema": {
+              "0": "undefined",
+              "1": "PartialString<{ base: string[]; icon: string[]; externalIcon: string[]; }>"
+            }
+          }
+        }
+      ]
+    }
+  },
+  "ProseCard": {
+    "mode": "all",
+    "global": true,
+    "prefetch": false,
+    "preload": false,
+    "filePath": "node_modules/.pnpm/@nuxt+ui-pro@3.0.2_@babel+parser@7.27.0_db0@0.3.1_better-sqlite3@11.9.1__embla-carousel_c91fed73073e7ebd3bd8cfe4cd954783/node_modules/@nuxt/ui-pro/dist/runtime/components/prose/Card.vue",
+    "pascalName": "ProseCard",
+    "kebabName": "prose-card",
+    "chunkName": "components/prose-card",
+    "priority": 0,
+    "_scanned": true,
+    "meta": {
+      "type": 1,
+      "props": [
+        {
+          "name": "to",
+          "global": false,
+          "description": "",
+          "tags": [],
+          "required": false,
+          "type": "string | RouteLocationAsRelativeGeneric | RouteLocationAsPathGeneric | undefined",
+          "schema": {
+            "kind": "enum",
+            "type": "string | RouteLocationAsRelativeGeneric | RouteLocationAsPathGeneric | undefined",
+            "schema": {
+              "0": "undefined",
+              "1": "string",
+              "2": {
+                "kind": "object",
+                "type": "RouteLocationAsRelativeGeneric",
+                "schema": {
+                  "name": {
+                    "name": "name",
+                    "global": false,
+                    "description": "",
+                    "tags": [],
+                    "required": false,
+                    "type": "RouteRecordNameGeneric",
+                    "schema": {
+                      "kind": "enum",
+                      "type": "RouteRecordNameGeneric",
+                      "schema": {
+                        "0": "undefined",
+                        "1": "string",
+                        "2": "symbol"
+                      }
+                    }
+                  },
+                  "params": {
+                    "name": "params",
+                    "global": false,
+                    "description": "",
+                    "tags": [],
+                    "required": false,
+                    "type": "RouteParamsRawGeneric | undefined",
+                    "schema": {
+                      "kind": "enum",
+                      "type": "RouteParamsRawGeneric | undefined",
+                      "schema": {
+                        "0": "undefined",
+                        "1": "RouteParamsRawGeneric"
+                      }
+                    }
+                  },
+                  "path": {
+                    "name": "path",
+                    "global": false,
+                    "description": "A relative path to the current location. This property should be removed",
+                    "tags": [],
+                    "required": false,
+                    "type": "undefined",
+                    "schema": "undefined"
+                  },
+                  "query": {
+                    "name": "query",
+                    "global": false,
+                    "description": "",
+                    "tags": [],
+                    "required": false,
+                    "type": "LocationQueryRaw | undefined",
+                    "schema": {
+                      "kind": "enum",
+                      "type": "LocationQueryRaw | undefined",
+                      "schema": {
+                        "0": "undefined",
+                        "1": "LocationQueryRaw"
+                      }
+                    }
+                  },
+                  "hash": {
+                    "name": "hash",
+                    "global": false,
+                    "description": "",
+                    "tags": [],
+                    "required": false,
+                    "type": "string | undefined",
+                    "schema": {
+                      "kind": "enum",
+                      "type": "string | undefined",
+                      "schema": {
+                        "0": "undefined",
+                        "1": "string"
+                      }
+                    }
+                  },
+                  "replace": {
+                    "name": "replace",
+                    "global": false,
+                    "description": "Replace the entry in the history instead of pushing a new entry",
+                    "tags": [],
+                    "required": false,
+                    "type": "boolean | undefined",
+                    "schema": {
+                      "kind": "enum",
+                      "type": "boolean | undefined",
+                      "schema": {
+                        "0": "undefined",
+                        "1": "false",
+                        "2": "true"
+                      }
+                    }
+                  },
+                  "force": {
+                    "name": "force",
+                    "global": false,
+                    "description": "Triggers the navigation even if the location is the same as the current one.\r\nNote this will also add a new entry to the history unless `replace: true`\r\nis passed.",
+                    "tags": [],
+                    "required": false,
+                    "type": "boolean | undefined",
+                    "schema": "boolean | undefined"
+                  },
+                  "state": {
+                    "name": "state",
+                    "global": false,
+                    "description": "State to save using the History API. This cannot contain any reactive\r\nvalues and some primitives like Symbols are forbidden. More info at\r\nhttps://developer.mozilla.org/en-US/docs/Web/API/History/state",
+                    "tags": [],
+                    "required": false,
+                    "type": "HistoryState | undefined",
+                    "schema": {
+                      "kind": "enum",
+                      "type": "HistoryState | undefined",
+                      "schema": {
+                        "0": "undefined",
+                        "1": {
+                          "kind": "object",
+                          "type": "HistoryState",
+                          "schema": {}
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              "3": {
+                "kind": "object",
+                "type": "RouteLocationAsPathGeneric",
+                "schema": {
+                  "path": {
+                    "name": "path",
+                    "global": false,
+                    "description": "Percentage encoded pathname section of the URL.",
+                    "tags": [],
+                    "required": true,
+                    "type": "string",
+                    "schema": "string"
+                  },
+                  "query": {
+                    "name": "query",
+                    "global": false,
+                    "description": "",
+                    "tags": [],
+                    "required": false,
+                    "type": "LocationQueryRaw | undefined",
+                    "schema": "LocationQueryRaw | undefined"
+                  },
+                  "hash": {
+                    "name": "hash",
+                    "global": false,
+                    "description": "",
+                    "tags": [],
+                    "required": false,
+                    "type": "string | undefined",
+                    "schema": "string | undefined"
+                  },
+                  "replace": {
+                    "name": "replace",
+                    "global": false,
+                    "description": "Replace the entry in the history instead of pushing a new entry",
+                    "tags": [],
+                    "required": false,
+                    "type": "boolean | undefined",
+                    "schema": "boolean | undefined"
+                  },
+                  "force": {
+                    "name": "force",
+                    "global": false,
+                    "description": "Triggers the navigation even if the location is the same as the current one.\r\nNote this will also add a new entry to the history unless `replace: true`\r\nis passed.",
+                    "tags": [],
+                    "required": false,
+                    "type": "boolean | undefined",
+                    "schema": "boolean | undefined"
+                  },
+                  "state": {
+                    "name": "state",
+                    "global": false,
+                    "description": "State to save using the History API. This cannot contain any reactive\r\nvalues and some primitives like Symbols are forbidden. More info at\r\nhttps://developer.mozilla.org/en-US/docs/Web/API/History/state",
+                    "tags": [],
+                    "required": false,
+                    "type": "HistoryState | undefined",
+                    "schema": "HistoryState | undefined"
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "target",
+          "global": false,
+          "description": "",
+          "tags": [],
+          "required": false,
+          "type": "\"_blank\" | \"_parent\" | \"_self\" | \"_top\" | (string & {}) | null | undefined",
+          "schema": {
+            "kind": "enum",
+            "type": "\"_blank\" | \"_parent\" | \"_self\" | \"_top\" | (string & {}) | null | undefined",
+            "schema": {
+              "0": "undefined",
+              "1": "null",
+              "2": "\"_blank\"",
+              "3": "\"_parent\"",
+              "4": "\"_self\"",
+              "5": "\"_top\"",
+              "6": {
+                "kind": "object",
+                "type": "string & {}",
+                "schema": {}
+              }
+            }
+          }
+        },
+        {
+          "name": "icon",
+          "global": false,
+          "description": "",
+          "tags": [],
+          "required": false,
+          "type": "string | undefined",
+          "schema": {
+            "kind": "enum",
+            "type": "string | undefined",
+            "schema": {
+              "0": "undefined",
+              "1": "string"
+            }
+          }
+        },
+        {
+          "name": "title",
+          "global": false,
+          "description": "",
+          "tags": [],
+          "required": false,
+          "type": "string | undefined",
+          "schema": {
+            "kind": "enum",
+            "type": "string | undefined",
+            "schema": {
+              "0": "undefined",
+              "1": "string"
+            }
+          }
+        },
+        {
+          "name": "color",
+          "global": false,
+          "description": "",
+          "tags": [
+            {
+              "name": "defaultValue",
+              "text": "'primary'"
+            }
+          ],
+          "required": false,
+          "type": "\"primary\" | \"secondary\" | \"success\" | \"info\" | \"warning\" | \"error\" | \"neutral\" | undefined",
+          "schema": {
+            "kind": "enum",
+            "type": "\"primary\" | \"secondary\" | \"success\" | \"info\" | \"warning\" | \"error\" | \"neutral\" | undefined",
+            "schema": {
+              "0": "undefined",
+              "1": "\"primary\"",
+              "2": "\"secondary\"",
+              "3": "\"success\"",
+              "4": "\"info\"",
+              "5": "\"warning\"",
+              "6": "\"error\"",
+              "7": "\"neutral\""
+            }
+          }
+        },
+        {
+          "name": "ui",
+          "global": false,
+          "description": "",
+          "tags": [],
+          "required": false,
+          "type": "PartialString<{ base: string[]; icon: string; title: string; description: string; externalIcon: string[]; }> | undefined",
+          "schema": {
+            "kind": "enum",
+            "type": "PartialString<{ base: string[]; icon: string; title: string; description: string; externalIcon: string[]; }> | undefined",
+            "schema": {
+              "0": "undefined",
+              "1": "PartialString<{ base: string[]; icon: string; title: string; description: string; externalIcon: string[]; }>"
+            }
+          }
+        }
+      ],
+      "slots": [
+        {
+          "name": "default",
+          "type": "{} | undefined",
+          "description": "",
+          "schema": {
+            "kind": "enum",
+            "type": "{} | undefined",
+            "schema": {
+              "0": "undefined",
+              "1": {
+                "kind": "object",
+                "type": "{}",
+                "schema": {}
+              }
+            }
+          }
+        }
+      ],
+      "events": [],
+      "exposed": [
+        {
+          "name": "$slots",
+          "type": "Readonly<InternalSlots> & CardSlots",
+          "description": "",
+          "schema": {
+            "kind": "object",
+            "type": "Readonly<InternalSlots> & CardSlots",
+            "schema": {
+              "default": {
+                "name": "default",
+                "global": false,
+                "description": "",
+                "tags": [],
+                "required": true,
+                "type": "(props?: {} | undefined) => any",
+                "schema": {
+                  "kind": "event",
+                  "type": "(props?: {} | undefined): any",
+                  "schema": {}
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "target",
+          "type": "\"_blank\" | \"_parent\" | \"_self\" | \"_top\" | (string & {}) | null | undefined",
+          "description": "",
+          "schema": {
+            "kind": "enum",
+            "type": "\"_blank\" | \"_parent\" | \"_self\" | \"_top\" | (string & {}) | null | undefined",
+            "schema": {
+              "0": "undefined",
+              "1": "null",
+              "2": "\"_blank\"",
+              "3": "\"_parent\"",
+              "4": "\"_self\"",
+              "5": "\"_top\"",
+              "6": {
+                "kind": "object",
+                "type": "string & {}",
+                "schema": {}
+              }
+            }
+          }
+        },
+        {
+          "name": "class",
+          "type": "any",
+          "description": "",
+          "schema": "any"
+        },
+        {
+          "name": "to",
+          "type": "string | RouteLocationAsRelativeGeneric | RouteLocationAsPathGeneric | undefined",
+          "description": "",
+          "schema": {
+            "kind": "enum",
+            "type": "string | RouteLocationAsRelativeGeneric | RouteLocationAsPathGeneric | undefined",
+            "schema": {
+              "0": "undefined",
+              "1": "string",
+              "2": {
+                "kind": "object",
+                "type": "RouteLocationAsRelativeGeneric",
+                "schema": {
+                  "name": {
+                    "name": "name",
+                    "global": false,
+                    "description": "",
+                    "tags": [],
+                    "required": false,
+                    "type": "RouteRecordNameGeneric",
+                    "schema": {
+                      "kind": "enum",
+                      "type": "RouteRecordNameGeneric",
+                      "schema": {
+                        "0": "undefined",
+                        "1": "string",
+                        "2": "symbol"
+                      }
+                    }
+                  },
+                  "params": {
+                    "name": "params",
+                    "global": false,
+                    "description": "",
+                    "tags": [],
+                    "required": false,
+                    "type": "RouteParamsRawGeneric | undefined",
+                    "schema": {
+                      "kind": "enum",
+                      "type": "RouteParamsRawGeneric | undefined",
+                      "schema": {
+                        "0": "undefined",
+                        "1": "RouteParamsRawGeneric"
+                      }
+                    }
+                  },
+                  "path": {
+                    "name": "path",
+                    "global": false,
+                    "description": "A relative path to the current location. This property should be removed",
+                    "tags": [],
+                    "required": false,
+                    "type": "undefined",
+                    "schema": "undefined"
+                  },
+                  "query": {
+                    "name": "query",
+                    "global": false,
+                    "description": "",
+                    "tags": [],
+                    "required": false,
+                    "type": "LocationQueryRaw | undefined",
+                    "schema": {
+                      "kind": "enum",
+                      "type": "LocationQueryRaw | undefined",
+                      "schema": {
+                        "0": "undefined",
+                        "1": "LocationQueryRaw"
+                      }
+                    }
+                  },
+                  "hash": {
+                    "name": "hash",
+                    "global": false,
+                    "description": "",
+                    "tags": [],
+                    "required": false,
+                    "type": "string | undefined",
+                    "schema": {
+                      "kind": "enum",
+                      "type": "string | undefined",
+                      "schema": {
+                        "0": "undefined",
+                        "1": "string"
+                      }
+                    }
+                  },
+                  "replace": {
+                    "name": "replace",
+                    "global": false,
+                    "description": "Replace the entry in the history instead of pushing a new entry",
+                    "tags": [],
+                    "required": false,
+                    "type": "boolean | undefined",
+                    "schema": {
+                      "kind": "enum",
+                      "type": "boolean | undefined",
+                      "schema": {
+                        "0": "undefined",
+                        "1": "false",
+                        "2": "true"
+                      }
+                    }
+                  },
+                  "force": {
+                    "name": "force",
+                    "global": false,
+                    "description": "Triggers the navigation even if the location is the same as the current one.\r\nNote this will also add a new entry to the history unless `replace: true`\r\nis passed.",
+                    "tags": [],
+                    "required": false,
+                    "type": "boolean | undefined",
+                    "schema": "boolean | undefined"
+                  },
+                  "state": {
+                    "name": "state",
+                    "global": false,
+                    "description": "State to save using the History API. This cannot contain any reactive\r\nvalues and some primitives like Symbols are forbidden. More info at\r\nhttps://developer.mozilla.org/en-US/docs/Web/API/History/state",
+                    "tags": [],
+                    "required": false,
+                    "type": "HistoryState | undefined",
+                    "schema": {
+                      "kind": "enum",
+                      "type": "HistoryState | undefined",
+                      "schema": {
+                        "0": "undefined",
+                        "1": {
+                          "kind": "object",
+                          "type": "HistoryState",
+                          "schema": {}
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              "3": {
+                "kind": "object",
+                "type": "RouteLocationAsPathGeneric",
+                "schema": {
+                  "path": {
+                    "name": "path",
+                    "global": false,
+                    "description": "Percentage encoded pathname section of the URL.",
+                    "tags": [],
+                    "required": true,
+                    "type": "string",
+                    "schema": "string"
+                  },
+                  "query": {
+                    "name": "query",
+                    "global": false,
+                    "description": "",
+                    "tags": [],
+                    "required": false,
+                    "type": "LocationQueryRaw | undefined",
+                    "schema": "LocationQueryRaw | undefined"
+                  },
+                  "hash": {
+                    "name": "hash",
+                    "global": false,
+                    "description": "",
+                    "tags": [],
+                    "required": false,
+                    "type": "string | undefined",
+                    "schema": "string | undefined"
+                  },
+                  "replace": {
+                    "name": "replace",
+                    "global": false,
+                    "description": "Replace the entry in the history instead of pushing a new entry",
+                    "tags": [],
+                    "required": false,
+                    "type": "boolean | undefined",
+                    "schema": "boolean | undefined"
+                  },
+                  "force": {
+                    "name": "force",
+                    "global": false,
+                    "description": "Triggers the navigation even if the location is the same as the current one.\r\nNote this will also add a new entry to the history unless `replace: true`\r\nis passed.",
+                    "tags": [],
+                    "required": false,
+                    "type": "boolean | undefined",
+                    "schema": "boolean | undefined"
+                  },
+                  "state": {
+                    "name": "state",
+                    "global": false,
+                    "description": "State to save using the History API. This cannot contain any reactive\r\nvalues and some primitives like Symbols are forbidden. More info at\r\nhttps://developer.mozilla.org/en-US/docs/Web/API/History/state",
+                    "tags": [],
+                    "required": false,
+                    "type": "HistoryState | undefined",
+                    "schema": "HistoryState | undefined"
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "icon",
+          "type": "string | undefined",
+          "description": "",
+          "schema": {
+            "kind": "enum",
+            "type": "string | undefined",
+            "schema": {
+              "0": "undefined",
+              "1": "string"
+            }
+          }
+        },
+        {
+          "name": "color",
+          "type": "\"primary\" | \"secondary\" | \"success\" | \"info\" | \"warning\" | \"error\" | \"neutral\" | undefined",
+          "description": "",
+          "schema": {
+            "kind": "enum",
+            "type": "\"primary\" | \"secondary\" | \"success\" | \"info\" | \"warning\" | \"error\" | \"neutral\" | undefined",
+            "schema": {
+              "0": "undefined",
+              "1": "\"primary\"",
+              "2": "\"secondary\"",
+              "3": "\"success\"",
+              "4": "\"info\"",
+              "5": "\"warning\"",
+              "6": "\"error\"",
+              "7": "\"neutral\""
+            }
+          }
+        },
+        {
+          "name": "ui",
+          "type": "PartialString<{ base: string[]; icon: string; title: string; description: string; externalIcon: string[]; }> | undefined",
+          "description": "",
+          "schema": {
+            "kind": "enum",
+            "type": "PartialString<{ base: string[]; icon: string; title: string; description: string; externalIcon: string[]; }> | undefined",
+            "schema": {
+              "0": "undefined",
+              "1": "PartialString<{ base: string[]; icon: string; title: string; description: string; externalIcon: string[]; }>"
+            }
+          }
+        },
+        {
+          "name": "title",
+          "type": "string | undefined",
+          "description": "",
+          "schema": {
+            "kind": "enum",
+            "type": "string | undefined",
+            "schema": {
+              "0": "undefined",
+              "1": "string"
+            }
+          }
+        }
+      ]
+    }
+  },
+  "ProseCardGroup": {
+    "mode": "all",
+    "global": true,
+    "prefetch": false,
+    "preload": false,
+    "filePath": "node_modules/.pnpm/@nuxt+ui-pro@3.0.2_@babel+parser@7.27.0_db0@0.3.1_better-sqlite3@11.9.1__embla-carousel_c91fed73073e7ebd3bd8cfe4cd954783/node_modules/@nuxt/ui-pro/dist/runtime/components/prose/CardGroup.vue",
+    "pascalName": "ProseCardGroup",
+    "kebabName": "prose-card-group",
+    "chunkName": "components/prose-card-group",
+    "priority": 0,
+    "_scanned": true,
+    "meta": {
+      "type": 1,
+      "props": [],
+      "slots": [
+        {
+          "name": "default",
+          "type": "{}",
+          "description": "",
+          "schema": {
+            "kind": "object",
+            "type": "{}",
+            "schema": {}
+          }
+        }
+      ],
+      "events": [],
+      "exposed": [
+        {
+          "name": "$slots",
+          "type": "Readonly<InternalSlots> & { default?: ((props: {}) => any) | undefined; }",
+          "description": "",
+          "schema": {
+            "kind": "object",
+            "type": "Readonly<InternalSlots> & { default?: ((props: {}) => any) | undefined; }",
+            "schema": {
+              "default": {
+                "name": "default",
+                "global": false,
+                "description": "",
+                "tags": [],
+                "required": false,
+                "type": "((props: {}) => any) | undefined",
+                "schema": {
+                  "kind": "enum",
+                  "type": "((props: {}) => any) | undefined",
+                  "schema": {
+                    "0": "undefined",
+                    "1": {
+                      "kind": "event",
+                      "type": "(props: {}): any",
+                      "schema": []
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "class",
+          "type": "string | undefined",
+          "description": "",
+          "schema": {
+            "kind": "enum",
+            "type": "string | undefined",
+            "schema": {
+              "0": "undefined",
+              "1": "string"
+            }
+          }
+        }
+      ]
+    }
+  },
+  "ProseCode": {
+    "mode": "all",
+    "global": true,
+    "prefetch": false,
+    "preload": false,
+    "filePath": "node_modules/.pnpm/@nuxt+ui-pro@3.0.2_@babel+parser@7.27.0_db0@0.3.1_better-sqlite3@11.9.1__embla-carousel_c91fed73073e7ebd3bd8cfe4cd954783/node_modules/@nuxt/ui-pro/dist/runtime/components/prose/Code.vue",
+    "pascalName": "ProseCode",
+    "kebabName": "prose-code",
+    "chunkName": "components/prose-code",
+    "priority": 0,
+    "_scanned": true,
+    "meta": {
+      "type": 1,
+      "props": [
+        {
+          "name": "lang",
+          "global": false,
+          "description": "",
+          "tags": [],
+          "required": false,
+          "type": "string | undefined",
+          "schema": {
+            "kind": "enum",
+            "type": "string | undefined",
+            "schema": {
+              "0": "undefined",
+              "1": "string"
+            }
+          }
+        },
+        {
+          "name": "color",
+          "global": false,
+          "description": "",
+          "tags": [
+            {
+              "name": "defaultValue",
+              "text": "'neutral'"
+            }
+          ],
+          "required": false,
+          "type": "\"primary\" | \"secondary\" | \"success\" | \"info\" | \"warning\" | \"error\" | \"neutral\" | undefined",
+          "schema": {
+            "kind": "enum",
+            "type": "\"primary\" | \"secondary\" | \"success\" | \"info\" | \"warning\" | \"error\" | \"neutral\" | undefined",
+            "schema": {
+              "0": "undefined",
+              "1": "\"primary\"",
+              "2": "\"secondary\"",
+              "3": "\"success\"",
+              "4": "\"info\"",
+              "5": "\"warning\"",
+              "6": "\"error\"",
+              "7": "\"neutral\""
+            }
+          }
+        }
+      ],
+      "slots": [
+        {
+          "name": "default",
+          "type": "{}",
+          "description": "",
+          "schema": {
+            "kind": "object",
+            "type": "{}",
+            "schema": {}
+          }
+        }
+      ],
+      "events": [],
+      "exposed": [
+        {
+          "name": "$slots",
+          "type": "Readonly<InternalSlots> & { default?: ((props: {}) => any) | undefined; }",
+          "description": "",
+          "schema": {
+            "kind": "object",
+            "type": "Readonly<InternalSlots> & { default?: ((props: {}) => any) | undefined; }",
+            "schema": {
+              "default": {
+                "name": "default",
+                "global": false,
+                "description": "",
+                "tags": [],
+                "required": false,
+                "type": "((props: {}) => any) | undefined",
+                "schema": {
+                  "kind": "enum",
+                  "type": "((props: {}) => any) | undefined",
+                  "schema": {
+                    "0": "undefined",
+                    "1": {
+                      "kind": "event",
+                      "type": "(props: {}): any",
+                      "schema": []
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "class",
+          "type": "any",
+          "description": "",
+          "schema": "any"
+        },
+        {
+          "name": "color",
+          "type": "\"primary\" | \"secondary\" | \"success\" | \"info\" | \"warning\" | \"error\" | \"neutral\" | undefined",
+          "description": "",
+          "schema": {
+            "kind": "enum",
+            "type": "\"primary\" | \"secondary\" | \"success\" | \"info\" | \"warning\" | \"error\" | \"neutral\" | undefined",
+            "schema": {
+              "0": "undefined",
+              "1": "\"primary\"",
+              "2": "\"secondary\"",
+              "3": "\"success\"",
+              "4": "\"info\"",
+              "5": "\"warning\"",
+              "6": "\"error\"",
+              "7": "\"neutral\""
+            }
+          }
+        },
+        {
+          "name": "lang",
+          "type": "string | undefined",
+          "description": "",
+          "schema": {
+            "kind": "enum",
+            "type": "string | undefined",
+            "schema": {
+              "0": "undefined",
+              "1": "string"
+            }
+          }
+        }
+      ]
+    }
+  },
+  "ProseCodeCollapse": {
+    "mode": "all",
+    "global": true,
+    "prefetch": false,
+    "preload": false,
+    "filePath": "node_modules/.pnpm/@nuxt+ui-pro@3.0.2_@babel+parser@7.27.0_db0@0.3.1_better-sqlite3@11.9.1__embla-carousel_c91fed73073e7ebd3bd8cfe4cd954783/node_modules/@nuxt/ui-pro/dist/runtime/components/prose/CodeCollapse.vue",
+    "pascalName": "ProseCodeCollapse",
+    "kebabName": "prose-code-collapse",
+    "chunkName": "components/prose-code-collapse",
+    "priority": 0,
+    "_scanned": true,
+    "meta": {
+      "type": 1,
+      "props": [
+        {
+          "name": "icon",
+          "global": false,
+          "description": "The icon displayed to toggle the code.",
+          "tags": [
+            {
+              "name": "defaultValue",
+              "text": "appConfig.ui.icons.chevronDown"
+            }
+          ],
+          "required": false,
+          "type": "string | undefined",
+          "schema": {
+            "kind": "enum",
+            "type": "string | undefined",
+            "schema": {
+              "0": "undefined",
+              "1": "string"
+            }
+          }
+        },
+        {
+          "name": "name",
+          "global": false,
+          "description": "The name displayed in the trigger label.",
+          "tags": [
+            {
+              "name": "defaultValue",
+              "text": "'code'"
+            }
+          ],
+          "required": false,
+          "type": "string | undefined",
+          "schema": {
+            "kind": "enum",
+            "type": "string | undefined",
+            "schema": {
+              "0": "undefined",
+              "1": "string"
+            }
+          },
+          "default": "\"code\""
+        },
+        {
+          "name": "openText",
+          "global": false,
+          "description": "The text displayed when the code is collapsed.",
+          "tags": [
+            {
+              "name": "defaultValue",
+              "text": "'Expand'"
+            }
+          ],
+          "required": false,
+          "type": "string | undefined",
+          "schema": {
+            "kind": "enum",
+            "type": "string | undefined",
+            "schema": {
+              "0": "undefined",
+              "1": "string"
+            }
+          },
+          "default": "\"Expand\""
+        },
+        {
+          "name": "closeText",
+          "global": false,
+          "description": "The text displayed when the code is expanded.",
+          "tags": [
+            {
+              "name": "defaultValue",
+              "text": "'Collapse'"
+            }
+          ],
+          "required": false,
+          "type": "string | undefined",
+          "schema": {
+            "kind": "enum",
+            "type": "string | undefined",
+            "schema": {
+              "0": "undefined",
+              "1": "string"
+            }
+          },
+          "default": "\"Collapse\""
+        },
+        {
+          "name": "ui",
+          "global": false,
+          "description": "",
+          "tags": [],
+          "required": false,
+          "type": "PartialString<{ root: string; footer: string; trigger: string; triggerIcon: string; }> | undefined",
+          "schema": {
+            "kind": "enum",
+            "type": "PartialString<{ root: string; footer: string; trigger: string; triggerIcon: string; }> | undefined",
+            "schema": {
+              "0": "undefined",
+              "1": "PartialString<{ root: string; footer: string; trigger: string; triggerIcon: string; }>"
+            }
+          }
+        },
+        {
+          "name": "open",
+          "global": false,
+          "description": "",
+          "tags": [],
+          "required": false,
+          "type": "boolean | undefined",
+          "schema": {
+            "kind": "enum",
+            "type": "boolean | undefined",
+            "schema": {
+              "0": "undefined",
+              "1": "false",
+              "2": "true"
+            }
+          },
+          "default": "false"
+        }
+      ],
+      "slots": [
+        {
+          "name": "default",
+          "type": "{}",
+          "description": "",
+          "schema": {
+            "kind": "object",
+            "type": "{}",
+            "schema": {}
+          }
+        }
+      ],
+      "events": [
+        {
+          "name": "update:open",
+          "description": "",
+          "tags": [],
+          "type": "[value: boolean]",
+          "signature": "(event: \"update:open\", value: boolean): void",
+          "schema": [
+            {
+              "kind": "enum",
+              "type": "boolean",
+              "schema": [
+                "false",
+                "true"
+              ]
+            }
+          ]
+        }
+      ],
+      "exposed": [
+        {
+          "name": "$slots",
+          "type": "Readonly<InternalSlots> & { default?: ((props: {}) => any) | undefined; }",
+          "description": "",
+          "schema": {
+            "kind": "object",
+            "type": "Readonly<InternalSlots> & { default?: ((props: {}) => any) | undefined; }",
+            "schema": {
+              "default": {
+                "name": "default",
+                "global": false,
+                "description": "",
+                "tags": [],
+                "required": false,
+                "type": "((props: {}) => any) | undefined",
+                "schema": {
+                  "kind": "enum",
+                  "type": "((props: {}) => any) | undefined",
+                  "schema": {
+                    "0": "undefined",
+                    "1": {
+                      "kind": "event",
+                      "type": "(props: {}): any",
+                      "schema": []
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "name",
+          "type": "string",
+          "description": "The name displayed in the trigger label.",
+          "schema": "string"
+        },
+        {
+          "name": "openText",
+          "type": "string",
+          "description": "The text displayed when the code is collapsed.",
+          "schema": "string"
+        },
+        {
+          "name": "closeText",
+          "type": "string",
+          "description": "The text displayed when the code is expanded.",
+          "schema": "string"
+        },
+        {
+          "name": "class",
+          "type": "any",
+          "description": "",
+          "schema": "any"
+        },
+        {
+          "name": "icon",
+          "type": "string | undefined",
+          "description": "The icon displayed to toggle the code.",
+          "schema": {
+            "kind": "enum",
+            "type": "string | undefined",
+            "schema": {
+              "0": "undefined",
+              "1": "string"
+            }
+          }
+        },
+        {
+          "name": "ui",
+          "type": "PartialString<{ root: string; footer: string; trigger: string; triggerIcon: string; }> | undefined",
+          "description": "",
+          "schema": {
+            "kind": "enum",
+            "type": "PartialString<{ root: string; footer: string; trigger: string; triggerIcon: string; }> | undefined",
+            "schema": {
+              "0": "undefined",
+              "1": "PartialString<{ root: string; footer: string; trigger: string; triggerIcon: string; }>"
+            }
+          }
+        },
+        {
+          "name": "open",
+          "type": "boolean | undefined",
+          "description": "",
+          "schema": {
+            "kind": "enum",
+            "type": "boolean | undefined",
+            "schema": {
+              "0": "undefined",
+              "1": "false",
+              "2": "true"
+            }
+          }
+        },
+        {
+          "name": "onUpdate:open",
+          "type": "((value: boolean) => any) | undefined",
+          "description": "",
+          "schema": {
+            "kind": "enum",
+            "type": "((value: boolean) => any) | undefined",
+            "schema": {
+              "0": "undefined",
+              "1": {
+                "kind": "event",
+                "type": "(value: boolean): any",
+                "schema": [
+                  {
+                    "kind": "enum",
+                    "type": "boolean",
+                    "schema": [
+                      "false",
+                      "true"
+                    ]
+                  }
+                ]
+              }
+            }
+          }
+        }
+      ]
+    }
+  },
+  "ProseCodeGroup": {
+    "mode": "all",
+    "global": true,
+    "prefetch": false,
+    "preload": false,
+    "filePath": "node_modules/.pnpm/@nuxt+ui-pro@3.0.2_@babel+parser@7.27.0_db0@0.3.1_better-sqlite3@11.9.1__embla-carousel_c91fed73073e7ebd3bd8cfe4cd954783/node_modules/@nuxt/ui-pro/dist/runtime/components/prose/CodeGroup.vue",
+    "pascalName": "ProseCodeGroup",
+    "kebabName": "prose-code-group",
+    "chunkName": "components/prose-code-group",
+    "priority": 0,
+    "_scanned": true,
+    "meta": {
+      "type": 1,
+      "props": [
+        {
+          "name": "defaultValue",
+          "global": false,
+          "description": "The default tab to select.",
+          "tags": [
+            {
+              "name": "example",
+              "text": "'1'"
+            }
+          ],
+          "required": false,
+          "type": "string | undefined",
+          "schema": {
+            "kind": "enum",
+            "type": "string | undefined",
+            "schema": {
+              "0": "undefined",
+              "1": "string"
+            }
+          },
+          "default": "\"0\""
+        },
+        {
+          "name": "sync",
+          "global": false,
+          "description": "Sync the selected tab with a local storage key.",
+          "tags": [],
+          "required": false,
+          "type": "string | undefined",
+          "schema": {
+            "kind": "enum",
+            "type": "string | undefined",
+            "schema": {
+              "0": "undefined",
+              "1": "string"
+            }
+          }
+        },
+        {
+          "name": "ui",
+          "global": false,
+          "description": "",
+          "tags": [],
+          "required": false,
+          "type": "PartialString<{ root: string; list: string; indicator: string; trigger: string[]; triggerIcon: string; triggerLabel: string; }> | undefined",
+          "schema": {
+            "kind": "enum",
+            "type": "PartialString<{ root: string; list: string; indicator: string; trigger: string[]; triggerIcon: string; triggerLabel: string; }> | undefined",
+            "schema": {
+              "0": "undefined",
+              "1": "PartialString<{ root: string; list: string; indicator: string; trigger: string[]; triggerIcon: string; triggerLabel: string; }>"
+            }
+          }
+        },
+        {
+          "name": "modelValue",
+          "global": false,
+          "description": "",
+          "tags": [],
+          "required": false,
+          "type": "string | undefined",
+          "schema": {
+            "kind": "enum",
+            "type": "string | undefined",
+            "schema": {
+              "0": "undefined",
+              "1": "string"
+            }
+          }
+        }
+      ],
+      "slots": [
+        {
+          "name": "default",
+          "type": "{} | undefined",
+          "description": "",
+          "schema": {
+            "kind": "enum",
+            "type": "{} | undefined",
+            "schema": {
+              "0": "undefined",
+              "1": {
+                "kind": "object",
+                "type": "{}",
+                "schema": {}
+              }
+            }
+          }
+        }
+      ],
+      "events": [
+        {
+          "name": "update:modelValue",
+          "description": "",
+          "tags": [],
+          "type": "[value: string | undefined]",
+          "signature": "(event: \"update:modelValue\", value: string | undefined): void",
+          "schema": [
+            {
+              "kind": "enum",
+              "type": "string | undefined",
+              "schema": [
+                "undefined",
+                "string"
+              ]
+            }
+          ]
+        }
+      ],
+      "exposed": [
+        {
+          "name": "$slots",
+          "type": "Readonly<InternalSlots> & CodeGroupSlots",
+          "description": "",
+          "schema": {
+            "kind": "object",
+            "type": "Readonly<InternalSlots> & CodeGroupSlots",
+            "schema": {
+              "default": {
+                "name": "default",
+                "global": false,
+                "description": "",
+                "tags": [],
+                "required": true,
+                "type": "(props?: {} | undefined) => any",
+                "schema": {
+                  "kind": "event",
+                  "type": "(props?: {} | undefined): any",
+                  "schema": {}
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "defaultValue",
+          "type": "string",
+          "description": "The default tab to select.",
+          "schema": "string"
+        },
+        {
+          "name": "class",
+          "type": "any",
+          "description": "",
+          "schema": "any"
+        },
+        {
+          "name": "ui",
+          "type": "PartialString<{ root: string; list: string; indicator: string; trigger: string[]; triggerIcon: string; triggerLabel: string; }> | undefined",
+          "description": "",
+          "schema": {
+            "kind": "enum",
+            "type": "PartialString<{ root: string; list: string; indicator: string; trigger: string[]; triggerIcon: string; triggerLabel: string; }> | undefined",
+            "schema": {
+              "0": "undefined",
+              "1": "PartialString<{ root: string; list: string; indicator: string; trigger: string[]; triggerIcon: string; triggerLabel: string; }>"
+            }
+          }
+        },
+        {
+          "name": "sync",
+          "type": "string | undefined",
+          "description": "Sync the selected tab with a local storage key.",
+          "schema": {
+            "kind": "enum",
+            "type": "string | undefined",
+            "schema": {
+              "0": "undefined",
+              "1": "string"
+            }
+          }
+        },
+        {
+          "name": "modelValue",
+          "type": "string | undefined",
+          "description": "",
+          "schema": {
+            "kind": "enum",
+            "type": "string | undefined",
+            "schema": {
+              "0": "undefined",
+              "1": "string"
+            }
+          }
+        },
+        {
+          "name": "onUpdate:modelValue",
+          "type": "((value: string | undefined) => any) | undefined",
+          "description": "",
+          "schema": {
+            "kind": "enum",
+            "type": "((value: string | undefined) => any) | undefined",
+            "schema": {
+              "0": "undefined",
+              "1": {
+                "kind": "event",
+                "type": "(value: string | undefined): any",
+                "schema": [
+                  {
+                    "kind": "enum",
+                    "type": "string | undefined",
+                    "schema": [
+                      "undefined",
+                      "string"
+                    ]
+                  }
+                ]
+              }
+            }
+          }
+        }
+      ]
+    }
+  },
+  "ProseCodeIcon": {
+    "mode": "all",
+    "global": true,
+    "prefetch": false,
+    "preload": false,
+    "filePath": "node_modules/.pnpm/@nuxt+ui-pro@3.0.2_@babel+parser@7.27.0_db0@0.3.1_better-sqlite3@11.9.1__embla-carousel_c91fed73073e7ebd3bd8cfe4cd954783/node_modules/@nuxt/ui-pro/dist/runtime/components/prose/CodeIcon.vue",
+    "pascalName": "ProseCodeIcon",
+    "kebabName": "prose-code-icon",
+    "chunkName": "components/prose-code-icon",
+    "priority": 0,
+    "_scanned": true,
+    "meta": {
+      "type": 1,
+      "props": [
+        {
+          "name": "icon",
+          "global": false,
+          "description": "",
+          "tags": [],
+          "required": false,
+          "type": "string | undefined",
+          "schema": {
+            "kind": "enum",
+            "type": "string | undefined",
+            "schema": {
+              "0": "undefined",
+              "1": "string"
+            }
+          }
+        },
+        {
+          "name": "filename",
+          "global": false,
+          "description": "",
+          "tags": [],
+          "required": false,
+          "type": "string | undefined",
+          "schema": {
+            "kind": "enum",
+            "type": "string | undefined",
+            "schema": {
+              "0": "undefined",
+              "1": "string"
+            }
+          }
+        }
+      ],
+      "slots": [],
+      "events": [],
+      "exposed": [
+        {
+          "name": "icon",
+          "type": "string | undefined",
+          "description": "",
+          "schema": {
+            "kind": "enum",
+            "type": "string | undefined",
+            "schema": {
+              "0": "undefined",
+              "1": "string"
+            }
+          }
+        },
+        {
+          "name": "filename",
+          "type": "string | undefined",
+          "description": "",
+          "schema": {
+            "kind": "enum",
+            "type": "string | undefined",
+            "schema": {
+              "0": "undefined",
+              "1": "string"
+            }
+          }
+        }
+      ]
+    }
+  },
+  "ProseCodePreview": {
+    "mode": "all",
+    "global": true,
+    "prefetch": false,
+    "preload": false,
+    "filePath": "node_modules/.pnpm/@nuxt+ui-pro@3.0.2_@babel+parser@7.27.0_db0@0.3.1_better-sqlite3@11.9.1__embla-carousel_c91fed73073e7ebd3bd8cfe4cd954783/node_modules/@nuxt/ui-pro/dist/runtime/components/prose/CodePreview.vue",
+    "pascalName": "ProseCodePreview",
+    "kebabName": "prose-code-preview",
+    "chunkName": "components/prose-code-preview",
+    "priority": 0,
+    "_scanned": true,
+    "meta": {
+      "type": 1,
+      "props": [
+        {
+          "name": "ui",
+          "global": false,
+          "description": "",
+          "tags": [],
+          "required": false,
+          "type": "Partial<{ root: string; preview: string; code: string; }> | undefined",
+          "schema": {
+            "kind": "enum",
+            "type": "Partial<{ root: string; preview: string; code: string; }> | undefined",
+            "schema": {
+              "0": "undefined",
+              "1": "Partial<{ root: string; preview: string; code: string; }>"
+            }
+          }
+        }
+      ],
+      "slots": [
+        {
+          "name": "default",
+          "type": "{} | undefined",
+          "description": "",
+          "schema": {
+            "kind": "enum",
+            "type": "{} | undefined",
+            "schema": {
+              "0": "undefined",
+              "1": {
+                "kind": "object",
+                "type": "{}",
+                "schema": {}
+              }
+            }
+          }
+        },
+        {
+          "name": "code",
+          "type": "{} | undefined",
+          "description": "",
+          "schema": {
+            "kind": "enum",
+            "type": "{} | undefined",
+            "schema": {
+              "0": "undefined",
+              "1": {
+                "kind": "object",
+                "type": "{}",
+                "schema": {}
+              }
+            }
+          }
+        }
+      ],
+      "events": [],
+      "exposed": [
+        {
+          "name": "$slots",
+          "type": "Readonly<InternalSlots> & CodePreviewSlots",
+          "description": "",
+          "schema": {
+            "kind": "object",
+            "type": "Readonly<InternalSlots> & CodePreviewSlots",
+            "schema": {
+              "default": {
+                "name": "default",
+                "global": false,
+                "description": "",
+                "tags": [],
+                "required": true,
+                "type": "(props?: {} | undefined) => any",
+                "schema": {
+                  "kind": "event",
+                  "type": "(props?: {} | undefined): any",
+                  "schema": {}
+                }
+              },
+              "code": {
+                "name": "code",
+                "global": false,
+                "description": "",
+                "tags": [],
+                "required": true,
+                "type": "(props?: {} | undefined) => any",
+                "schema": {
+                  "kind": "event",
+                  "type": "(props?: {} | undefined): any",
+                  "schema": {}
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "class",
+          "type": "any",
+          "description": "",
+          "schema": "any"
+        },
+        {
+          "name": "ui",
+          "type": "Partial<{ root: string; preview: string; code: string; }> | undefined",
+          "description": "",
+          "schema": {
+            "kind": "enum",
+            "type": "Partial<{ root: string; preview: string; code: string; }> | undefined",
+            "schema": {
+              "0": "undefined",
+              "1": "Partial<{ root: string; preview: string; code: string; }>"
+            }
+          }
+        }
+      ]
+    }
+  },
+  "ProseCodeTree": {
+    "mode": "all",
+    "global": true,
+    "prefetch": false,
+    "preload": false,
+    "filePath": "node_modules/.pnpm/@nuxt+ui-pro@3.0.2_@babel+parser@7.27.0_db0@0.3.1_better-sqlite3@11.9.1__embla-carousel_c91fed73073e7ebd3bd8cfe4cd954783/node_modules/@nuxt/ui-pro/dist/runtime/components/prose/CodeTree.vue",
+    "pascalName": "ProseCodeTree",
+    "kebabName": "prose-code-tree",
+    "chunkName": "components/prose-code-tree",
+    "priority": 0,
+    "_scanned": true,
+    "meta": {
+      "type": 1,
+      "props": [
+        {
+          "name": "defaultValue",
+          "global": false,
+          "description": "The default path to select.",
+          "tags": [
+            {
+              "name": "example",
+              "text": "'package.json'"
+            }
+          ],
+          "required": false,
+          "type": "string | undefined",
+          "schema": {
+            "kind": "enum",
+            "type": "string | undefined",
+            "schema": {
+              "0": "undefined",
+              "1": "string"
+            }
+          }
+        },
+        {
+          "name": "ui",
+          "global": false,
+          "description": "",
+          "tags": [],
+          "required": false,
+          "type": "Partial<{ root: string; list: string; item: string; listWithChildren: string; itemWithChildren: string; link: string; linkLeadingIcon: string; linkLabel: string; linkTrailing: string; linkTrailingIcon: string; content: string; }> | undefined",
+          "schema": {
+            "kind": "enum",
+            "type": "Partial<{ root: string; list: string; item: string; listWithChildren: string; itemWithChildren: string; link: string; linkLeadingIcon: string; linkLabel: string; linkTrailing: string; linkTrailingIcon: string; content: string; }> | undefined",
+            "schema": {
+              "0": "undefined",
+              "1": "Partial<{ root: string; list: string; item: string; listWithChildren: string; itemWithChildren: string; link: string; linkLeadingIcon: string; linkLabel: string; linkTrailing: string; linkTrailingIcon: string; content: string; }>"
+            }
+          }
+        }
+      ],
+      "slots": [
+        {
+          "name": "default",
+          "type": "{} | undefined",
+          "description": "",
+          "schema": {
+            "kind": "enum",
+            "type": "{} | undefined",
+            "schema": {
+              "0": "undefined",
+              "1": {
+                "kind": "object",
+                "type": "{}",
+                "schema": {}
+              }
+            }
+          }
+        }
+      ],
+      "events": [],
+      "exposed": [
+        {
+          "name": "$slots",
+          "type": "Readonly<InternalSlots> & CodeTreeSlots",
+          "description": "",
+          "schema": {
+            "kind": "object",
+            "type": "Readonly<InternalSlots> & CodeTreeSlots",
+            "schema": {
+              "default": {
+                "name": "default",
+                "global": false,
+                "description": "",
+                "tags": [],
+                "required": true,
+                "type": "(props?: {} | undefined) => any",
+                "schema": {
+                  "kind": "event",
+                  "type": "(props?: {} | undefined): any",
+                  "schema": {}
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "class",
+          "type": "any",
+          "description": "",
+          "schema": "any"
+        },
+        {
+          "name": "ui",
+          "type": "Partial<{ root: string; list: string; item: string; listWithChildren: string; itemWithChildren: string; link: string; linkLeadingIcon: string; linkLabel: string; linkTrailing: string; linkTrailingIcon: string; content: string; }> | undefined",
+          "description": "",
+          "schema": {
+            "kind": "enum",
+            "type": "Partial<{ root: string; list: string; item: string; listWithChildren: string; itemWithChildren: string; link: string; linkLeadingIcon: string; linkLabel: string; linkTrailing: string; linkTrailingIcon: string; content: string; }> | undefined",
+            "schema": {
+              "0": "undefined",
+              "1": "Partial<{ root: string; list: string; item: string; listWithChildren: string; itemWithChildren: string; link: string; linkLeadingIcon: string; linkLabel: string; linkTrailing: string; linkTrailingIcon: string; content: string; }>"
+            }
+          }
+        },
+        {
+          "name": "defaultValue",
+          "type": "string | undefined",
+          "description": "The default path to select.",
+          "schema": {
+            "kind": "enum",
+            "type": "string | undefined",
+            "schema": {
+              "0": "undefined",
+              "1": "string"
+            }
+          }
+        }
+      ]
+    }
+  },
+  "ProseCollapsible": {
+    "mode": "all",
+    "global": true,
+    "prefetch": false,
+    "preload": false,
+    "filePath": "node_modules/.pnpm/@nuxt+ui-pro@3.0.2_@babel+parser@7.27.0_db0@0.3.1_better-sqlite3@11.9.1__embla-carousel_c91fed73073e7ebd3bd8cfe4cd954783/node_modules/@nuxt/ui-pro/dist/runtime/components/prose/Collapsible.vue",
+    "pascalName": "ProseCollapsible",
+    "kebabName": "prose-collapsible",
+    "chunkName": "components/prose-collapsible",
+    "priority": 0,
+    "_scanned": true,
+    "meta": {
+      "type": 1,
+      "props": [
+        {
+          "name": "icon",
+          "global": false,
+          "description": "The icon displayed to toggle the collapsible.",
+          "tags": [
+            {
+              "name": "defaultValue",
+              "text": "appConfig.ui.icons.chevronDown"
+            }
+          ],
+          "required": false,
+          "type": "string | undefined",
+          "schema": {
+            "kind": "enum",
+            "type": "string | undefined",
+            "schema": {
+              "0": "undefined",
+              "1": "string"
+            }
+          }
+        },
+        {
+          "name": "name",
+          "global": false,
+          "description": "The name displayed in the trigger label.",
+          "tags": [
+            {
+              "name": "defaultValue",
+              "text": "'properties'"
+            }
+          ],
+          "required": false,
+          "type": "string | undefined",
+          "schema": {
+            "kind": "enum",
+            "type": "string | undefined",
+            "schema": {
+              "0": "undefined",
+              "1": "string"
+            }
+          },
+          "default": "\"properties\""
+        },
+        {
+          "name": "openText",
+          "global": false,
+          "description": "The text displayed when the collapsible is open.",
+          "tags": [
+            {
+              "name": "defaultValue",
+              "text": "'Show'"
+            }
+          ],
+          "required": false,
+          "type": "string | undefined",
+          "schema": {
+            "kind": "enum",
+            "type": "string | undefined",
+            "schema": {
+              "0": "undefined",
+              "1": "string"
+            }
+          },
+          "default": "\"Show\""
+        },
+        {
+          "name": "closeText",
+          "global": false,
+          "description": "The text displayed when the collapsible is closed.",
+          "tags": [
+            {
+              "name": "defaultValue",
+              "text": "'Hide'"
+            }
+          ],
+          "required": false,
+          "type": "string | undefined",
+          "schema": {
+            "kind": "enum",
+            "type": "string | undefined",
+            "schema": {
+              "0": "undefined",
+              "1": "string"
+            }
+          },
+          "default": "\"Hide\""
+        },
+        {
+          "name": "ui",
+          "global": false,
+          "description": "",
+          "tags": [],
+          "required": false,
+          "type": "PartialString<{ base: string; trigger: string[]; triggerIcon: string; triggerLabel: string; }> | undefined",
+          "schema": {
+            "kind": "enum",
+            "type": "PartialString<{ base: string; trigger: string[]; triggerIcon: string; triggerLabel: string; }> | undefined",
+            "schema": {
+              "0": "undefined",
+              "1": "PartialString<{ base: string; trigger: string[]; triggerIcon: string; triggerLabel: string; }>"
+            }
+          }
+        }
+      ],
+      "slots": [
+        {
+          "name": "default",
+          "type": "{ mdcUnwrap: string; }",
+          "description": "",
+          "schema": {
+            "kind": "object",
+            "type": "{ mdcUnwrap: string; }",
+            "schema": {
+              "mdcUnwrap": {
+                "name": "mdcUnwrap",
+                "global": false,
+                "description": "",
+                "tags": [],
+                "required": true,
+                "type": "string",
+                "schema": "string"
+              }
+            }
+          }
+        }
+      ],
+      "events": [],
+      "exposed": [
+        {
+          "name": "$slots",
+          "type": "Readonly<InternalSlots> & { default?: ((props: { mdcUnwrap: string; }) => any) | undefined; }",
+          "description": "",
+          "schema": {
+            "kind": "object",
+            "type": "Readonly<InternalSlots> & { default?: ((props: { mdcUnwrap: string; }) => any) | undefined; }",
+            "schema": {
+              "default": {
+                "name": "default",
+                "global": false,
+                "description": "",
+                "tags": [],
+                "required": false,
+                "type": "((props: { mdcUnwrap: string; }) => any) | undefined",
+                "schema": {
+                  "kind": "enum",
+                  "type": "((props: { mdcUnwrap: string; }) => any) | undefined",
+                  "schema": {
+                    "0": "undefined",
+                    "1": {
+                      "kind": "event",
+                      "type": "(props: { mdcUnwrap: string; }): any",
+                      "schema": []
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "name",
+          "type": "string",
+          "description": "The name displayed in the trigger label.",
+          "schema": "string"
+        },
+        {
+          "name": "openText",
+          "type": "string",
+          "description": "The text displayed when the collapsible is open.",
+          "schema": "string"
+        },
+        {
+          "name": "closeText",
+          "type": "string",
+          "description": "The text displayed when the collapsible is closed.",
+          "schema": "string"
+        },
+        {
+          "name": "class",
+          "type": "any",
+          "description": "",
+          "schema": "any"
+        },
+        {
+          "name": "icon",
+          "type": "string | undefined",
+          "description": "The icon displayed to toggle the collapsible.",
+          "schema": {
+            "kind": "enum",
+            "type": "string | undefined",
+            "schema": {
+              "0": "undefined",
+              "1": "string"
+            }
+          }
+        },
+        {
+          "name": "ui",
+          "type": "PartialString<{ base: string; trigger: string[]; triggerIcon: string; triggerLabel: string; }> | undefined",
+          "description": "",
+          "schema": {
+            "kind": "enum",
+            "type": "PartialString<{ base: string; trigger: string[]; triggerIcon: string; triggerLabel: string; }> | undefined",
+            "schema": {
+              "0": "undefined",
+              "1": "PartialString<{ base: string; trigger: string[]; triggerIcon: string; triggerLabel: string; }>"
+            }
+          }
+        }
+      ]
+    }
+  },
+  "ProseEm": {
+    "mode": "all",
+    "global": true,
+    "prefetch": false,
+    "preload": false,
+    "filePath": "node_modules/.pnpm/@nuxt+ui-pro@3.0.2_@babel+parser@7.27.0_db0@0.3.1_better-sqlite3@11.9.1__embla-carousel_c91fed73073e7ebd3bd8cfe4cd954783/node_modules/@nuxt/ui-pro/dist/runtime/components/prose/Em.vue",
+    "pascalName": "ProseEm",
+    "kebabName": "prose-em",
+    "chunkName": "components/prose-em",
+    "priority": 0,
+    "_scanned": true,
+    "meta": {
+      "type": 1,
+      "props": [],
+      "slots": [
+        {
+          "name": "default",
+          "type": "{}",
+          "description": "",
+          "schema": {
+            "kind": "object",
+            "type": "{}",
+            "schema": {}
+          }
+        }
+      ],
+      "events": [],
+      "exposed": [
+        {
+          "name": "$slots",
+          "type": "Readonly<InternalSlots> & { default?: ((props: {}) => any) | undefined; }",
+          "description": "",
+          "schema": {
+            "kind": "object",
+            "type": "Readonly<InternalSlots> & { default?: ((props: {}) => any) | undefined; }",
+            "schema": {
+              "default": {
+                "name": "default",
+                "global": false,
+                "description": "",
+                "tags": [],
+                "required": false,
+                "type": "((props: {}) => any) | undefined",
+                "schema": {
+                  "kind": "enum",
+                  "type": "((props: {}) => any) | undefined",
+                  "schema": {
+                    "0": "undefined",
+                    "1": {
+                      "kind": "event",
+                      "type": "(props: {}): any",
+                      "schema": []
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "class",
+          "type": "string | undefined",
+          "description": "",
+          "schema": {
+            "kind": "enum",
+            "type": "string | undefined",
+            "schema": {
+              "0": "undefined",
+              "1": "string"
+            }
+          }
+        }
+      ]
+    }
+  },
+  "ProseField": {
+    "mode": "all",
+    "global": true,
+    "prefetch": false,
+    "preload": false,
+    "filePath": "node_modules/.pnpm/@nuxt+ui-pro@3.0.2_@babel+parser@7.27.0_db0@0.3.1_better-sqlite3@11.9.1__embla-carousel_c91fed73073e7ebd3bd8cfe4cd954783/node_modules/@nuxt/ui-pro/dist/runtime/components/prose/Field.vue",
+    "pascalName": "ProseField",
+    "kebabName": "prose-field",
+    "chunkName": "components/prose-field",
+    "priority": 0,
+    "_scanned": true,
+    "meta": {
+      "type": 1,
+      "props": [
+        {
+          "name": "name",
+          "global": false,
+          "description": "The name of the field.",
+          "tags": [],
+          "required": true,
+          "type": "string",
+          "schema": "string"
+        },
+        {
+          "name": "type",
+          "global": false,
+          "description": "Expected type of the field’s value",
+          "tags": [],
+          "required": true,
+          "type": "string",
+          "schema": "string"
+        },
+        {
+          "name": "as",
+          "global": false,
+          "description": "The element or component this component should render as.",
+          "tags": [
+            {
+              "name": "defaultValue",
+              "text": "'div'"
+            }
+          ],
+          "required": false,
+          "type": "any",
+          "schema": "any"
+        },
+        {
+          "name": "description",
+          "global": false,
+          "description": "Description of the field",
+          "tags": [],
+          "required": false,
+          "type": "string | undefined",
+          "schema": {
+            "kind": "enum",
+            "type": "string | undefined",
+            "schema": {
+              "0": "undefined",
+              "1": "string"
+            }
+          }
+        },
+        {
+          "name": "required",
+          "global": false,
+          "description": "Indicate whether the field is required",
+          "tags": [],
+          "required": false,
+          "type": "boolean | undefined",
+          "schema": {
+            "kind": "enum",
+            "type": "boolean | undefined",
+            "schema": {
+              "0": "undefined",
+              "1": "false",
+              "2": "true"
+            }
+          }
+        },
+        {
+          "name": "ui",
+          "global": false,
+          "description": "",
+          "tags": [],
+          "required": false,
+          "type": "Partial<{ root: string; container: string; name: string; wrapper: string; required: string; type: string; description: string; }> | undefined",
+          "schema": {
+            "kind": "enum",
+            "type": "Partial<{ root: string; container: string; name: string; wrapper: string; required: string; type: string; description: string; }> | undefined",
+            "schema": {
+              "0": "undefined",
+              "1": "Partial<{ root: string; container: string; name: string; wrapper: string; required: string; type: string; description: string; }>"
+            }
+          }
+        }
+      ],
+      "slots": [
+        {
+          "name": "default",
+          "type": "{} | undefined",
+          "description": "",
+          "schema": {
+            "kind": "enum",
+            "type": "{} | undefined",
+            "schema": {
+              "0": "undefined",
+              "1": {
+                "kind": "object",
+                "type": "{}",
+                "schema": {}
+              }
+            }
+          }
+        }
+      ],
+      "events": [],
+      "exposed": [
+        {
+          "name": "$slots",
+          "type": "Readonly<InternalSlots> & FieldSlots",
+          "description": "",
+          "schema": {
+            "kind": "object",
+            "type": "Readonly<InternalSlots> & FieldSlots",
+            "schema": {
+              "default": {
+                "name": "default",
+                "global": false,
+                "description": "",
+                "tags": [],
+                "required": true,
+                "type": "(props?: {} | undefined) => any",
+                "schema": {
+                  "kind": "event",
+                  "type": "(props?: {} | undefined): any",
+                  "schema": {}
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "class",
+          "type": "any",
+          "description": "",
+          "schema": "any"
+        },
+        {
+          "name": "type",
+          "type": "string",
+          "description": "Expected type of the field’s value",
+          "schema": "string"
+        },
+        {
+          "name": "ui",
+          "type": "Partial<{ root: string; container: string; name: string; wrapper: string; required: string; type: string; description: string; }> | undefined",
+          "description": "",
+          "schema": {
+            "kind": "enum",
+            "type": "Partial<{ root: string; container: string; name: string; wrapper: string; required: string; type: string; description: string; }> | undefined",
+            "schema": {
+              "0": "undefined",
+              "1": "Partial<{ root: string; container: string; name: string; wrapper: string; required: string; type: string; description: string; }>"
+            }
+          }
+        },
+        {
+          "name": "description",
+          "type": "string | undefined",
+          "description": "Description of the field",
+          "schema": {
+            "kind": "enum",
+            "type": "string | undefined",
+            "schema": {
+              "0": "undefined",
+              "1": "string"
+            }
+          }
+        },
+        {
+          "name": "name",
+          "type": "string",
+          "description": "The name of the field.",
+          "schema": "string"
+        },
+        {
+          "name": "as",
+          "type": "any",
+          "description": "The element or component this component should render as.",
+          "schema": "any"
+        },
+        {
+          "name": "required",
+          "type": "boolean | undefined",
+          "description": "Indicate whether the field is required",
+          "schema": {
+            "kind": "enum",
+            "type": "boolean | undefined",
+            "schema": {
+              "0": "undefined",
+              "1": "false",
+              "2": "true"
+            }
+          }
+        }
+      ]
+    }
+  },
+  "ProseFieldGroup": {
+    "mode": "all",
+    "global": true,
+    "prefetch": false,
+    "preload": false,
+    "filePath": "node_modules/.pnpm/@nuxt+ui-pro@3.0.2_@babel+parser@7.27.0_db0@0.3.1_better-sqlite3@11.9.1__embla-carousel_c91fed73073e7ebd3bd8cfe4cd954783/node_modules/@nuxt/ui-pro/dist/runtime/components/prose/FieldGroup.vue",
+    "pascalName": "ProseFieldGroup",
+    "kebabName": "prose-field-group",
+    "chunkName": "components/prose-field-group",
+    "priority": 0,
+    "_scanned": true,
+    "meta": {
+      "type": 1,
+      "props": [
+        {
+          "name": "as",
+          "global": false,
+          "description": "The element or component this component should render as.",
+          "tags": [
+            {
+              "name": "defaultValue",
+              "text": "'div'"
+            }
+          ],
+          "required": false,
+          "type": "any",
+          "schema": "any"
+        }
+      ],
+      "slots": [
+        {
+          "name": "default",
+          "type": "{} | undefined",
+          "description": "",
+          "schema": {
+            "kind": "enum",
+            "type": "{} | undefined",
+            "schema": {
+              "0": "undefined",
+              "1": {
+                "kind": "object",
+                "type": "{}",
+                "schema": {}
+              }
+            }
+          }
+        }
+      ],
+      "events": [],
+      "exposed": [
+        {
+          "name": "$slots",
+          "type": "Readonly<InternalSlots> & FieldGroupSlots",
+          "description": "",
+          "schema": {
+            "kind": "object",
+            "type": "Readonly<InternalSlots> & FieldGroupSlots",
+            "schema": {
+              "default": {
+                "name": "default",
+                "global": false,
+                "description": "",
+                "tags": [],
+                "required": true,
+                "type": "(props?: {} | undefined) => any",
+                "schema": {
+                  "kind": "event",
+                  "type": "(props?: {} | undefined): any",
+                  "schema": {}
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "class",
+          "type": "any",
+          "description": "",
+          "schema": "any"
+        },
+        {
+          "name": "as",
+          "type": "any",
+          "description": "The element or component this component should render as.",
+          "schema": "any"
+        }
+      ]
+    }
+  },
+  "ProseH1": {
+    "mode": "all",
+    "global": true,
+    "prefetch": false,
+    "preload": false,
+    "filePath": "node_modules/.pnpm/@nuxt+ui-pro@3.0.2_@babel+parser@7.27.0_db0@0.3.1_better-sqlite3@11.9.1__embla-carousel_c91fed73073e7ebd3bd8cfe4cd954783/node_modules/@nuxt/ui-pro/dist/runtime/components/prose/H1.vue",
+    "pascalName": "ProseH1",
+    "kebabName": "prose-h1",
+    "chunkName": "components/prose-h1",
+    "priority": 0,
+    "_scanned": true,
+    "meta": {
+      "type": 1,
+      "props": [
+        {
+          "name": "id",
+          "global": false,
+          "description": "",
+          "tags": [],
+          "required": false,
+          "type": "string | undefined",
+          "schema": {
+            "kind": "enum",
+            "type": "string | undefined",
+            "schema": {
+              "0": "undefined",
+              "1": "string"
+            }
+          }
+        },
+        {
+          "name": "ui",
+          "global": false,
+          "description": "",
+          "tags": [],
+          "required": false,
+          "type": "Partial<{ base: string; link: string; }> | undefined",
+          "schema": {
+            "kind": "enum",
+            "type": "Partial<{ base: string; link: string; }> | undefined",
+            "schema": {
+              "0": "undefined",
+              "1": "Partial<{ base: string; link: string; }>"
+            }
+          }
+        }
+      ],
+      "slots": [
+        {
+          "name": "default",
+          "type": "{}",
+          "description": "",
+          "schema": {
+            "kind": "object",
+            "type": "{}",
+            "schema": {}
+          }
+        }
+      ],
+      "events": [],
+      "exposed": [
+        {
+          "name": "$slots",
+          "type": "Readonly<InternalSlots> & { default?: (((props: {}) => any) & ((props: {}) => any)) | undefined; }",
+          "description": "",
+          "schema": {
+            "kind": "object",
+            "type": "Readonly<InternalSlots> & { default?: (((props: {}) => any) & ((props: {}) => any)) | undefined; }",
+            "schema": {
+              "default": {
+                "name": "default",
+                "global": false,
+                "description": "",
+                "tags": [],
+                "required": false,
+                "type": "(((props: {}) => any) & ((props: {}) => any)) | undefined",
+                "schema": {
+                  "kind": "enum",
+                  "type": "(((props: {}) => any) & ((props: {}) => any)) | undefined",
+                  "schema": {
+                    "0": "undefined",
+                    "1": {
+                      "kind": "event",
+                      "type": "(props: {}): any",
+                      "schema": []
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "class",
+          "type": "any",
+          "description": "",
+          "schema": "any"
+        },
+        {
+          "name": "ui",
+          "type": "Partial<{ base: string; link: string; }> | undefined",
+          "description": "",
+          "schema": {
+            "kind": "enum",
+            "type": "Partial<{ base: string; link: string; }> | undefined",
+            "schema": {
+              "0": "undefined",
+              "1": "Partial<{ base: string; link: string; }>"
+            }
+          }
+        },
+        {
+          "name": "id",
+          "type": "string | undefined",
+          "description": "",
+          "schema": {
+            "kind": "enum",
+            "type": "string | undefined",
+            "schema": {
+              "0": "undefined",
+              "1": "string"
+            }
+          }
+        }
+      ]
+    }
+  },
+  "ProseH2": {
+    "mode": "all",
+    "global": true,
+    "prefetch": false,
+    "preload": false,
+    "filePath": "node_modules/.pnpm/@nuxt+ui-pro@3.0.2_@babel+parser@7.27.0_db0@0.3.1_better-sqlite3@11.9.1__embla-carousel_c91fed73073e7ebd3bd8cfe4cd954783/node_modules/@nuxt/ui-pro/dist/runtime/components/prose/H2.vue",
+    "pascalName": "ProseH2",
+    "kebabName": "prose-h2",
+    "chunkName": "components/prose-h2",
+    "priority": 0,
+    "_scanned": true,
+    "meta": {
+      "type": 1,
+      "props": [
+        {
+          "name": "id",
+          "global": false,
+          "description": "",
+          "tags": [],
+          "required": false,
+          "type": "string | undefined",
+          "schema": {
+            "kind": "enum",
+            "type": "string | undefined",
+            "schema": {
+              "0": "undefined",
+              "1": "string"
+            }
+          }
+        },
+        {
+          "name": "ui",
+          "global": false,
+          "description": "",
+          "tags": [],
+          "required": false,
+          "type": "Partial<{ base: string[]; leading: string[]; leadingIcon: string; link: string; }> | undefined",
+          "schema": {
+            "kind": "enum",
+            "type": "Partial<{ base: string[]; leading: string[]; leadingIcon: string; link: string; }> | undefined",
+            "schema": {
+              "0": "undefined",
+              "1": "Partial<{ base: string[]; leading: string[]; leadingIcon: string; link: string; }>"
+            }
+          }
+        }
+      ],
+      "slots": [
+        {
+          "name": "default",
+          "type": "{}",
+          "description": "",
+          "schema": {
+            "kind": "object",
+            "type": "{}",
+            "schema": {}
+          }
+        }
+      ],
+      "events": [],
+      "exposed": [
+        {
+          "name": "$slots",
+          "type": "Readonly<InternalSlots> & { default?: (((props: {}) => any) & ((props: {}) => any)) | undefined; }",
+          "description": "",
+          "schema": {
+            "kind": "object",
+            "type": "Readonly<InternalSlots> & { default?: (((props: {}) => any) & ((props: {}) => any)) | undefined; }",
+            "schema": {
+              "default": {
+                "name": "default",
+                "global": false,
+                "description": "",
+                "tags": [],
+                "required": false,
+                "type": "(((props: {}) => any) & ((props: {}) => any)) | undefined",
+                "schema": {
+                  "kind": "enum",
+                  "type": "(((props: {}) => any) & ((props: {}) => any)) | undefined",
+                  "schema": {
+                    "0": "undefined",
+                    "1": {
+                      "kind": "event",
+                      "type": "(props: {}): any",
+                      "schema": []
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "class",
+          "type": "any",
+          "description": "",
+          "schema": "any"
+        },
+        {
+          "name": "ui",
+          "type": "Partial<{ base: string[]; leading: string[]; leadingIcon: string; link: string; }> | undefined",
+          "description": "",
+          "schema": {
+            "kind": "enum",
+            "type": "Partial<{ base: string[]; leading: string[]; leadingIcon: string; link: string; }> | undefined",
+            "schema": {
+              "0": "undefined",
+              "1": "Partial<{ base: string[]; leading: string[]; leadingIcon: string; link: string; }>"
+            }
+          }
+        },
+        {
+          "name": "id",
+          "type": "string | undefined",
+          "description": "",
+          "schema": {
+            "kind": "enum",
+            "type": "string | undefined",
+            "schema": {
+              "0": "undefined",
+              "1": "string"
+            }
+          }
+        }
+      ]
+    }
+  },
+  "ProseH3": {
+    "mode": "all",
+    "global": true,
+    "prefetch": false,
+    "preload": false,
+    "filePath": "node_modules/.pnpm/@nuxt+ui-pro@3.0.2_@babel+parser@7.27.0_db0@0.3.1_better-sqlite3@11.9.1__embla-carousel_c91fed73073e7ebd3bd8cfe4cd954783/node_modules/@nuxt/ui-pro/dist/runtime/components/prose/H3.vue",
+    "pascalName": "ProseH3",
+    "kebabName": "prose-h3",
+    "chunkName": "components/prose-h3",
+    "priority": 0,
+    "_scanned": true,
+    "meta": {
+      "type": 1,
+      "props": [
+        {
+          "name": "id",
+          "global": false,
+          "description": "",
+          "tags": [],
+          "required": false,
+          "type": "string | undefined",
+          "schema": {
+            "kind": "enum",
+            "type": "string | undefined",
+            "schema": {
+              "0": "undefined",
+              "1": "string"
+            }
+          }
+        },
+        {
+          "name": "ui",
+          "global": false,
+          "description": "",
+          "tags": [],
+          "required": false,
+          "type": "Partial<{ base: string[]; leading: string[]; leadingIcon: string; link: string; }> | undefined",
+          "schema": {
+            "kind": "enum",
+            "type": "Partial<{ base: string[]; leading: string[]; leadingIcon: string; link: string; }> | undefined",
+            "schema": {
+              "0": "undefined",
+              "1": "Partial<{ base: string[]; leading: string[]; leadingIcon: string; link: string; }>"
+            }
+          }
+        }
+      ],
+      "slots": [
+        {
+          "name": "default",
+          "type": "{}",
+          "description": "",
+          "schema": {
+            "kind": "object",
+            "type": "{}",
+            "schema": {}
+          }
+        }
+      ],
+      "events": [],
+      "exposed": [
+        {
+          "name": "$slots",
+          "type": "Readonly<InternalSlots> & { default?: (((props: {}) => any) & ((props: {}) => any)) | undefined; }",
+          "description": "",
+          "schema": {
+            "kind": "object",
+            "type": "Readonly<InternalSlots> & { default?: (((props: {}) => any) & ((props: {}) => any)) | undefined; }",
+            "schema": {
+              "default": {
+                "name": "default",
+                "global": false,
+                "description": "",
+                "tags": [],
+                "required": false,
+                "type": "(((props: {}) => any) & ((props: {}) => any)) | undefined",
+                "schema": {
+                  "kind": "enum",
+                  "type": "(((props: {}) => any) & ((props: {}) => any)) | undefined",
+                  "schema": {
+                    "0": "undefined",
+                    "1": {
+                      "kind": "event",
+                      "type": "(props: {}): any",
+                      "schema": []
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "class",
+          "type": "any",
+          "description": "",
+          "schema": "any"
+        },
+        {
+          "name": "ui",
+          "type": "Partial<{ base: string[]; leading: string[]; leadingIcon: string; link: string; }> | undefined",
+          "description": "",
+          "schema": {
+            "kind": "enum",
+            "type": "Partial<{ base: string[]; leading: string[]; leadingIcon: string; link: string; }> | undefined",
+            "schema": {
+              "0": "undefined",
+              "1": "Partial<{ base: string[]; leading: string[]; leadingIcon: string; link: string; }>"
+            }
+          }
+        },
+        {
+          "name": "id",
+          "type": "string | undefined",
+          "description": "",
+          "schema": {
+            "kind": "enum",
+            "type": "string | undefined",
+            "schema": {
+              "0": "undefined",
+              "1": "string"
+            }
+          }
+        }
+      ]
+    }
+  },
+  "ProseH4": {
+    "mode": "all",
+    "global": true,
+    "prefetch": false,
+    "preload": false,
+    "filePath": "node_modules/.pnpm/@nuxt+ui-pro@3.0.2_@babel+parser@7.27.0_db0@0.3.1_better-sqlite3@11.9.1__embla-carousel_c91fed73073e7ebd3bd8cfe4cd954783/node_modules/@nuxt/ui-pro/dist/runtime/components/prose/H4.vue",
+    "pascalName": "ProseH4",
+    "kebabName": "prose-h4",
+    "chunkName": "components/prose-h4",
+    "priority": 0,
+    "_scanned": true,
+    "meta": {
+      "type": 1,
+      "props": [
+        {
+          "name": "id",
+          "global": false,
+          "description": "",
+          "tags": [],
+          "required": false,
+          "type": "string | undefined",
+          "schema": {
+            "kind": "enum",
+            "type": "string | undefined",
+            "schema": {
+              "0": "undefined",
+              "1": "string"
+            }
+          }
+        },
+        {
+          "name": "ui",
+          "global": false,
+          "description": "",
+          "tags": [],
+          "required": false,
+          "type": "Partial<{ base: string; link: string; }> | undefined",
+          "schema": {
+            "kind": "enum",
+            "type": "Partial<{ base: string; link: string; }> | undefined",
+            "schema": {
+              "0": "undefined",
+              "1": "Partial<{ base: string; link: string; }>"
+            }
+          }
+        }
+      ],
+      "slots": [
+        {
+          "name": "default",
+          "type": "{}",
+          "description": "",
+          "schema": {
+            "kind": "object",
+            "type": "{}",
+            "schema": {}
+          }
+        }
+      ],
+      "events": [],
+      "exposed": [
+        {
+          "name": "$slots",
+          "type": "Readonly<InternalSlots> & { default?: (((props: {}) => any) & ((props: {}) => any)) | undefined; }",
+          "description": "",
+          "schema": {
+            "kind": "object",
+            "type": "Readonly<InternalSlots> & { default?: (((props: {}) => any) & ((props: {}) => any)) | undefined; }",
+            "schema": {
+              "default": {
+                "name": "default",
+                "global": false,
+                "description": "",
+                "tags": [],
+                "required": false,
+                "type": "(((props: {}) => any) & ((props: {}) => any)) | undefined",
+                "schema": {
+                  "kind": "enum",
+                  "type": "(((props: {}) => any) & ((props: {}) => any)) | undefined",
+                  "schema": {
+                    "0": "undefined",
+                    "1": {
+                      "kind": "event",
+                      "type": "(props: {}): any",
+                      "schema": []
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "class",
+          "type": "any",
+          "description": "",
+          "schema": "any"
+        },
+        {
+          "name": "ui",
+          "type": "Partial<{ base: string; link: string; }> | undefined",
+          "description": "",
+          "schema": {
+            "kind": "enum",
+            "type": "Partial<{ base: string; link: string; }> | undefined",
+            "schema": {
+              "0": "undefined",
+              "1": "Partial<{ base: string; link: string; }>"
+            }
+          }
+        },
+        {
+          "name": "id",
+          "type": "string | undefined",
+          "description": "",
+          "schema": {
+            "kind": "enum",
+            "type": "string | undefined",
+            "schema": {
+              "0": "undefined",
+              "1": "string"
+            }
+          }
+        }
+      ]
+    }
+  },
+  "ProseHr": {
+    "mode": "all",
+    "global": true,
+    "prefetch": false,
+    "preload": false,
+    "filePath": "node_modules/.pnpm/@nuxt+ui-pro@3.0.2_@babel+parser@7.27.0_db0@0.3.1_better-sqlite3@11.9.1__embla-carousel_c91fed73073e7ebd3bd8cfe4cd954783/node_modules/@nuxt/ui-pro/dist/runtime/components/prose/Hr.vue",
+    "pascalName": "ProseHr",
+    "kebabName": "prose-hr",
+    "chunkName": "components/prose-hr",
+    "priority": 0,
+    "_scanned": true,
+    "meta": {
+      "type": 1,
+      "props": [],
+      "slots": [],
+      "events": [],
+      "exposed": [
+        {
+          "name": "class",
+          "type": "string | undefined",
+          "description": "",
+          "schema": {
+            "kind": "enum",
+            "type": "string | undefined",
+            "schema": {
+              "0": "undefined",
+              "1": "string"
+            }
+          }
+        }
+      ]
+    }
+  },
+  "ProseIcon": {
+    "mode": "all",
+    "global": true,
+    "prefetch": false,
+    "preload": false,
+    "filePath": "node_modules/.pnpm/@nuxt+ui-pro@3.0.2_@babel+parser@7.27.0_db0@0.3.1_better-sqlite3@11.9.1__embla-carousel_c91fed73073e7ebd3bd8cfe4cd954783/node_modules/@nuxt/ui-pro/dist/runtime/components/prose/Icon.vue",
+    "pascalName": "ProseIcon",
+    "kebabName": "prose-icon",
+    "chunkName": "components/prose-icon",
+    "priority": 0,
+    "_scanned": true,
+    "meta": {
+      "type": 1,
+      "props": [
+        {
+          "name": "name",
+          "global": false,
+          "description": "",
+          "tags": [],
+          "required": true,
+          "type": "string",
+          "schema": "string"
+        }
+      ],
+      "slots": [],
+      "events": [],
+      "exposed": [
+        {
+          "name": "class",
+          "type": "any",
+          "description": "",
+          "schema": "any"
+        },
+        {
+          "name": "name",
+          "type": "string",
+          "description": "",
+          "schema": "string"
+        }
+      ]
+    }
+  },
+  "ProseImg": {
+    "mode": "all",
+    "global": true,
+    "prefetch": false,
+    "preload": false,
+    "filePath": "node_modules/.pnpm/@nuxt+ui-pro@3.0.2_@babel+parser@7.27.0_db0@0.3.1_better-sqlite3@11.9.1__embla-carousel_c91fed73073e7ebd3bd8cfe4cd954783/node_modules/@nuxt/ui-pro/dist/runtime/components/prose/Img.vue",
+    "pascalName": "ProseImg",
+    "kebabName": "prose-img",
+    "chunkName": "components/prose-img",
+    "priority": 0,
+    "_scanned": true,
+    "meta": {
+      "type": 1,
+      "props": [
+        {
+          "name": "src",
+          "global": false,
+          "description": "",
+          "tags": [],
+          "required": true,
+          "type": "string",
+          "schema": "string"
+        },
+        {
+          "name": "alt",
+          "global": false,
+          "description": "",
+          "tags": [],
+          "required": true,
+          "type": "string",
+          "schema": "string"
+        },
+        {
+          "name": "width",
+          "global": false,
+          "description": "",
+          "tags": [],
+          "required": false,
+          "type": "string | number | undefined",
+          "schema": {
+            "kind": "enum",
+            "type": "string | number | undefined",
+            "schema": {
+              "0": "undefined",
+              "1": "string",
+              "2": "number"
+            }
+          }
+        },
+        {
+          "name": "height",
+          "global": false,
+          "description": "",
+          "tags": [],
+          "required": false,
+          "type": "string | number | undefined",
+          "schema": {
+            "kind": "enum",
+            "type": "string | number | undefined",
+            "schema": {
+              "0": "undefined",
+              "1": "string",
+              "2": "number"
+            }
+          }
+        }
+      ],
+      "slots": [],
+      "events": [],
+      "exposed": [
+        {
+          "name": "class",
+          "type": "any",
+          "description": "",
+          "schema": "any"
+        },
+        {
+          "name": "src",
+          "type": "string",
+          "description": "",
+          "schema": "string"
+        },
+        {
+          "name": "alt",
+          "type": "string",
+          "description": "",
+          "schema": "string"
+        },
+        {
+          "name": "width",
+          "type": "string | number | undefined",
+          "description": "",
+          "schema": {
+            "kind": "enum",
+            "type": "string | number | undefined",
+            "schema": {
+              "0": "undefined",
+              "1": "string",
+              "2": "number"
+            }
+          }
+        },
+        {
+          "name": "height",
+          "type": "string | number | undefined",
+          "description": "",
+          "schema": {
+            "kind": "enum",
+            "type": "string | number | undefined",
+            "schema": {
+              "0": "undefined",
+              "1": "string",
+              "2": "number"
+            }
+          }
+        }
+      ]
+    }
+  },
+  "ProseKbd": {
+    "mode": "all",
+    "global": true,
+    "prefetch": false,
+    "preload": false,
+    "filePath": "node_modules/.pnpm/@nuxt+ui-pro@3.0.2_@babel+parser@7.27.0_db0@0.3.1_better-sqlite3@11.9.1__embla-carousel_c91fed73073e7ebd3bd8cfe4cd954783/node_modules/@nuxt/ui-pro/dist/runtime/components/prose/Kbd.vue",
+    "pascalName": "ProseKbd",
+    "kebabName": "prose-kbd",
+    "chunkName": "components/prose-kbd",
+    "priority": 0,
+    "_scanned": true,
+    "meta": {
+      "type": 1,
+      "props": [
+        {
+          "name": "value",
+          "global": false,
+          "description": "",
+          "tags": [],
+          "required": true,
+          "type": "string",
+          "schema": "string"
+        }
+      ],
+      "slots": [],
+      "events": [],
+      "exposed": [
+        {
+          "name": "class",
+          "type": "any",
+          "description": "",
+          "schema": "any"
+        },
+        {
+          "name": "value",
+          "type": "string",
+          "description": "",
+          "schema": "string"
+        }
+      ]
+    }
+  },
+  "ProseLi": {
+    "mode": "all",
+    "global": true,
+    "prefetch": false,
+    "preload": false,
+    "filePath": "node_modules/.pnpm/@nuxt+ui-pro@3.0.2_@babel+parser@7.27.0_db0@0.3.1_better-sqlite3@11.9.1__embla-carousel_c91fed73073e7ebd3bd8cfe4cd954783/node_modules/@nuxt/ui-pro/dist/runtime/components/prose/Li.vue",
+    "pascalName": "ProseLi",
+    "kebabName": "prose-li",
+    "chunkName": "components/prose-li",
+    "priority": 0,
+    "_scanned": true,
+    "meta": {
+      "type": 1,
+      "props": [],
+      "slots": [
+        {
+          "name": "default",
+          "type": "{}",
+          "description": "",
+          "schema": {
+            "kind": "object",
+            "type": "{}",
+            "schema": {}
+          }
+        }
+      ],
+      "events": [],
+      "exposed": [
+        {
+          "name": "$slots",
+          "type": "Readonly<InternalSlots> & { default?: ((props: {}) => any) | undefined; }",
+          "description": "",
+          "schema": {
+            "kind": "object",
+            "type": "Readonly<InternalSlots> & { default?: ((props: {}) => any) | undefined; }",
+            "schema": {
+              "default": {
+                "name": "default",
+                "global": false,
+                "description": "",
+                "tags": [],
+                "required": false,
+                "type": "((props: {}) => any) | undefined",
+                "schema": {
+                  "kind": "enum",
+                  "type": "((props: {}) => any) | undefined",
+                  "schema": {
+                    "0": "undefined",
+                    "1": {
+                      "kind": "event",
+                      "type": "(props: {}): any",
+                      "schema": []
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "class",
+          "type": "string | undefined",
+          "description": "",
+          "schema": {
+            "kind": "enum",
+            "type": "string | undefined",
+            "schema": {
+              "0": "undefined",
+              "1": "string"
+            }
+          }
+        }
+      ]
+    }
+  },
+  "ProseOl": {
+    "mode": "all",
+    "global": true,
+    "prefetch": false,
+    "preload": false,
+    "filePath": "node_modules/.pnpm/@nuxt+ui-pro@3.0.2_@babel+parser@7.27.0_db0@0.3.1_better-sqlite3@11.9.1__embla-carousel_c91fed73073e7ebd3bd8cfe4cd954783/node_modules/@nuxt/ui-pro/dist/runtime/components/prose/Ol.vue",
+    "pascalName": "ProseOl",
+    "kebabName": "prose-ol",
+    "chunkName": "components/prose-ol",
+    "priority": 0,
+    "_scanned": true,
+    "meta": {
+      "type": 1,
+      "props": [],
+      "slots": [
+        {
+          "name": "default",
+          "type": "{}",
+          "description": "",
+          "schema": {
+            "kind": "object",
+            "type": "{}",
+            "schema": {}
+          }
+        }
+      ],
+      "events": [],
+      "exposed": [
+        {
+          "name": "$slots",
+          "type": "Readonly<InternalSlots> & { default?: ((props: {}) => any) | undefined; }",
+          "description": "",
+          "schema": {
+            "kind": "object",
+            "type": "Readonly<InternalSlots> & { default?: ((props: {}) => any) | undefined; }",
+            "schema": {
+              "default": {
+                "name": "default",
+                "global": false,
+                "description": "",
+                "tags": [],
+                "required": false,
+                "type": "((props: {}) => any) | undefined",
+                "schema": {
+                  "kind": "enum",
+                  "type": "((props: {}) => any) | undefined",
+                  "schema": {
+                    "0": "undefined",
+                    "1": {
+                      "kind": "event",
+                      "type": "(props: {}): any",
+                      "schema": []
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "class",
+          "type": "string | undefined",
+          "description": "",
+          "schema": {
+            "kind": "enum",
+            "type": "string | undefined",
+            "schema": {
+              "0": "undefined",
+              "1": "string"
+            }
+          }
+        }
+      ]
+    }
+  },
+  "ProseP": {
+    "mode": "all",
+    "global": true,
+    "prefetch": false,
+    "preload": false,
+    "filePath": "node_modules/.pnpm/@nuxt+ui-pro@3.0.2_@babel+parser@7.27.0_db0@0.3.1_better-sqlite3@11.9.1__embla-carousel_c91fed73073e7ebd3bd8cfe4cd954783/node_modules/@nuxt/ui-pro/dist/runtime/components/prose/P.vue",
+    "pascalName": "ProseP",
+    "kebabName": "prose-p",
+    "chunkName": "components/prose-p",
+    "priority": 0,
+    "_scanned": true,
+    "meta": {
+      "type": 1,
+      "props": [],
+      "slots": [
+        {
+          "name": "default",
+          "type": "{}",
+          "description": "",
+          "schema": {
+            "kind": "object",
+            "type": "{}",
+            "schema": {}
+          }
+        }
+      ],
+      "events": [],
+      "exposed": [
+        {
+          "name": "$slots",
+          "type": "Readonly<InternalSlots> & { default?: ((props: {}) => any) | undefined; }",
+          "description": "",
+          "schema": {
+            "kind": "object",
+            "type": "Readonly<InternalSlots> & { default?: ((props: {}) => any) | undefined; }",
+            "schema": {
+              "default": {
+                "name": "default",
+                "global": false,
+                "description": "",
+                "tags": [],
+                "required": false,
+                "type": "((props: {}) => any) | undefined",
+                "schema": {
+                  "kind": "enum",
+                  "type": "((props: {}) => any) | undefined",
+                  "schema": {
+                    "0": "undefined",
+                    "1": {
+                      "kind": "event",
+                      "type": "(props: {}): any",
+                      "schema": []
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "class",
+          "type": "string | undefined",
+          "description": "",
+          "schema": {
+            "kind": "enum",
+            "type": "string | undefined",
+            "schema": {
+              "0": "undefined",
+              "1": "string"
+            }
+          }
+        }
+      ]
+    }
+  },
+  "ProsePre": {
+    "mode": "all",
+    "global": true,
+    "prefetch": false,
+    "preload": false,
+    "filePath": "node_modules/.pnpm/@nuxt+ui-pro@3.0.2_@babel+parser@7.27.0_db0@0.3.1_better-sqlite3@11.9.1__embla-carousel_c91fed73073e7ebd3bd8cfe4cd954783/node_modules/@nuxt/ui-pro/dist/runtime/components/prose/Pre.vue",
+    "pascalName": "ProsePre",
+    "kebabName": "prose-pre",
+    "chunkName": "components/prose-pre",
+    "priority": 0,
+    "_scanned": true,
+    "meta": {
+      "type": 1,
+      "props": [
+        {
+          "name": "icon",
+          "global": false,
+          "description": "",
+          "tags": [],
+          "required": false,
+          "type": "string | undefined",
+          "schema": {
+            "kind": "enum",
+            "type": "string | undefined",
+            "schema": {
+              "0": "undefined",
+              "1": "string"
+            }
+          }
+        },
+        {
+          "name": "code",
+          "global": false,
+          "description": "",
+          "tags": [],
+          "required": false,
+          "type": "string | undefined",
+          "schema": {
+            "kind": "enum",
+            "type": "string | undefined",
+            "schema": {
+              "0": "undefined",
+              "1": "string"
+            }
+          }
+        },
+        {
+          "name": "language",
+          "global": false,
+          "description": "",
+          "tags": [],
+          "required": false,
+          "type": "string | undefined",
+          "schema": {
+            "kind": "enum",
+            "type": "string | undefined",
+            "schema": {
+              "0": "undefined",
+              "1": "string"
+            }
+          }
+        },
+        {
+          "name": "filename",
+          "global": false,
+          "description": "",
+          "tags": [],
+          "required": false,
+          "type": "string | undefined",
+          "schema": {
+            "kind": "enum",
+            "type": "string | undefined",
+            "schema": {
+              "0": "undefined",
+              "1": "string"
+            }
+          }
+        },
+        {
+          "name": "highlights",
+          "global": false,
+          "description": "",
+          "tags": [],
+          "required": false,
+          "type": "number[] | undefined",
+          "schema": {
+            "kind": "enum",
+            "type": "number[] | undefined",
+            "schema": {
+              "0": "undefined",
+              "1": {
+                "kind": "array",
+                "type": "number[]",
+                "schema": [
+                  "number"
+                ]
+              }
+            }
+          }
+        },
+        {
+          "name": "hideHeader",
+          "global": false,
+          "description": "",
+          "tags": [],
+          "required": false,
+          "type": "boolean | undefined",
+          "schema": {
+            "kind": "enum",
+            "type": "boolean | undefined",
+            "schema": {
+              "0": "undefined",
+              "1": "false",
+              "2": "true"
+            }
+          }
+        },
+        {
+          "name": "meta",
+          "global": false,
+          "description": "",
+          "tags": [],
+          "required": false,
+          "type": "string | undefined",
+          "schema": {
+            "kind": "enum",
+            "type": "string | undefined",
+            "schema": {
+              "0": "undefined",
+              "1": "string"
+            }
+          }
+        },
+        {
+          "name": "ui",
+          "global": false,
+          "description": "",
+          "tags": [],
+          "required": false,
+          "type": "Partial<{ root: string; header: string; filename: string; icon: string; copy: string; base: string; }> | undefined",
+          "schema": {
+            "kind": "enum",
+            "type": "Partial<{ root: string; header: string; filename: string; icon: string; copy: string; base: string; }> | undefined",
+            "schema": {
+              "0": "undefined",
+              "1": "Partial<{ root: string; header: string; filename: string; icon: string; copy: string; base: string; }>"
+            }
+          }
+        }
+      ],
+      "slots": [
+        {
+          "name": "default",
+          "type": "{}",
+          "description": "",
+          "schema": {
+            "kind": "object",
+            "type": "{}",
+            "schema": {}
+          }
+        }
+      ],
+      "events": [],
+      "exposed": [
+        {
+          "name": "$slots",
+          "type": "Readonly<InternalSlots> & { default?: ((props: {}) => any) | undefined; }",
+          "description": "",
+          "schema": {
+            "kind": "object",
+            "type": "Readonly<InternalSlots> & { default?: ((props: {}) => any) | undefined; }",
+            "schema": {
+              "default": {
+                "name": "default",
+                "global": false,
+                "description": "",
+                "tags": [],
+                "required": false,
+                "type": "((props: {}) => any) | undefined",
+                "schema": {
+                  "kind": "enum",
+                  "type": "((props: {}) => any) | undefined",
+                  "schema": {
+                    "0": "undefined",
+                    "1": {
+                      "kind": "event",
+                      "type": "(props: {}): any",
+                      "schema": []
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "class",
+          "type": "any",
+          "description": "",
+          "schema": "any"
+        },
+        {
+          "name": "icon",
+          "type": "string | undefined",
+          "description": "",
+          "schema": {
+            "kind": "enum",
+            "type": "string | undefined",
+            "schema": {
+              "0": "undefined",
+              "1": "string"
+            }
+          }
+        },
+        {
+          "name": "ui",
+          "type": "Partial<{ root: string; header: string; filename: string; icon: string; copy: string; base: string; }> | undefined",
+          "description": "",
+          "schema": {
+            "kind": "enum",
+            "type": "Partial<{ root: string; header: string; filename: string; icon: string; copy: string; base: string; }> | undefined",
+            "schema": {
+              "0": "undefined",
+              "1": "Partial<{ root: string; header: string; filename: string; icon: string; copy: string; base: string; }>"
+            }
+          }
+        },
+        {
+          "name": "code",
+          "type": "string | undefined",
+          "description": "",
+          "schema": {
+            "kind": "enum",
+            "type": "string | undefined",
+            "schema": {
+              "0": "undefined",
+              "1": "string"
+            }
+          }
+        },
+        {
+          "name": "filename",
+          "type": "string | undefined",
+          "description": "",
+          "schema": {
+            "kind": "enum",
+            "type": "string | undefined",
+            "schema": {
+              "0": "undefined",
+              "1": "string"
+            }
+          }
+        },
+        {
+          "name": "language",
+          "type": "string | undefined",
+          "description": "",
+          "schema": {
+            "kind": "enum",
+            "type": "string | undefined",
+            "schema": {
+              "0": "undefined",
+              "1": "string"
+            }
+          }
+        },
+        {
+          "name": "highlights",
+          "type": "number[] | undefined",
+          "description": "",
+          "schema": {
+            "kind": "enum",
+            "type": "number[] | undefined",
+            "schema": {
+              "0": "undefined",
+              "1": {
+                "kind": "array",
+                "type": "number[]",
+                "schema": [
+                  "number"
+                ]
+              }
+            }
+          }
+        },
+        {
+          "name": "hideHeader",
+          "type": "boolean | undefined",
+          "description": "",
+          "schema": {
+            "kind": "enum",
+            "type": "boolean | undefined",
+            "schema": {
+              "0": "undefined",
+              "1": "false",
+              "2": "true"
+            }
+          }
+        },
+        {
+          "name": "meta",
+          "type": "string | undefined",
+          "description": "",
+          "schema": {
+            "kind": "enum",
+            "type": "string | undefined",
+            "schema": {
+              "0": "undefined",
+              "1": "string"
+            }
+          }
+        }
+      ]
+    }
+  },
+  "ProseScript": {
+    "mode": "all",
+    "global": true,
+    "prefetch": false,
+    "preload": false,
+    "filePath": "node_modules/.pnpm/@nuxt+ui-pro@3.0.2_@babel+parser@7.27.0_db0@0.3.1_better-sqlite3@11.9.1__embla-carousel_c91fed73073e7ebd3bd8cfe4cd954783/node_modules/@nuxt/ui-pro/dist/runtime/components/prose/Script.vue",
+    "pascalName": "ProseScript",
+    "kebabName": "prose-script",
+    "chunkName": "components/prose-script",
+    "priority": 0,
+    "_scanned": true,
+    "meta": {
+      "type": 1,
+      "props": [
+        {
+          "name": "src",
+          "global": false,
+          "description": "",
+          "tags": [],
+          "required": true,
+          "type": "string",
+          "schema": "string"
+        }
+      ],
+      "slots": [],
+      "events": [],
+      "exposed": [
+        {
+          "name": "src",
+          "type": "string",
+          "description": "",
+          "schema": "string"
+        }
+      ]
+    }
+  },
+  "ProseSteps": {
+    "mode": "all",
+    "global": true,
+    "prefetch": false,
+    "preload": false,
+    "filePath": "node_modules/.pnpm/@nuxt+ui-pro@3.0.2_@babel+parser@7.27.0_db0@0.3.1_better-sqlite3@11.9.1__embla-carousel_c91fed73073e7ebd3bd8cfe4cd954783/node_modules/@nuxt/ui-pro/dist/runtime/components/prose/Steps.vue",
+    "pascalName": "ProseSteps",
+    "kebabName": "prose-steps",
+    "chunkName": "components/prose-steps",
+    "priority": 0,
+    "_scanned": true,
+    "meta": {
+      "type": 1,
+      "props": [
+        {
+          "name": "level",
+          "global": false,
+          "description": "The heading level to apply to the steps.",
+          "tags": [
+            {
+              "name": "defaultValue",
+              "text": "'3'"
+            }
+          ],
+          "required": false,
+          "type": "\"3\" | \"2\" | \"4\" | undefined",
+          "schema": {
+            "kind": "enum",
+            "type": "\"3\" | \"2\" | \"4\" | undefined",
+            "schema": {
+              "0": "undefined",
+              "1": "\"3\"",
+              "2": "\"2\"",
+              "3": "\"4\""
+            }
+          }
+        }
+      ],
+      "slots": [
+        {
+          "name": "default",
+          "type": "{}",
+          "description": "",
+          "schema": {
+            "kind": "object",
+            "type": "{}",
+            "schema": {}
+          }
+        }
+      ],
+      "events": [],
+      "exposed": [
+        {
+          "name": "$slots",
+          "type": "Readonly<InternalSlots> & { default?: ((props: {}) => any) | undefined; }",
+          "description": "",
+          "schema": {
+            "kind": "object",
+            "type": "Readonly<InternalSlots> & { default?: ((props: {}) => any) | undefined; }",
+            "schema": {
+              "default": {
+                "name": "default",
+                "global": false,
+                "description": "",
+                "tags": [],
+                "required": false,
+                "type": "((props: {}) => any) | undefined",
+                "schema": {
+                  "kind": "enum",
+                  "type": "((props: {}) => any) | undefined",
+                  "schema": {
+                    "0": "undefined",
+                    "1": {
+                      "kind": "event",
+                      "type": "(props: {}): any",
+                      "schema": []
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "class",
+          "type": "any",
+          "description": "",
+          "schema": "any"
+        },
+        {
+          "name": "level",
+          "type": "\"3\" | \"2\" | \"4\" | undefined",
+          "description": "The heading level to apply to the steps.",
+          "schema": {
+            "kind": "enum",
+            "type": "\"3\" | \"2\" | \"4\" | undefined",
+            "schema": {
+              "0": "undefined",
+              "1": "\"3\"",
+              "2": "\"2\"",
+              "3": "\"4\""
+            }
+          }
+        }
+      ]
+    }
+  },
+  "ProseStrong": {
+    "mode": "all",
+    "global": true,
+    "prefetch": false,
+    "preload": false,
+    "filePath": "node_modules/.pnpm/@nuxt+ui-pro@3.0.2_@babel+parser@7.27.0_db0@0.3.1_better-sqlite3@11.9.1__embla-carousel_c91fed73073e7ebd3bd8cfe4cd954783/node_modules/@nuxt/ui-pro/dist/runtime/components/prose/Strong.vue",
+    "pascalName": "ProseStrong",
+    "kebabName": "prose-strong",
+    "chunkName": "components/prose-strong",
+    "priority": 0,
+    "_scanned": true,
+    "meta": {
+      "type": 1,
+      "props": [],
+      "slots": [
+        {
+          "name": "default",
+          "type": "{}",
+          "description": "",
+          "schema": {
+            "kind": "object",
+            "type": "{}",
+            "schema": {}
+          }
+        }
+      ],
+      "events": [],
+      "exposed": [
+        {
+          "name": "$slots",
+          "type": "Readonly<InternalSlots> & { default?: ((props: {}) => any) | undefined; }",
+          "description": "",
+          "schema": {
+            "kind": "object",
+            "type": "Readonly<InternalSlots> & { default?: ((props: {}) => any) | undefined; }",
+            "schema": {
+              "default": {
+                "name": "default",
+                "global": false,
+                "description": "",
+                "tags": [],
+                "required": false,
+                "type": "((props: {}) => any) | undefined",
+                "schema": {
+                  "kind": "enum",
+                  "type": "((props: {}) => any) | undefined",
+                  "schema": {
+                    "0": "undefined",
+                    "1": {
+                      "kind": "event",
+                      "type": "(props: {}): any",
+                      "schema": []
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "class",
+          "type": "string | undefined",
+          "description": "",
+          "schema": {
+            "kind": "enum",
+            "type": "string | undefined",
+            "schema": {
+              "0": "undefined",
+              "1": "string"
+            }
+          }
+        }
+      ]
+    }
+  },
+  "ProseTable": {
+    "mode": "all",
+    "global": true,
+    "prefetch": false,
+    "preload": false,
+    "filePath": "node_modules/.pnpm/@nuxt+ui-pro@3.0.2_@babel+parser@7.27.0_db0@0.3.1_better-sqlite3@11.9.1__embla-carousel_c91fed73073e7ebd3bd8cfe4cd954783/node_modules/@nuxt/ui-pro/dist/runtime/components/prose/Table.vue",
+    "pascalName": "ProseTable",
+    "kebabName": "prose-table",
+    "chunkName": "components/prose-table",
+    "priority": 0,
+    "_scanned": true,
+    "meta": {
+      "type": 1,
+      "props": [
+        {
+          "name": "ui",
+          "global": false,
+          "description": "",
+          "tags": [],
+          "required": false,
+          "type": "Partial<{ root: string; base: string; }> | undefined",
+          "schema": {
+            "kind": "enum",
+            "type": "Partial<{ root: string; base: string; }> | undefined",
+            "schema": {
+              "0": "undefined",
+              "1": "Partial<{ root: string; base: string; }>"
+            }
+          }
+        }
+      ],
+      "slots": [
+        {
+          "name": "default",
+          "type": "{}",
+          "description": "",
+          "schema": {
+            "kind": "object",
+            "type": "{}",
+            "schema": {}
+          }
+        }
+      ],
+      "events": [],
+      "exposed": [
+        {
+          "name": "$slots",
+          "type": "Readonly<InternalSlots> & { default?: ((props: {}) => any) | undefined; }",
+          "description": "",
+          "schema": {
+            "kind": "object",
+            "type": "Readonly<InternalSlots> & { default?: ((props: {}) => any) | undefined; }",
+            "schema": {
+              "default": {
+                "name": "default",
+                "global": false,
+                "description": "",
+                "tags": [],
+                "required": false,
+                "type": "((props: {}) => any) | undefined",
+                "schema": {
+                  "kind": "enum",
+                  "type": "((props: {}) => any) | undefined",
+                  "schema": {
+                    "0": "undefined",
+                    "1": {
+                      "kind": "event",
+                      "type": "(props: {}): any",
+                      "schema": []
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "class",
+          "type": "string | undefined",
+          "description": "",
+          "schema": {
+            "kind": "enum",
+            "type": "string | undefined",
+            "schema": {
+              "0": "undefined",
+              "1": "string"
+            }
+          }
+        },
+        {
+          "name": "ui",
+          "type": "Partial<{ root: string; base: string; }> | undefined",
+          "description": "",
+          "schema": {
+            "kind": "enum",
+            "type": "Partial<{ root: string; base: string; }> | undefined",
+            "schema": {
+              "0": "undefined",
+              "1": "Partial<{ root: string; base: string; }>"
+            }
+          }
+        }
+      ]
+    }
+  },
+  "ProseTabs": {
+    "mode": "all",
+    "global": true,
+    "prefetch": false,
+    "preload": false,
+    "filePath": "node_modules/.pnpm/@nuxt+ui-pro@3.0.2_@babel+parser@7.27.0_db0@0.3.1_better-sqlite3@11.9.1__embla-carousel_c91fed73073e7ebd3bd8cfe4cd954783/node_modules/@nuxt/ui-pro/dist/runtime/components/prose/Tabs.vue",
+    "pascalName": "ProseTabs",
+    "kebabName": "prose-tabs",
+    "chunkName": "components/prose-tabs",
+    "priority": 0,
+    "_scanned": true,
+    "meta": {
+      "type": 1,
+      "props": [
+        {
+          "name": "defaultValue",
+          "global": false,
+          "description": "The default tab to select.",
+          "tags": [
+            {
+              "name": "example",
+              "text": "'1'"
+            }
+          ],
+          "required": false,
+          "type": "string | undefined",
+          "schema": {
+            "kind": "enum",
+            "type": "string | undefined",
+            "schema": {
+              "0": "undefined",
+              "1": "string"
+            }
+          },
+          "default": "\"0\""
+        },
+        {
+          "name": "sync",
+          "global": false,
+          "description": "Sync the selected tab with a local storage key.",
+          "tags": [],
+          "required": false,
+          "type": "string | undefined",
+          "schema": {
+            "kind": "enum",
+            "type": "string | undefined",
+            "schema": {
+              "0": "undefined",
+              "1": "string"
+            }
+          }
+        },
+        {
+          "name": "hash",
+          "global": false,
+          "description": "The hash to scroll to when the tab is selected.",
+          "tags": [],
+          "required": false,
+          "type": "string | undefined",
+          "schema": {
+            "kind": "enum",
+            "type": "string | undefined",
+            "schema": {
+              "0": "undefined",
+              "1": "string"
+            }
+          }
+        },
+        {
+          "name": "modelValue",
+          "global": false,
+          "description": "",
+          "tags": [],
+          "required": false,
+          "type": "string | undefined",
+          "schema": {
+            "kind": "enum",
+            "type": "string | undefined",
+            "schema": {
+              "0": "undefined",
+              "1": "string"
+            }
+          }
+        }
+      ],
+      "slots": [
+        {
+          "name": "default",
+          "type": "{} | undefined",
+          "description": "",
+          "schema": {
+            "kind": "enum",
+            "type": "{} | undefined",
+            "schema": {
+              "0": "undefined",
+              "1": {
+                "kind": "object",
+                "type": "{}",
+                "schema": {}
+              }
+            }
+          }
+        }
+      ],
+      "events": [
+        {
+          "name": "update:modelValue",
+          "description": "",
+          "tags": [],
+          "type": "[value: string | undefined]",
+          "signature": "(event: \"update:modelValue\", value: string | undefined): void",
+          "schema": [
+            {
+              "kind": "enum",
+              "type": "string | undefined",
+              "schema": [
+                "undefined",
+                "string"
+              ]
+            }
+          ]
+        }
+      ],
+      "exposed": [
+        {
+          "name": "$slots",
+          "type": "Readonly<InternalSlots> & TabsSlots",
+          "description": "",
+          "schema": {
+            "kind": "object",
+            "type": "Readonly<InternalSlots> & TabsSlots",
+            "schema": {
+              "default": {
+                "name": "default",
+                "global": false,
+                "description": "",
+                "tags": [],
+                "required": true,
+                "type": "(props?: {} | undefined) => any",
+                "schema": {
+                  "kind": "event",
+                  "type": "(props?: {} | undefined): any",
+                  "schema": {}
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "defaultValue",
+          "type": "string",
+          "description": "The default tab to select.",
+          "schema": "string"
+        },
+        {
+          "name": "class",
+          "type": "any",
+          "description": "",
+          "schema": "any"
+        },
+        {
+          "name": "sync",
+          "type": "string | undefined",
+          "description": "Sync the selected tab with a local storage key.",
+          "schema": {
+            "kind": "enum",
+            "type": "string | undefined",
+            "schema": {
+              "0": "undefined",
+              "1": "string"
+            }
+          }
+        },
+        {
+          "name": "modelValue",
+          "type": "string | undefined",
+          "description": "",
+          "schema": {
+            "kind": "enum",
+            "type": "string | undefined",
+            "schema": {
+              "0": "undefined",
+              "1": "string"
+            }
+          }
+        },
+        {
+          "name": "onUpdate:modelValue",
+          "type": "((value: string | undefined) => any) | undefined",
+          "description": "",
+          "schema": {
+            "kind": "enum",
+            "type": "((value: string | undefined) => any) | undefined",
+            "schema": {
+              "0": "undefined",
+              "1": {
+                "kind": "event",
+                "type": "(value: string | undefined): any",
+                "schema": [
+                  {
+                    "kind": "enum",
+                    "type": "string | undefined",
+                    "schema": [
+                      "undefined",
+                      "string"
+                    ]
+                  }
+                ]
+              }
+            }
+          }
+        },
+        {
+          "name": "hash",
+          "type": "string | undefined",
+          "description": "The hash to scroll to when the tab is selected.",
+          "schema": {
+            "kind": "enum",
+            "type": "string | undefined",
+            "schema": {
+              "0": "undefined",
+              "1": "string"
+            }
+          }
+        }
+      ]
+    }
+  },
+  "ProseTabsItem": {
+    "mode": "all",
+    "global": true,
+    "prefetch": false,
+    "preload": false,
+    "filePath": "node_modules/.pnpm/@nuxt+ui-pro@3.0.2_@babel+parser@7.27.0_db0@0.3.1_better-sqlite3@11.9.1__embla-carousel_c91fed73073e7ebd3bd8cfe4cd954783/node_modules/@nuxt/ui-pro/dist/runtime/components/prose/TabsItem.vue",
+    "pascalName": "ProseTabsItem",
+    "kebabName": "prose-tabs-item",
+    "chunkName": "components/prose-tabs-item",
+    "priority": 0,
+    "_scanned": true,
+    "meta": {
+      "type": 1,
+      "props": [
+        {
+          "name": "label",
+          "global": false,
+          "description": "",
+          "tags": [],
+          "required": true,
+          "type": "string",
+          "schema": "string"
+        }
+      ],
+      "slots": [
+        {
+          "name": "default",
+          "type": "{ mdcUnwrap: string; }",
+          "description": "",
+          "schema": {
+            "kind": "object",
+            "type": "{ mdcUnwrap: string; }",
+            "schema": {
+              "mdcUnwrap": {
+                "name": "mdcUnwrap",
+                "global": false,
+                "description": "",
+                "tags": [],
+                "required": true,
+                "type": "string",
+                "schema": "string"
+              }
+            }
+          }
+        }
+      ],
+      "events": [],
+      "exposed": [
+        {
+          "name": "$slots",
+          "type": "Readonly<InternalSlots> & { default?: ((props: { mdcUnwrap: string; }) => any) | undefined; }",
+          "description": "",
+          "schema": {
+            "kind": "object",
+            "type": "Readonly<InternalSlots> & { default?: ((props: { mdcUnwrap: string; }) => any) | undefined; }",
+            "schema": {
+              "default": {
+                "name": "default",
+                "global": false,
+                "description": "",
+                "tags": [],
+                "required": false,
+                "type": "((props: { mdcUnwrap: string; }) => any) | undefined",
+                "schema": {
+                  "kind": "enum",
+                  "type": "((props: { mdcUnwrap: string; }) => any) | undefined",
+                  "schema": {
+                    "0": "undefined",
+                    "1": {
+                      "kind": "event",
+                      "type": "(props: { mdcUnwrap: string; }): any",
+                      "schema": []
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "class",
+          "type": "any",
+          "description": "",
+          "schema": "any"
+        },
+        {
+          "name": "label",
+          "type": "string",
+          "description": "",
+          "schema": "string"
+        }
+      ]
+    }
+  },
+  "ProseTbody": {
+    "mode": "all",
+    "global": true,
+    "prefetch": false,
+    "preload": false,
+    "filePath": "node_modules/.pnpm/@nuxt+ui-pro@3.0.2_@babel+parser@7.27.0_db0@0.3.1_better-sqlite3@11.9.1__embla-carousel_c91fed73073e7ebd3bd8cfe4cd954783/node_modules/@nuxt/ui-pro/dist/runtime/components/prose/Tbody.vue",
+    "pascalName": "ProseTbody",
+    "kebabName": "prose-tbody",
+    "chunkName": "components/prose-tbody",
+    "priority": 0,
+    "_scanned": true,
+    "meta": {
+      "type": 1,
+      "props": [],
+      "slots": [
+        {
+          "name": "default",
+          "type": "{}",
+          "description": "",
+          "schema": {
+            "kind": "object",
+            "type": "{}",
+            "schema": {}
+          }
+        }
+      ],
+      "events": [],
+      "exposed": [
+        {
+          "name": "$slots",
+          "type": "Readonly<InternalSlots> & { default?: ((props: {}) => any) | undefined; }",
+          "description": "",
+          "schema": {
+            "kind": "object",
+            "type": "Readonly<InternalSlots> & { default?: ((props: {}) => any) | undefined; }",
+            "schema": {
+              "default": {
+                "name": "default",
+                "global": false,
+                "description": "",
+                "tags": [],
+                "required": false,
+                "type": "((props: {}) => any) | undefined",
+                "schema": {
+                  "kind": "enum",
+                  "type": "((props: {}) => any) | undefined",
+                  "schema": {
+                    "0": "undefined",
+                    "1": {
+                      "kind": "event",
+                      "type": "(props: {}): any",
+                      "schema": []
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "class",
+          "type": "string | undefined",
+          "description": "",
+          "schema": {
+            "kind": "enum",
+            "type": "string | undefined",
+            "schema": {
+              "0": "undefined",
+              "1": "string"
+            }
+          }
+        }
+      ]
+    }
+  },
+  "ProseTd": {
+    "mode": "all",
+    "global": true,
+    "prefetch": false,
+    "preload": false,
+    "filePath": "node_modules/.pnpm/@nuxt+ui-pro@3.0.2_@babel+parser@7.27.0_db0@0.3.1_better-sqlite3@11.9.1__embla-carousel_c91fed73073e7ebd3bd8cfe4cd954783/node_modules/@nuxt/ui-pro/dist/runtime/components/prose/Td.vue",
+    "pascalName": "ProseTd",
+    "kebabName": "prose-td",
+    "chunkName": "components/prose-td",
+    "priority": 0,
+    "_scanned": true,
+    "meta": {
+      "type": 1,
+      "props": [],
+      "slots": [
+        {
+          "name": "default",
+          "type": "{}",
+          "description": "",
+          "schema": {
+            "kind": "object",
+            "type": "{}",
+            "schema": {}
+          }
+        }
+      ],
+      "events": [],
+      "exposed": [
+        {
+          "name": "$slots",
+          "type": "Readonly<InternalSlots> & { default?: ((props: {}) => any) | undefined; }",
+          "description": "",
+          "schema": {
+            "kind": "object",
+            "type": "Readonly<InternalSlots> & { default?: ((props: {}) => any) | undefined; }",
+            "schema": {
+              "default": {
+                "name": "default",
+                "global": false,
+                "description": "",
+                "tags": [],
+                "required": false,
+                "type": "((props: {}) => any) | undefined",
+                "schema": {
+                  "kind": "enum",
+                  "type": "((props: {}) => any) | undefined",
+                  "schema": {
+                    "0": "undefined",
+                    "1": {
+                      "kind": "event",
+                      "type": "(props: {}): any",
+                      "schema": []
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "class",
+          "type": "string | undefined",
+          "description": "",
+          "schema": {
+            "kind": "enum",
+            "type": "string | undefined",
+            "schema": {
+              "0": "undefined",
+              "1": "string"
+            }
+          }
+        }
+      ]
+    }
+  },
+  "ProseTh": {
+    "mode": "all",
+    "global": true,
+    "prefetch": false,
+    "preload": false,
+    "filePath": "node_modules/.pnpm/@nuxt+ui-pro@3.0.2_@babel+parser@7.27.0_db0@0.3.1_better-sqlite3@11.9.1__embla-carousel_c91fed73073e7ebd3bd8cfe4cd954783/node_modules/@nuxt/ui-pro/dist/runtime/components/prose/Th.vue",
+    "pascalName": "ProseTh",
+    "kebabName": "prose-th",
+    "chunkName": "components/prose-th",
+    "priority": 0,
+    "_scanned": true,
+    "meta": {
+      "type": 1,
+      "props": [],
+      "slots": [
+        {
+          "name": "default",
+          "type": "{}",
+          "description": "",
+          "schema": {
+            "kind": "object",
+            "type": "{}",
+            "schema": {}
+          }
+        }
+      ],
+      "events": [],
+      "exposed": [
+        {
+          "name": "$slots",
+          "type": "Readonly<InternalSlots> & { default?: ((props: {}) => any) | undefined; }",
+          "description": "",
+          "schema": {
+            "kind": "object",
+            "type": "Readonly<InternalSlots> & { default?: ((props: {}) => any) | undefined; }",
+            "schema": {
+              "default": {
+                "name": "default",
+                "global": false,
+                "description": "",
+                "tags": [],
+                "required": false,
+                "type": "((props: {}) => any) | undefined",
+                "schema": {
+                  "kind": "enum",
+                  "type": "((props: {}) => any) | undefined",
+                  "schema": {
+                    "0": "undefined",
+                    "1": {
+                      "kind": "event",
+                      "type": "(props: {}): any",
+                      "schema": []
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "class",
+          "type": "string | undefined",
+          "description": "",
+          "schema": {
+            "kind": "enum",
+            "type": "string | undefined",
+            "schema": {
+              "0": "undefined",
+              "1": "string"
+            }
+          }
+        }
+      ]
+    }
+  },
+  "ProseThead": {
+    "mode": "all",
+    "global": true,
+    "prefetch": false,
+    "preload": false,
+    "filePath": "node_modules/.pnpm/@nuxt+ui-pro@3.0.2_@babel+parser@7.27.0_db0@0.3.1_better-sqlite3@11.9.1__embla-carousel_c91fed73073e7ebd3bd8cfe4cd954783/node_modules/@nuxt/ui-pro/dist/runtime/components/prose/Thead.vue",
+    "pascalName": "ProseThead",
+    "kebabName": "prose-thead",
+    "chunkName": "components/prose-thead",
+    "priority": 0,
+    "_scanned": true,
+    "meta": {
+      "type": 1,
+      "props": [],
+      "slots": [
+        {
+          "name": "default",
+          "type": "{}",
+          "description": "",
+          "schema": {
+            "kind": "object",
+            "type": "{}",
+            "schema": {}
+          }
+        }
+      ],
+      "events": [],
+      "exposed": [
+        {
+          "name": "$slots",
+          "type": "Readonly<InternalSlots> & { default?: ((props: {}) => any) | undefined; }",
+          "description": "",
+          "schema": {
+            "kind": "object",
+            "type": "Readonly<InternalSlots> & { default?: ((props: {}) => any) | undefined; }",
+            "schema": {
+              "default": {
+                "name": "default",
+                "global": false,
+                "description": "",
+                "tags": [],
+                "required": false,
+                "type": "((props: {}) => any) | undefined",
+                "schema": {
+                  "kind": "enum",
+                  "type": "((props: {}) => any) | undefined",
+                  "schema": {
+                    "0": "undefined",
+                    "1": {
+                      "kind": "event",
+                      "type": "(props: {}): any",
+                      "schema": []
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "class",
+          "type": "string | undefined",
+          "description": "",
+          "schema": {
+            "kind": "enum",
+            "type": "string | undefined",
+            "schema": {
+              "0": "undefined",
+              "1": "string"
+            }
+          }
+        }
+      ]
+    }
+  },
+  "ProseTr": {
+    "mode": "all",
+    "global": true,
+    "prefetch": false,
+    "preload": false,
+    "filePath": "node_modules/.pnpm/@nuxt+ui-pro@3.0.2_@babel+parser@7.27.0_db0@0.3.1_better-sqlite3@11.9.1__embla-carousel_c91fed73073e7ebd3bd8cfe4cd954783/node_modules/@nuxt/ui-pro/dist/runtime/components/prose/Tr.vue",
+    "pascalName": "ProseTr",
+    "kebabName": "prose-tr",
+    "chunkName": "components/prose-tr",
+    "priority": 0,
+    "_scanned": true,
+    "meta": {
+      "type": 1,
+      "props": [],
+      "slots": [
+        {
+          "name": "default",
+          "type": "{}",
+          "description": "",
+          "schema": {
+            "kind": "object",
+            "type": "{}",
+            "schema": {}
+          }
+        }
+      ],
+      "events": [],
+      "exposed": [
+        {
+          "name": "$slots",
+          "type": "Readonly<InternalSlots> & { default?: ((props: {}) => any) | undefined; }",
+          "description": "",
+          "schema": {
+            "kind": "object",
+            "type": "Readonly<InternalSlots> & { default?: ((props: {}) => any) | undefined; }",
+            "schema": {
+              "default": {
+                "name": "default",
+                "global": false,
+                "description": "",
+                "tags": [],
+                "required": false,
+                "type": "((props: {}) => any) | undefined",
+                "schema": {
+                  "kind": "enum",
+                  "type": "((props: {}) => any) | undefined",
+                  "schema": {
+                    "0": "undefined",
+                    "1": {
+                      "kind": "event",
+                      "type": "(props: {}): any",
+                      "schema": []
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "class",
+          "type": "string | undefined",
+          "description": "",
+          "schema": {
+            "kind": "enum",
+            "type": "string | undefined",
+            "schema": {
+              "0": "undefined",
+              "1": "string"
+            }
+          }
+        }
+      ]
+    }
+  },
+  "ProseUl": {
+    "mode": "all",
+    "global": true,
+    "prefetch": false,
+    "preload": false,
+    "filePath": "node_modules/.pnpm/@nuxt+ui-pro@3.0.2_@babel+parser@7.27.0_db0@0.3.1_better-sqlite3@11.9.1__embla-carousel_c91fed73073e7ebd3bd8cfe4cd954783/node_modules/@nuxt/ui-pro/dist/runtime/components/prose/Ul.vue",
+    "pascalName": "ProseUl",
+    "kebabName": "prose-ul",
+    "chunkName": "components/prose-ul",
+    "priority": 0,
+    "_scanned": true,
+    "meta": {
+      "type": 1,
+      "props": [],
+      "slots": [
+        {
+          "name": "default",
+          "type": "{}",
+          "description": "",
+          "schema": {
+            "kind": "object",
+            "type": "{}",
+            "schema": {}
+          }
+        }
+      ],
+      "events": [],
+      "exposed": [
+        {
+          "name": "$slots",
+          "type": "Readonly<InternalSlots> & { default?: ((props: {}) => any) | undefined; }",
+          "description": "",
+          "schema": {
+            "kind": "object",
+            "type": "Readonly<InternalSlots> & { default?: ((props: {}) => any) | undefined; }",
+            "schema": {
+              "default": {
+                "name": "default",
+                "global": false,
+                "description": "",
+                "tags": [],
+                "required": false,
+                "type": "((props: {}) => any) | undefined",
+                "schema": {
+                  "kind": "enum",
+                  "type": "((props: {}) => any) | undefined",
+                  "schema": {
+                    "0": "undefined",
+                    "1": {
+                      "kind": "event",
+                      "type": "(props: {}): any",
+                      "schema": []
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "class",
+          "type": "string | undefined",
+          "description": "",
+          "schema": {
+            "kind": "enum",
+            "type": "string | undefined",
+            "schema": {
+              "0": "undefined",
+              "1": "string"
+            }
+          }
+        }
+      ]
+    }
+  },
+  "ProseCaution": {
+    "mode": "all",
+    "global": true,
+    "prefetch": false,
+    "preload": false,
+    "filePath": "node_modules/.pnpm/@nuxt+ui-pro@3.0.2_@babel+parser@7.27.0_db0@0.3.1_better-sqlite3@11.9.1__embla-carousel_c91fed73073e7ebd3bd8cfe4cd954783/node_modules/@nuxt/ui-pro/dist/runtime/components/prose/callout/Caution.vue",
+    "pascalName": "ProseCaution",
+    "kebabName": "prose-caution",
+    "chunkName": "components/prose-caution",
+    "priority": 0,
+    "_scanned": true,
+    "meta": {
+      "type": 1,
+      "props": [],
+      "slots": [
+        {
+          "name": "default",
+          "type": "{ mdcUnwrap: string; }",
+          "description": "",
+          "schema": {
+            "kind": "object",
+            "type": "{ mdcUnwrap: string; }",
+            "schema": {
+              "mdcUnwrap": {
+                "name": "mdcUnwrap",
+                "global": false,
+                "description": "",
+                "tags": [],
+                "required": true,
+                "type": "string",
+                "schema": "string"
+              }
+            }
+          }
+        }
+      ],
+      "events": [],
+      "exposed": [
+        {
+          "name": "$slots",
+          "type": "Readonly<InternalSlots> & { default?: ((props: { mdcUnwrap: string; }) => any) | undefined; }",
+          "description": "",
+          "schema": {
+            "kind": "object",
+            "type": "Readonly<InternalSlots> & { default?: ((props: { mdcUnwrap: string; }) => any) | undefined; }",
+            "schema": {
+              "default": {
+                "name": "default",
+                "global": false,
+                "description": "",
+                "tags": [],
+                "required": false,
+                "type": "((props: { mdcUnwrap: string; }) => any) | undefined",
+                "schema": {
+                  "kind": "enum",
+                  "type": "((props: { mdcUnwrap: string; }) => any) | undefined",
+                  "schema": {
+                    "0": "undefined",
+                    "1": {
+                      "kind": "event",
+                      "type": "(props: { mdcUnwrap: string; }): any",
+                      "schema": []
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  },
+  "ProseNote": {
+    "mode": "all",
+    "global": true,
+    "prefetch": false,
+    "preload": false,
+    "filePath": "node_modules/.pnpm/@nuxt+ui-pro@3.0.2_@babel+parser@7.27.0_db0@0.3.1_better-sqlite3@11.9.1__embla-carousel_c91fed73073e7ebd3bd8cfe4cd954783/node_modules/@nuxt/ui-pro/dist/runtime/components/prose/callout/Note.vue",
+    "pascalName": "ProseNote",
+    "kebabName": "prose-note",
+    "chunkName": "components/prose-note",
+    "priority": 0,
+    "_scanned": true,
+    "meta": {
+      "type": 1,
+      "props": [],
+      "slots": [
+        {
+          "name": "default",
+          "type": "{ mdcUnwrap: string; }",
+          "description": "",
+          "schema": {
+            "kind": "object",
+            "type": "{ mdcUnwrap: string; }",
+            "schema": {
+              "mdcUnwrap": {
+                "name": "mdcUnwrap",
+                "global": false,
+                "description": "",
+                "tags": [],
+                "required": true,
+                "type": "string",
+                "schema": "string"
+              }
+            }
+          }
+        }
+      ],
+      "events": [],
+      "exposed": [
+        {
+          "name": "$slots",
+          "type": "Readonly<InternalSlots> & { default?: ((props: { mdcUnwrap: string; }) => any) | undefined; }",
+          "description": "",
+          "schema": {
+            "kind": "object",
+            "type": "Readonly<InternalSlots> & { default?: ((props: { mdcUnwrap: string; }) => any) | undefined; }",
+            "schema": {
+              "default": {
+                "name": "default",
+                "global": false,
+                "description": "",
+                "tags": [],
+                "required": false,
+                "type": "((props: { mdcUnwrap: string; }) => any) | undefined",
+                "schema": {
+                  "kind": "enum",
+                  "type": "((props: { mdcUnwrap: string; }) => any) | undefined",
+                  "schema": {
+                    "0": "undefined",
+                    "1": {
+                      "kind": "event",
+                      "type": "(props: { mdcUnwrap: string; }): any",
+                      "schema": []
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  },
+  "ProseTip": {
+    "mode": "all",
+    "global": true,
+    "prefetch": false,
+    "preload": false,
+    "filePath": "node_modules/.pnpm/@nuxt+ui-pro@3.0.2_@babel+parser@7.27.0_db0@0.3.1_better-sqlite3@11.9.1__embla-carousel_c91fed73073e7ebd3bd8cfe4cd954783/node_modules/@nuxt/ui-pro/dist/runtime/components/prose/callout/Tip.vue",
+    "pascalName": "ProseTip",
+    "kebabName": "prose-tip",
+    "chunkName": "components/prose-tip",
+    "priority": 0,
+    "_scanned": true,
+    "meta": {
+      "type": 1,
+      "props": [],
+      "slots": [
+        {
+          "name": "default",
+          "type": "{ mdcUnwrap: string; }",
+          "description": "",
+          "schema": {
+            "kind": "object",
+            "type": "{ mdcUnwrap: string; }",
+            "schema": {
+              "mdcUnwrap": {
+                "name": "mdcUnwrap",
+                "global": false,
+                "description": "",
+                "tags": [],
+                "required": true,
+                "type": "string",
+                "schema": "string"
+              }
+            }
+          }
+        }
+      ],
+      "events": [],
+      "exposed": [
+        {
+          "name": "$slots",
+          "type": "Readonly<InternalSlots> & { default?: ((props: { mdcUnwrap: string; }) => any) | undefined; }",
+          "description": "",
+          "schema": {
+            "kind": "object",
+            "type": "Readonly<InternalSlots> & { default?: ((props: { mdcUnwrap: string; }) => any) | undefined; }",
+            "schema": {
+              "default": {
+                "name": "default",
+                "global": false,
+                "description": "",
+                "tags": [],
+                "required": false,
+                "type": "((props: { mdcUnwrap: string; }) => any) | undefined",
+                "schema": {
+                  "kind": "enum",
+                  "type": "((props: { mdcUnwrap: string; }) => any) | undefined",
+                  "schema": {
+                    "0": "undefined",
+                    "1": {
+                      "kind": "event",
+                      "type": "(props: { mdcUnwrap: string; }): any",
+                      "schema": []
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  },
+  "ProseWarning": {
+    "mode": "all",
+    "global": true,
+    "prefetch": false,
+    "preload": false,
+    "filePath": "node_modules/.pnpm/@nuxt+ui-pro@3.0.2_@babel+parser@7.27.0_db0@0.3.1_better-sqlite3@11.9.1__embla-carousel_c91fed73073e7ebd3bd8cfe4cd954783/node_modules/@nuxt/ui-pro/dist/runtime/components/prose/callout/Warning.vue",
+    "pascalName": "ProseWarning",
+    "kebabName": "prose-warning",
+    "chunkName": "components/prose-warning",
+    "priority": 0,
+    "_scanned": true,
+    "meta": {
+      "type": 1,
+      "props": [],
+      "slots": [
+        {
+          "name": "default",
+          "type": "{ mdcUnwrap: string; }",
+          "description": "",
+          "schema": {
+            "kind": "object",
+            "type": "{ mdcUnwrap: string; }",
+            "schema": {
+              "mdcUnwrap": {
+                "name": "mdcUnwrap",
+                "global": false,
+                "description": "",
+                "tags": [],
+                "required": true,
+                "type": "string",
+                "schema": "string"
+              }
+            }
+          }
+        }
+      ],
+      "events": [],
+      "exposed": [
+        {
+          "name": "$slots",
+          "type": "Readonly<InternalSlots> & { default?: ((props: { mdcUnwrap: string; }) => any) | undefined; }",
+          "description": "",
+          "schema": {
+            "kind": "object",
+            "type": "Readonly<InternalSlots> & { default?: ((props: { mdcUnwrap: string; }) => any) | undefined; }",
+            "schema": {
+              "default": {
+                "name": "default",
+                "global": false,
+                "description": "",
+                "tags": [],
+                "required": false,
+                "type": "((props: { mdcUnwrap: string; }) => any) | undefined",
+                "schema": {
+                  "kind": "enum",
+                  "type": "((props: { mdcUnwrap: string; }) => any) | undefined",
+                  "schema": {
+                    "0": "undefined",
+                    "1": {
+                      "kind": "event",
+                      "type": "(props: { mdcUnwrap: string; }): any",
+                      "schema": []
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  },
+  "ProseH5": {
+    "mode": "all",
+    "global": true,
+    "prefetch": false,
+    "preload": false,
+    "filePath": "node_modules/.pnpm/@nuxtjs+mdc@0.16.1_magicast@0.3.5/node_modules/@nuxtjs/mdc/dist/runtime/components/prose/ProseH5.vue",
+    "pascalName": "ProseH5",
+    "kebabName": "prose-h5",
+    "chunkName": "components/prose-h5",
+    "priority": 0,
+    "_scanned": true,
+    "meta": {
+      "type": 1,
+      "props": [
+        {
+          "name": "id",
+          "global": false,
+          "description": "",
+          "tags": [],
+          "required": false,
+          "type": "string | undefined",
+          "schema": {
+            "kind": "enum",
+            "type": "string | undefined",
+            "schema": {
+              "0": "undefined",
+              "1": "string"
+            }
+          }
+        }
+      ],
+      "slots": [
+        {
+          "name": "default",
+          "type": "{}",
+          "description": "",
+          "schema": {
+            "kind": "object",
+            "type": "{}",
+            "schema": {}
+          }
+        }
+      ],
+      "events": [],
+      "exposed": [
+        {
+          "name": "$slots",
+          "type": "Readonly<InternalSlots> & { default?: (((props: {}) => any) & ((props: {}) => any)) | undefined; }",
+          "description": "",
+          "schema": {
+            "kind": "object",
+            "type": "Readonly<InternalSlots> & { default?: (((props: {}) => any) & ((props: {}) => any)) | undefined; }",
+            "schema": {
+              "default": {
+                "name": "default",
+                "global": false,
+                "description": "",
+                "tags": [],
+                "required": false,
+                "type": "(((props: {}) => any) & ((props: {}) => any)) | undefined",
+                "schema": {
+                  "kind": "enum",
+                  "type": "(((props: {}) => any) & ((props: {}) => any)) | undefined",
+                  "schema": {
+                    "0": "undefined",
+                    "1": {
+                      "kind": "event",
+                      "type": "(props: {}): any",
+                      "schema": []
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "id",
+          "type": "string | undefined",
+          "description": "",
+          "schema": {
+            "kind": "enum",
+            "type": "string | undefined",
+            "schema": {
+              "0": "undefined",
+              "1": "string"
+            }
+          }
+        }
+      ]
+    }
+  },
+  "ProseH6": {
+    "mode": "all",
+    "global": true,
+    "prefetch": false,
+    "preload": false,
+    "filePath": "node_modules/.pnpm/@nuxtjs+mdc@0.16.1_magicast@0.3.5/node_modules/@nuxtjs/mdc/dist/runtime/components/prose/ProseH6.vue",
+    "pascalName": "ProseH6",
+    "kebabName": "prose-h6",
+    "chunkName": "components/prose-h6",
+    "priority": 0,
+    "_scanned": true,
+    "meta": {
+      "type": 1,
+      "props": [
+        {
+          "name": "id",
+          "global": false,
+          "description": "",
+          "tags": [],
+          "required": false,
+          "type": "string | undefined",
+          "schema": {
+            "kind": "enum",
+            "type": "string | undefined",
+            "schema": {
+              "0": "undefined",
+              "1": "string"
+            }
+          }
+        }
+      ],
+      "slots": [
+        {
+          "name": "default",
+          "type": "{}",
+          "description": "",
+          "schema": {
+            "kind": "object",
+            "type": "{}",
+            "schema": {}
+          }
+        }
+      ],
+      "events": [],
+      "exposed": [
+        {
+          "name": "$slots",
+          "type": "Readonly<InternalSlots> & { default?: (((props: {}) => any) & ((props: {}) => any)) | undefined; }",
+          "description": "",
+          "schema": {
+            "kind": "object",
+            "type": "Readonly<InternalSlots> & { default?: (((props: {}) => any) & ((props: {}) => any)) | undefined; }",
+            "schema": {
+              "default": {
+                "name": "default",
+                "global": false,
+                "description": "",
+                "tags": [],
+                "required": false,
+                "type": "(((props: {}) => any) & ((props: {}) => any)) | undefined",
+                "schema": {
+                  "kind": "enum",
+                  "type": "(((props: {}) => any) & ((props: {}) => any)) | undefined",
+                  "schema": {
+                    "0": "undefined",
+                    "1": {
+                      "kind": "event",
+                      "type": "(props: {}): any",
+                      "schema": []
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "id",
+          "type": "string | undefined",
+          "description": "",
+          "schema": {
+            "kind": "enum",
+            "type": "string | undefined",
+            "schema": {
+              "0": "undefined",
+              "1": "string"
+            }
+          }
+        }
+      ]
+    }
+  },
+  "Icon": {
+    "chunkName": "components/icon",
+    "global": true,
+    "kebabName": "icon",
+    "pascalName": "Icon",
+    "prefetch": false,
+    "preload": false,
+    "mode": "all",
+    "priority": 0,
+    "meta": {
+      "type": 0,
+      "props": [],
+      "slots": [],
+      "events": [],
+      "exposed": []
+    },
+    "name": "Icon",
+    "filePath": "node_modules/.pnpm/@nuxt+icon@1.12.0_magicast@0.3.5_vite@6.2.6_jiti@2.4.2_lightningcss@1.29.2_terser@5.39._45852c06d0891daac18bddc1664bb3a3/node_modules/@nuxt/icon/dist/runtime/components/index.js"
+  }
+};
+
+const _DSx4yz = eventHandler(async () => {
+  const mappedComponents = Object.values(components).map(({ pascalName, filePath, meta }) => {
+    return {
+      name: pascalName,
+      path: filePath,
+      meta: {
+        props: meta.props,
+        slots: meta.slots,
+        events: meta.events
+      }
+    };
+  });
+  const appConfig = useAppConfig();
+  const runtimeConfig = useRuntimeConfig();
+  const { content } = runtimeConfig;
+  const { preview } = runtimeConfig.public;
+  const { version } = content;
+  return {
+    version,
+    preview,
+    gitInfo,
+    collections: collections$1,
+    appConfigSchema,
+    appConfig,
+    components: mappedComponents
+  };
+});
+
+const _9Ufa5L = defineEventHandler((event) => {
+  appendHeader(event, "Access-Control-Allow-Origin", "*");
+  const componentName = (event.context.params?.["component?"] || "").replace(/\.json$/, "");
+  if (componentName) {
+    const meta = components[pascalCase(componentName)];
+    if (!meta) {
+      throw createError({
+        statusMessage: "Components not found!",
+        statusCode: 404,
+        data: {
+          description: "Please make sure you are looking for correct component"
+        }
+      });
+    }
+    return meta;
+  }
+  return components;
+});
+
+const _1nkzOb = eventHandler(async (event) => {
+  const collection = getRouterParam(event, "collection");
+  const data = await useStorage().getItem(`build:content:database.compressed.mjs`) || "";
+  if (data) {
+    const lineStart = `export const ${collection} = "`;
+    const content = String(data).split("\n").find((line) => line.startsWith(lineStart));
+    if (content) {
+      return content.substring(lineStart.length, content.length - 1);
+    }
+  }
+  return await import('file:///Users/rgallegos/proyectos/blog-raul/.nuxt/content/database.compressed.mjs').then((m) => m[collection]);
+});
+
+async function decompressSQLDump(base64Str, compressionType = "gzip") {
+  const binaryData = Uint8Array.from(atob(base64Str), (c) => c.charCodeAt(0));
+  const response = new Response(new Blob([binaryData]));
+  const decompressedStream = response.body?.pipeThrough(new DecompressionStream(compressionType));
+  const decompressedText = await new Response(decompressedStream).text();
+  return decompressedText.split("\n");
 }
 
 function refineContentFields(sql, doc) {
@@ -1481,94 +8281,6 @@ function cleanupQuery(query, options = { removeString: false }) {
   return result;
 }
 
-function defineRenderHandler(render) {
-  const runtimeConfig = useRuntimeConfig();
-  return eventHandler(async (event) => {
-    const nitroApp = useNitroApp();
-    const ctx = { event, render, response: void 0 };
-    await nitroApp.hooks.callHook("render:before", ctx);
-    if (!ctx.response) {
-      if (event.path === `${runtimeConfig.app.baseURL}favicon.ico`) {
-        setResponseHeader(event, "Content-Type", "image/x-icon");
-        return send(
-          event,
-          "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
-        );
-      }
-      ctx.response = await ctx.render(event);
-      if (!ctx.response) {
-        const _currentStatus = getResponseStatus(event);
-        setResponseStatus(event, _currentStatus === 200 ? 500 : _currentStatus);
-        return send(
-          event,
-          "No response returned from render handler: " + event.path
-        );
-      }
-    }
-    await nitroApp.hooks.callHook("render:response", ctx.response, ctx);
-    if (ctx.response.headers) {
-      setResponseHeaders(event, ctx.response.headers);
-    }
-    if (ctx.response.statusCode || ctx.response.statusMessage) {
-      setResponseStatus(
-        event,
-        ctx.response.statusCode,
-        ctx.response.statusMessage
-      );
-    }
-    return ctx.response.body;
-  });
-}
-
-const scheduledTasks = false;
-
-const tasks = {
-  
-};
-
-const __runningTasks__ = {};
-async function runTask(name, {
-  payload = {},
-  context = {}
-} = {}) {
-  if (__runningTasks__[name]) {
-    return __runningTasks__[name];
-  }
-  if (!(name in tasks)) {
-    throw createError({
-      message: `Task \`${name}\` is not available!`,
-      statusCode: 404
-    });
-  }
-  if (!tasks[name].resolve) {
-    throw createError({
-      message: `Task \`${name}\` is not implemented!`,
-      statusCode: 501
-    });
-  }
-  const handler = await tasks[name].resolve();
-  const taskEvent = { name, payload, context };
-  __runningTasks__[name] = handler.run(taskEvent);
-  try {
-    const res = await __runningTasks__[name];
-    return res;
-  } finally {
-    delete __runningTasks__[name];
-  }
-}
-
-function buildAssetsDir() {
-  return useRuntimeConfig().app.buildAssetsDir;
-}
-function buildAssetsURL(...path) {
-  return joinRelativeURL(publicAssetsURL(), buildAssetsDir(), ...path);
-}
-function publicAssetsURL(...path) {
-  const app = useRuntimeConfig().app;
-  const publicBase = app.cdnURL || app.baseURL;
-  return path.length ? joinRelativeURL(publicBase, ...path) : publicBase;
-}
-
 const _XKVQ7v = eventHandler(async (event) => {
   const { sql } = await readBody(event);
   const collection = getRouterParam(event, "collection");
@@ -1598,14 +8310,20 @@ const _6qW8Ha = lazyEventHandler(() => {
   return useBase(opts.baseURL, ipxHandler);
 });
 
-const _lazy_8LfRxp = () => Promise.resolve().then(function () { return renderer$1; });
+const _lazy_woS7Mk = () => Promise.resolve().then(function () { return renderer$1; });
 
 const handlers = [
-  { route: '/__nuxt_error', handler: _lazy_8LfRxp, lazy: true, middleware: false, method: undefined },
+  { route: '/__nuxt_error', handler: _lazy_woS7Mk, lazy: true, middleware: false, method: undefined },
+  { route: '/api/_nuxt_icon/:collection', handler: _Tn6xkJ, lazy: false, middleware: false, method: undefined },
+  { route: '/__preview.json', handler: _DSx4yz, lazy: false, middleware: false, method: "get" },
+  { route: '/api/component-meta', handler: _9Ufa5L, lazy: false, middleware: false, method: "get" },
+  { route: '/api/component-meta.json', handler: _9Ufa5L, lazy: false, middleware: false, method: "get" },
+  { route: '/api/component-meta/:component?', handler: _9Ufa5L, lazy: false, middleware: false, method: "get" },
   { route: '/__nuxt_content/:collection/sql_dump', handler: _1nkzOb, lazy: false, middleware: false, method: undefined },
   { route: '/__nuxt_content/:collection/query', handler: _XKVQ7v, lazy: false, middleware: false, method: undefined },
   { route: '/_ipx/**', handler: _6qW8Ha, lazy: false, middleware: false, method: undefined },
-  { route: '/**', handler: _lazy_8LfRxp, lazy: true, middleware: false, method: undefined }
+  { route: '/_fonts/**', handler: _lazy_woS7Mk, lazy: true, middleware: false, method: undefined },
+  { route: '/**', handler: _lazy_woS7Mk, lazy: true, middleware: false, method: undefined }
 ];
 
 function createNitroApp() {
@@ -1903,7 +8621,11 @@ const getSPARenderer = lazyCachedFunction(async () => {
   const manifest = await getClientManifest();
   const spaTemplate = await Promise.resolve().then(function () { return _virtual__spaTemplate; }).then((r) => r.template).catch(() => "").then((r) => {
     {
-      return APP_ROOT_OPEN_TAG + r + APP_ROOT_CLOSE_TAG;
+      const APP_SPA_LOADER_OPEN_TAG = `<${appSpaLoaderTag}${propsToString(appSpaLoaderAttrs)}>`;
+      const APP_SPA_LOADER_CLOSE_TAG = `</${appSpaLoaderTag}>`;
+      const appTemplate = APP_ROOT_OPEN_TAG + APP_ROOT_CLOSE_TAG;
+      const loaderTemplate = r ? APP_SPA_LOADER_OPEN_TAG + r + APP_SPA_LOADER_CLOSE_TAG : "";
+      return appTemplate + loaderTemplate;
     }
   });
   const options = {
@@ -1985,11 +8707,9 @@ function splitPayload(ssrContext) {
 
 const unheadOptions = {
   disableDefaults: true,
-  disableCapoSorting: false,
-  plugins: [DeprecationsPlugin, PromisesPlugin, TemplateParamsPlugin, AliasSortingPlugin],
 };
 
-const renderSSRHeadOptions = {"omitLineBreaks":false};
+const renderSSRHeadOptions = {"omitLineBreaks":true};
 
 globalThis.__buildAssetsURL = buildAssetsURL;
 globalThis.__publicAssetsURL = publicAssetsURL;

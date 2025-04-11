@@ -201,10 +201,11 @@ const bundledLangs = {
 "yml": () => import('shiki/langs/yaml.mjs'),
 }
 const bundledThemes = {
-"github-light": () => import('shiki/themes/github-light.mjs').then(r => r.default),
-"github-dark": () => import('shiki/themes/github-dark.mjs').then(r => r.default),
+"material-theme-lighter": () => import('shiki/themes/material-theme-lighter.mjs').then(r => r.default),
+"material-theme": () => import('shiki/themes/material-theme.mjs').then(r => r.default),
+"material-theme-palenight": () => import('shiki/themes/material-theme-palenight.mjs').then(r => r.default),
 }
-const options = {"theme":{"default":"github-light","dark":"github-dark"}}
+const options = {"theme":{"light":"material-theme-lighter","default":"material-theme","dark":"material-theme-palenight"}}
 const engine = createOnigurumaEngine(() => import('shiki/wasm'))
 const highlighter = createShikiHighlighter({ bundledLangs, bundledThemes, options, getMdcConfigs, engine })
 export default highlighter
