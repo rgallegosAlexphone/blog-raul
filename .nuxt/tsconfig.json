@@ -99,19 +99,19 @@
         "../node_modules/.pnpm/@nuxt+image@1.10.0_db0@0.3.1_better-sqlite3@11.9.1__ioredis@5.6.0_magicast@0.3.5/node_modules/@nuxt/image/dist/runtime/*"
       ],
       "#content/components": [
-        "./content/components.ts"
+        "./content/components"
       ],
       "#content/manifest": [
-        "./content/manifest.ts"
+        "./content/manifest"
       ],
       "#mdc-configs": [
-        "./mdc-configs.mjs"
+        "./mdc-configs"
       ],
       "#mdc-highlighter": [
-        "./mdc-highlighter.mjs"
+        "./mdc-highlighter"
       ],
       "#mdc-imports": [
-        "./mdc-imports.mjs"
+        "./mdc-imports"
       ],
       "#vue-router": [
         "../node_modules/.pnpm/vue-router@4.5.0_vue@3.5.13_typescript@5.8.3_/node_modules/vue-router"
