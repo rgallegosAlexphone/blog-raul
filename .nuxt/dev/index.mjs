@@ -906,7 +906,7 @@ const _inlineRuntimeConfig = {
   },
   "public": {
     "content": {
-      "wsUrl": "ws://localhost:4001/"
+      "wsUrl": "ws://localhost:4000/"
     },
     "mdc": {
       "components": {
@@ -1551,7 +1551,7 @@ function publicAssetsURL(...path) {
 }
 
 const checksums = {
-  "content": "v3.3.0--cFYl7TfLPFcaGeZgBOmrO9ZXQiH6HN4001zDNdnN_Us"
+  "content": "v3.3.0--GTPqNAU1w3MytYISsHTzuO8zHoWIysTe-N6GYc0bzf8"
 };
 const checksumsStructure = {
   "content": "bgIYhpjRuV8zbHJE_CfelwKpJ_Td6YuGJwixiek8lmI"

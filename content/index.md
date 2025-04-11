@@ -1,4 +1,4 @@
 # My First Page
 
-Here is some content.!!!!!! batiste!!
-!!!!
+Here is some content.
+
